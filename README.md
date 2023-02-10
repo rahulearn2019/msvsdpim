@@ -324,6 +324,7 @@ the plot vout vs vin is generated as below :
 
 ![Screenshot from 2023-02-11 02-27-20](https://user-images.githubusercontent.com/50217106/218204749-dfb0d8ea-7806-4ff6-aea3-2efd8a8f0ac5.png)
 
+![Screenshot from 2023-02-11 02-28-50](https://user-images.githubusercontent.com/50217106/218204974-f1c5f258-e36e-4ab7-87ab-936886b5bac1.png)
 
 
 We right click and stretch on the plots vin and vout. A new expkanded vin vs vout is generated. We expand until the vin and vout pulses are far apart. 
