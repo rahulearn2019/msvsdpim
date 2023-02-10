@@ -134,7 +134,6 @@ $ cp /usr/local/share/pdk/sky130A/libs.tech/netgen//sky130A_setup.tcl .
 
 ### Using the symbol, an independent testbench is created to simulate the circuit
 
-![Screenshot from 2023-02-10 09-59-06](https://user-images.githubusercontent.com/50217106/218091959-d2df3d36-6d16-44cd-bf57-a6d660c0e5f7.png)
 
 ### Inverter DC analysis
 ![Screenshot from 2023-02-09 14-25-28](https://user-images.githubusercontent.com/50217106/218139861-b6a31207-693a-44c2-92c8-487d8d567a62.png)
@@ -145,9 +144,15 @@ $ cp /usr/local/share/pdk/sky130A/libs.tech/netgen//sky130A_setup.tcl .
 ![Screenshot from 2023-02-09 14-25-11](https://user-images.githubusercontent.com/50217106/218139230-5c07698e-fdc8-4ec4-9fe6-370c84e85f2b.png)
 
 
-### Creating and Simulating testbench Schematic
+### Simulating testbench Schematic
+#### Input pulse properties
+- rise time - 10ps
+- fall time - 10ps
+- on time - 1ns
+- period - 2ns
 
-![Screenshot from 2023-02-10 10-06-28](https://user-images.githubusercontent.com/50217106/218089214-f6946c50-e88c-4d48-8a03-eaa9b9768587.png)
+
+
 
 ### Calculation of Pre-layout Inverter delay using ngspice and plots
 ![Screenshot from 2023-02-10 10-06-10](https://user-images.githubusercontent.com/50217106/218088836-ed10f081-b9f8-402e-b847-555a27e54b63.png)
@@ -340,5 +345,5 @@ Input pulse specification in both
 - On time- 1ns
 - Period- 2ns
 
-- Pre-Layout Delay Vout-Vin - 13.5ps
+- Pre-Layout Delay Vout-Vin - 13.59ps
 - Post-Layout Delay Vout-Vin - 27.45ps
