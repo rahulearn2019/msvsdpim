@@ -157,7 +157,7 @@ clicking on the Vin and Vout curves give coordinates on the ngspice terminal
 ![Screenshot from 2023-02-10 10-06-28](https://user-images.githubusercontent.com/50217106/218089214-f6946c50-e88c-4d48-8a03-eaa9b9768587.png)
 
 the difference in corrdinates give the pre-layout inverer delay values
-delay = 1.3ps
+delay = 13.5ps
 
 Multiple iterations of simulations is performed and an average delay value is finalised.
 
@@ -336,5 +336,5 @@ Input pulse specification in both
 - On time- 1ns
 - Period- 2ns
 
-Pre-Layout Delay Vout-Vin - 
-Post-Layout Delay Vout-Vin - 27.45ps
+- Pre-Layout Delay Vout-Vin - 13.5ps
+- Post-Layout Delay Vout-Vin - 27.45ps
