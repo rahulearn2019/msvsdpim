@@ -15,11 +15,11 @@ The ALIGN flow includes the following steps:
 
 Circuit annotation creates a multilevel hierarchical representation of the input netlist. This representation is used to implement the circuit layout in using a hierarchical manner. Design rule abstraction creates a compact JSON-format represetation of the design rules in a PDK. This repository provides a mock PDK based on a FinFET technology (where the parameters are based on published data). These design rules are used to guide the layout and ensure DRC-correctness. Primitive cell generation works with primitives, i.e., blocks at the lowest level of design hierarchy, and generates their layouts. Primitives typically contain a small number of transistor structures (each of which may be implemented using multiple fins and/or fingers). A parameterized instance of a primitive is automatically translated to a GDSII layout in this step. Placement and routing performs block assembly of the hierarchical blocks in the netlist and routes connections between these blocks, while obeying a set of analog layout constraints. At the end of this step, the translation of the input SPICE netlist to a GDSII layout is complete.
 
-### Installing Align
-### :
-### : Prerequisites
- gcc >= 6.1.0( for C++14 support)
- Python >= 3.7
+### Installing Align:
+### 
+### Prerequisites:
+-gcc >= 6.1.0( for C++14 support)
+-Python >= 3.7
 
 
 Using the following command to install the Align tool:
