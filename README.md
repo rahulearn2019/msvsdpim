@@ -59,7 +59,7 @@ pip install -v --no-build-isolation -e . --no-deps --install-option='-DBUILD_TES
 
 
 ### Using the symbol, an independent testbench is created to simulate the circuit
-
+![Screenshot from 2023-02-10 10-06-28](https://user-images.githubusercontent.com/50217106/218089214-f6946c50-e88c-4d48-8a03-eaa9b9768587.png)
 
 
 
