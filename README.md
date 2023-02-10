@@ -1,11 +1,11 @@
 # msvsdpim
 ## week0
 ### Getting the tools
-open_pdks
-magic 
-ngspice 
-xschem
-Align - Analog Layout Intelligently generated from netlists
+- open_pdks
+- magic 
+- ngspice 
+- xschem
+- Align - Analog Layout Intelligently generated from netlists
 About :
 ALIGN is an open source automatic layout generator for analog circuits jointly developed under the DARPA IDEA program by the University of Minnesota, Texas A&M University, and Intel Corporation.
 
