@@ -197,6 +197,143 @@ We can also see a .spice netlist. This inverter.spice netlist generated post lay
 Now we need to use our pre-layout spice witht he post-layout parasitics netlist and perform spice simulations.
 - Step I
 Paste the pre-layout netlist of inverter testbench into the magic generated inverter spice netlist
+### Pre- Layout Inverter Testbench Spice Netlist
+```
+** sch_path: /home/rahul/Documents/inverter_hier/Inv_tran1.sch
+**.subckt Inv_tran1 vin vout
+*.ipin vin
+*.opin vout
+X27 vin vout VDD GND inverter
+V1 vin GND pulse(0 1.8 0 10ps 10ps 1ns 2ns)
+.save i(v1)
+V2 VDD GND 1.8
+.save i(v2)
+**** begin user architecture code
 
-Post Layout Delay 1.0551 - 1.02765 = 0.02745
+** opencircuitdesign pdks install
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
 
+
+
+.tran 10p 4n
+.save all
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  /home/rahul/Documents/inverter_hier/inverter.sym # of pins=4
+** sym_path: /home/rahul/Documents/inverter_hier/inverter.sym
+** sch_path: /home/rahul/Documents/inverter_hier/inverter.sch
+.subckt inverter A Y VP VN
+*.ipin A
+*.iopin VP
+*.iopin VN
+*.opin Y
+XM44 Y A VN VN sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM45 Y A VP VP sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+.GLOBAL GND
+.GLOBAL VDD
+.end
+```
+After selectively pasting this netlist into the inverter.spice generated(extracted) from Magic Tool, the inverter.spice netlist looks like this
+```
+* SPICE3 file created from inverter.ext - technology: sky130A
+** sch_path: /home/rahul/Documents/inverter_hier/Inv_tran1.sch
+**.subckt Inv_tran1 vin vout
+*.ipin vin
+*.opin vout
+X27 vin vout VDD GND inverter
+V1 vin GND pulse(0 1.8 0 10ps 10ps 1ns 2ns)
+.save i(v1)
+V2 VDD GND 1.8
+.save i(v2)
+**** begin user architecture code
+
+** opencircuitdesign pdks install
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+
+
+
+.tran 10p 4n
+.save all
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  /home/rahul/Documents/inverter_hier/inverter.sym # of pins=4
+** sym_path: /home/rahul/Documents/inverter_hier/inverter.sym
+** sch_path: /home/rahul/Documents/inverter_hier/inverter.sch
+.subckt inverter A Y VP VN
+*.ipin A
+*.iopin VP
+*.iopin VN
+*.opin Y
+XM44 Y A VN VN sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+XM45 Y A VP VP sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+.GLOBAL GND
+.GLOBAL VDD
+
+.subckt inverter A Y VP VN
+X0 Y A VP XM45/w_n211_n319# sky130_fd_pr__pfet_01v8 ad=2.9e+11p pd=2.58e+06u as=2.9e+11p ps=2.58e+06u w=1e+06u l=150000u
+X1 Y A VN VSUBS sky130_fd_pr__nfet_01v8 ad=2.9e+11p pd=2.58e+06u as=2.9e+11p ps=2.58e+06u w=1e+06u l=150000u
+C0 A XM45/w_n211_n319# 0.33fF
+C1 VP XM45/w_n211_n319# 0.21fF
+C2 VN A 0.33fF
+C3 Y XM45/w_n211_n319# 0.14fF
+C4 VN Y 0.28fF
+C5 VP A 0.29fF
+C6 A Y 0.10fF
+C7 VP Y 0.24fF
+C8 A VSUBS 0.73fF
+C9 Y VSUBS 0.90fF
+C10 VN VSUBS 0.98fF
+C11 VP VSUBS 0.71fF
+C12 XM45/w_n211_n319# VSUBS 1.11fF **FLOATING
+
+.ends
+```
+
+Open inverter.spice with ngspice
+```ngspice inverter.spice
+```
+run the following commands
+```
+run
+dsiplay   //list of plots available
+plot vin vout
+```
+![Screenshot from 2023-02-11 02-41-26](https://user-images.githubusercontent.com/50217106/218198322-2406ea3b-777c-438f-8c06-14e508e0690a.png)
+![Screenshot from 2023-02-11 02-43-00](https://user-images.githubusercontent.com/50217106/218198578-cf119d92-fa72-492f-9b75-9e59304cfd15.png)
+![Screenshot from 2023-02-11 02-44-28](https://user-images.githubusercontent.com/50217106/218198721-556bf6db-e22e-4d87-b981-3ce90f94e27d.png)
+![Screenshot from 2023-02-11 02-45-06](https://user-images.githubusercontent.com/50217106/218198842-247798c8-a548-4270-a7b7-42fa1041cad5.png)
+
+the plot vout vs vin is generated as below :
+
+
+We right click and stretch on the plots vin and vout. A new expkanded vin vs vout is generated. We expand until the vin and vout pulses are far apart. 
+When we expand at the 50% rise points(approximately selected), and click on the two plots, the x coordinate(time) and y coordinate(voltage) appears on ngspice. If we subtract them we get the required delay(post-layout).
+
+Post Layout Delay 1.0551 - 1.02765 = 0.02745( 27.45ps)
+
+## Comparison of pre-LAYOUT  and post-LAYOUT
+
+Input pulse specification in both 
+Rise Time-
+Fall Time-
+On time-
+Period-
+
+Pre-Layout Delay Vout-Vin - 
+Post-Layout Delay Vout-Vin - 27.45ps
