@@ -306,7 +306,8 @@ C12 XM45/w_n211_n319# VSUBS 1.11fF **FLOATING
 ```
 
 Open inverter.spice with ngspice
-```ngspice inverter.spice
+```
+ngspice inverter.spice
 ```
 run the following commands
 ```
