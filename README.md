@@ -3,7 +3,7 @@
 ### Getting the tools
 Note: open_pdk has to be installed last so it can correctly associate the xschem and magic directories. Note: if the configure step fails during any process, its most likely due to missing additional packages, and they need to be installed (preferably from source) to complete the installation
 ![image](https://user-images.githubusercontent.com/50217106/218158061-a319ea61-f115-48f8-8694-172a138004ba.png)
-- open_pdks
+
 
 ## Magic 
 - Install steps
@@ -39,7 +39,17 @@ $  sudo make install
 ```
 More info can be found at http://repo.hu/projects/xschem/index.html
 
-- Align - 
+## open_pdks
+Open_PDKs is distributed with files that support the Google/SkyWater sky130 open process description https://github.com/google/skywater-pdk. Open_PDKs will set up an environment for using the SkyWater sky130 process with open-source EDA tools and tool flows such as magic, qflow, openlane, netgen, klayout, etc.
+- Install steps
+```
+$  git clone git://opencircuitdesign.com/open_pdks
+$  open_pdks
+$	./configure --enable-sky130-pdk
+$  make
+$  sudo make install
+```
+## Align - 
 #### Analog Layout Intelligently generated from netlists
 About :
 #### ALIGN is an open source automatic layout generator for analog circuits jointly developed under the DARPA IDEA program by the University of Minnesota, Texas A&M University, and Intel Corporation.
