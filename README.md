@@ -50,23 +50,24 @@ pip install -v --no-build-isolation -e . --no-deps --install-option='-DBUILD_TES
 
 ### Creating inverter schematic using xschem
 
+![Screenshot from 2023-02-10 09-42-33](https://user-images.githubusercontent.com/50217106/218092046-625e8fe8-2af5-40c4-b838-cd323d1fce08.png)
 
 
 
 ### Convert the schematic to a symbol
-
+![Screenshot from 2023-02-10 09-42-36](https://user-images.githubusercontent.com/50217106/218091695-e57995fd-f585-492d-96ef-d046b3b4aed6.png)
 
 
 
 ### Using the symbol, an independent testbench is created to simulate the circuit
-![Screenshot from 2023-02-10 10-06-28](https://user-images.githubusercontent.com/50217106/218089214-f6946c50-e88c-4d48-8a03-eaa9b9768587.png)
+
+![Screenshot from 2023-02-10 09-59-06](https://user-images.githubusercontent.com/50217106/218091959-d2df3d36-6d16-44cd-bf57-a6d660c0e5f7.png)
 
 
 
 ### Creating and Simulating testbench Schematic
 
-
-
+![Screenshot from 2023-02-10 10-06-28](https://user-images.githubusercontent.com/50217106/218089214-f6946c50-e88c-4d48-8a03-eaa9b9768587.png)
 
 ### Calculation of Pre-layout Inverter delay using ngspice and plots
 ![Screenshot from 2023-02-10 10-06-10](https://user-images.githubusercontent.com/50217106/218088836-ed10f081-b9f8-402e-b847-555a27e54b63.png)
