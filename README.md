@@ -49,6 +49,31 @@ pip install setuptools wheel pybind11 scikit-build cmake ninja
 pip install -v -e .[test] --no-build-isolation
 pip install -v --no-build-isolation -e . --no-deps --install-option='-DBUILD_TESTING=ON'
 ```
+Testing Align tool -
+- Non- SKy130 Example:
+``` python 
+schematic2layout.py ../ALIGN-pdk-sky130/examples/five_transistor_ota -p ../pdks/SKY130_PDK/
+```
+Install Klayout to view generated GDS files from ALIGN - sudo apt-get install klayout
+
+
+### create a lab directory to perform experiments
+``` bash
+$ mkdir Lab1_and
+$ cd Lab1_and
+$ mkdir mag
+$ mkdir netgen
+$ mkdir xschem
+$ cd xschem
+$ cp /usr/local/share/pdk/sky130A/libs.tech/xschem/xschemrc .
+$ cp /usr/local/share/pdk/sky130A/libs.tech/ngspice/spinit .spiceinit
+$ cd ../mag
+$ cp /usr/local/share/pdk/sky130A/libs.tech/magic/sky130A.magicrc .magicrc
+$ cd ../netgen
+$ cp /usr/local/share/pdk/sky130A/libs.tech/netgen//sky130A_setup.tcl .
+```
+
+
 ### Inverter pre-layout experiments
 
 
