@@ -195,6 +195,8 @@ We can also see a .spice netlist. This inverter.spice netlist generated post lay
 ![Screenshot from 2023-02-10 21-50-00](https://user-images.githubusercontent.com/50217106/218151584-66d05733-377c-4f2b-8a13-4b265daf8527.png)
 
 Now we need to use our pre-layout spice witht he post-layout parasitics netlist and perform spice simulations.
+- Step I
+Paste the pre-layout netlist of inverter testbench into the magic generated inverter spice netlist
 
 Post Layout Delay 1.0551 - 1.02765 = 0.02745
 
