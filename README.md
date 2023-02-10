@@ -322,6 +322,9 @@ plot vin vout
 
 the plot vout vs vin is generated as below :
 
+![Screenshot from 2023-02-11 02-27-20](https://user-images.githubusercontent.com/50217106/218204749-dfb0d8ea-7806-4ff6-aea3-2efd8a8f0ac5.png)
+
+
 
 We right click and stretch on the plots vin and vout. A new expkanded vin vs vout is generated. We expand until the vin and vout pulses are far apart. 
 When we expand at the 50% rise points(approximately selected), and click on the two plots, the x coordinate(time) and y coordinate(voltage) appears on ngspice. If we subtract them we get the required delay(post-layout).
