@@ -331,10 +331,10 @@ Post Layout Delay 1.0551 - 1.02765 = 0.02745( 27.45ps)
 ## Comparison of pre-LAYOUT  and post-LAYOUT
 
 Input pulse specification in both 
-Rise Time-
-Fall Time-
-On time-
-Period-
+- Rise Time- 10ps
+- Fall Time- 10ps
+- On time- 1ns
+- Period- 2ns
 
 Pre-Layout Delay Vout-Vin - 
 Post-Layout Delay Vout-Vin - 27.45ps
