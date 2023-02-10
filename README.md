@@ -129,4 +129,17 @@ In the Layout window import the spice netlist of your inverter(one which has pin
 The metal input and output pins are imported and the nfet and pfet is imported
 Now we hover over the pins/fets and press i and then press m at the location we want to place them
 
+Now route the metal1 layer such that the layout is DRC free
+![Screenshot from 2023-02-10 21-34-39](https://user-images.githubusercontent.com/50217106/218149482-81fb02bd-7be3-4285-8536-787aa9b295f9.png)
+Now, go to File --> save and select autowrite. We're not done yet. Go to the command window and type the following:
+```
+extract do local
+extract all
+```
+Extract do local is an instruction to perform all extractions to the local directory and extract all does the actual extraction. We want our extraction for lvs to be in the spice format, so run the following commands.
+```
+ext2spice lvs
+ext2spice
+```
+Now, we can close magic.
 
