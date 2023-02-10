@@ -155,14 +155,14 @@ $ cp /usr/local/share/pdk/sky130A/libs.tech/netgen//sky130A_setup.tcl .
 
 
 ### Calculation of Pre-layout Inverter delay using ngspice and plots
-![Screenshot from 2023-02-10 10-06-10](https://user-images.githubusercontent.com/50217106/218088836-ed10f081-b9f8-402e-b847-555a27e54b63.png)
+
 
 clicking on the Vin and Vout curves give coordinates on the ngspice terminal
 
-![Screenshot from 2023-02-10 10-06-28](https://user-images.githubusercontent.com/50217106/218089214-f6946c50-e88c-4d48-8a03-eaa9b9768587.png)
+
 
 the difference in corrdinates give the pre-layout inverer delay values
-delay = 13.5ps
+delay = 13.59ps
 
 Multiple iterations of simulations is performed and an average delay value is finalised.
 
