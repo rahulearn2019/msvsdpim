@@ -127,6 +127,8 @@ This opens up the tkcon and layout windows
 
 In the Layout window import the spice netlist of your inverter(one which has pins and fets, and is the bottomost hierarchy of the inverter testbench)
 The metal input and output pins are imported and the nfet and pfet is imported
+![Screenshot from 2023-02-10 18-53-02](https://user-images.githubusercontent.com/50217106/218151916-737d2d97-53e8-4296-b2db-5f9b57072e7d.png)
+
 Now we hover over the pins/fets and press i and then press m at the location we want to place them
 
 Now route the metal1 layer such that the layout is DRC free
