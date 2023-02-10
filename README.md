@@ -18,8 +18,8 @@ Circuit annotation creates a multilevel hierarchical representation of the input
 ### Installing Align:
 ### 
 ### Prerequisites:
--gcc >= 6.1.0( for C++14 support)
--Python >= 3.7
+-gcc >= 6.1.0( for C++14 support) \n
+-Python >= 3.7 \n
 
 
 Using the following command to install the Align tool:
