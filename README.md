@@ -134,6 +134,7 @@ $ cp /usr/local/share/pdk/sky130A/libs.tech/netgen//sky130A_setup.tcl .
 
 ### Using the symbol, an independent testbench is created to simulate the circuit
 
+![Screenshot from 2023-02-11 03-21-54](https://user-images.githubusercontent.com/50217106/218207218-74cf8aa2-134b-4e47-a2ea-a150cb2427c6.png)
 
 ### Inverter DC analysis
 ![Screenshot from 2023-02-09 14-25-28](https://user-images.githubusercontent.com/50217106/218139861-b6a31207-693a-44c2-92c8-487d8d567a62.png)
@@ -151,14 +152,15 @@ $ cp /usr/local/share/pdk/sky130A/libs.tech/netgen//sky130A_setup.tcl .
 - on time - 1ns
 - period - 2ns
 
-
+![Screenshot from 2023-02-11 03-22-52](https://user-images.githubusercontent.com/50217106/218207329-f1e3e74a-8d37-4adf-94ca-9a8907d7fe86.png)
 
 
 ### Calculation of Pre-layout Inverter delay using ngspice and plots
 
+![Screenshot from 2023-02-11 03-23-31](https://user-images.githubusercontent.com/50217106/218207516-e60f8a80-00b5-43db-b20d-4b24a2a28d62.png)
 
 clicking on the Vin and Vout curves give coordinates on the ngspice terminal
-
+![Screenshot from 2023-02-11 03-25-10](https://user-images.githubusercontent.com/50217106/218207532-97cc2d2b-e9c5-4976-b77f-05b18304206b.png)
 
 
 the difference in corrdinates give the pre-layout inverer delay values
