@@ -1,12 +1,44 @@
 # msvsdpim
 ## week0
 ### Getting the tools
+Note: open_pdk has to be installed last so it can correctly associate the xschem and magic directories. Note: if the configure step fails during any process, its most likely due to missing additional packages, and they need to be installed (preferably from source) to complete the installation
 ![image](https://user-images.githubusercontent.com/50217106/218158061-a319ea61-f115-48f8-8694-172a138004ba.png)
 - open_pdks
 
-- magic 
-- ngspice 
-- xschem
+## Magic 
+- Install steps
+```
+$  git clone git://opencircuitdesign.com/magic
+$  cd magic
+$	 ./configure
+$  make
+$  sudo make install
+```
+More info can be found at http://opencircuitdesign.com/magic/index.html
+## Ngspice 
+ngspice is the open-source spice simulator for electric and electronic circuits.
+- Install steps
+After downloading the tarball from https://sourceforge.net/projects/ngspice/files/ to a local directory, unpack it using:
+```
+ $ tar -zxvf ngspice-37.tar.gz
+ $ cd ngspice-37
+ $ mkdir release
+ $ cd release
+ $ ../configure  --with-x --with-readline=yes --disable-debug
+ $ make
+ $ sudo make install
+ ```
+## xschem
+Xschem is a schematic capture program
+- Install steps
+```
+$  git clone https://github.com/StefanSchippers/xschem.git xschem_git
+$	./configure
+$  make
+$  sudo make install
+```
+More info can be found at http://repo.hu/projects/xschem/index.html
+
 - Align - 
 #### Analog Layout Intelligently generated from netlists
 About :
