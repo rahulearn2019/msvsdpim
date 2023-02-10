@@ -22,7 +22,9 @@ gcc >= 6.1.0( for C++14 support)
 Python >= 3.7
 
 
-Using the following command to install the Align tool
+Using the following command to install the Align tool:
+
+```
 export CC=/usr/bin/gcc
 export CXX=/usr/bin/g++
 git clone https://github.com/ALIGN-analoglayout/ALIGN-public
@@ -42,6 +44,7 @@ pip install -e .
 pip install setuptools wheel pybind11 scikit-build cmake ninja
 pip install -v -e .[test] --no-build-isolation
 pip install -v --no-build-isolation -e . --no-deps --install-option='-DBUILD_TESTING=ON'
+```
 ### Inverter pre-layout experiments
 
 
