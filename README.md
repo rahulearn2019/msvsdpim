@@ -1,6 +1,6 @@
 # msvsdpim
 ## week0
-###Getting the tools
+### Getting the tools
 open_pdks
 magic 
 ngspice 
@@ -33,10 +33,10 @@ python -m venv general
 source general/bin/activate
 python -m pip install pip --upgrade
 
-# Install ALIGN as a USER
+### Install ALIGN as a USER
 pip install -v .
 
-# Install ALIGN as a DEVELOPER
+### Install ALIGN as a DEVELOPER
 pip install -e .
 
 pip install setuptools wheel pybind11 scikit-build cmake ninja
@@ -45,27 +45,27 @@ pip install -v --no-build-isolation -e . --no-deps --install-option='-DBUILD_TES
 ### Inverter pre-layout experiments
 
 
-Creating inverter schematic using xschem
+### Creating inverter schematic using xschem
 
 
 
 
-Convert the schematic to a symbol
+### Convert the schematic to a symbol
 
 
 
 
-Using the symbol, an independent testbench is created to simulate the circuit
+### Using the symbol, an independent testbench is created to simulate the circuit
 
 
 
 
-Creating and Simulating testbench Schematic
+### Creating and Simulating testbench Schematic
 
 
 
 
-Calculation of Pre-layout Inverter delay using ngspice and plots
+### Calculation of Pre-layout Inverter delay using ngspice and plots
 
 
 
