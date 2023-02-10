@@ -110,3 +110,37 @@ delay = .01301
 
 Multiple iterations of simulations is performed and an average delay value is finalised.
 
+## Creation of Layout using inverter schematic in layout tool MAGIC
+Create a working directory with sky130A.tech, .xschemrc and .sky130magicrc files or you can import these files to the MAGIC directory itself. Either way open the working directory and use the following command
+```
+'MAGIC -T sky130A.tech
+```
+This opens up the tkcon and layout windows
+- the layout and tkcon windows
+
+In the Layout window import the spice netlist of your inverter(one which has pins and fets, and is the bottomost hierarchy of the inverter testbench)
+
+- the option of importing netlist
+
+The metal input and output pins are imported and the nfet and pfet is imported
+
+- the pics
+
+
+now we hover over the pins/fets and press i and then press m at the location we want to place them
+
+- pics of correct placement
+
+
+route metal
+
+- pics of routed layout
+
+
+drc free
+
+- pics of drc free
+
+extract layout
+
+- commands and files
