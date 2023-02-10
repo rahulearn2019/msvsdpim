@@ -149,3 +149,5 @@ If we run an ls in this directory we should see our .ext files and .mag files fo
 circuit - inverter.mag inverter.ext
 We can also see a .spice netlist. This inverter.spice netlist generated post layout contains the parasitics that were absent in pre-layout netlist.
 ![Screenshot from 2023-02-10 21-50-00](https://user-images.githubusercontent.com/50217106/218151584-66d05733-377c-4f2b-8a13-4b265daf8527.png)
+
+Now we need to use our pre-layout spice witht he post-layout parasitics netlist and perform spice simulations.
