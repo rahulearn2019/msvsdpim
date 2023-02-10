@@ -1,7 +1,9 @@
 # msvsdpim
 ## week0
 ### Getting the tools
+![image](https://user-images.githubusercontent.com/50217106/218158061-a319ea61-f115-48f8-8694-172a138004ba.png)
 - open_pdks
+
 - magic 
 - ngspice 
 - xschem
