@@ -350,7 +350,7 @@ the plot vout vs vin is generated as below :
 We right click and stretch on the plots vin and vout. A new expkanded vin vs vout is generated. We expand until the vin and vout pulses are far apart. 
 When we expand at the 50% rise points(approximately selected), and click on the two plots, the x coordinate(time) and y coordinate(voltage) appears on ngspice. If we subtract them we get the required delay(post-layout).
 
-Post Layout Delay 1.0551 - 1.02765 = 0.02745( 27.45ps)
+Post Layout Delay 1.02765-1.01551 = 0.01241( 12.5ps)
 
 ## Comparison of pre-LAYOUT  and post-LAYOUT
 
@@ -361,4 +361,4 @@ Input pulse specification in both
 - Period- 2ns
 
 - Pre-Layout Delay Vout-Vin - 13.59ps
-- Post-Layout Delay Vout-Vin - 27.45ps
+- Post-Layout Delay Vout-Vin - 12.4ps
