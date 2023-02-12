@@ -1,0 +1,14 @@
+## Importing spice netlist to magic tool. 
+Note - this spice netlist is generated in .xschem/simulations (.xschem is a hidden folder which can be seen after you enable view hidden files in home gui or using the command 
+ls -aslrt in terminal, here option a gives you the hidden files)
+
+
+
+
+
+
+
+
+
+### cannot remove topmost cell in the window with pins and fets imported
+click on edit->select select area option->click on delete
