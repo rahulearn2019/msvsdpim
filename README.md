@@ -186,11 +186,11 @@ Create a working directory with sky130A.tech, .xschemrc and .sky130magicrc files
 ```
 'MAGIC -T sky130A.tech
 ```
-This opens up the tkcon and layout windows
-
+This opens up the tkcon and layout windows.
 
 In the Layout window import the spice netlist of your inverter(one which has pins and fets, and is the bottomost hierarchy of the inverter testbench)
-The metal input and output pins are imported and the nfet and pfet is imported
+The metal input and output pins are imported and the nfet and pfet is imported.
+
 ![Screenshot from 2023-02-10 18-53-02](https://user-images.githubusercontent.com/50217106/218151916-737d2d97-53e8-4296-b2db-5f9b57072e7d.png)
 
 Now we hover over the pins/fets and press i and then press m at the location we want to place them
@@ -205,6 +205,7 @@ extract all
 Extract do local is an instruction to perform all extractions to the local directory and extract all does the actual extraction. We want our extraction for lvs to be in the spice format, so run the following commands.
 ```
 ext2spice lvs
+ext2spice cthresh 0 rthresh 0
 ext2spice
 ```
 Now, we can close magic.
