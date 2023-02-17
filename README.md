@@ -628,10 +628,47 @@ Gmin stepping error encountered again
 
 
 
-### Inverter ALIGN
+### Post Layout characterization of Inverter usign ALIGN tool
+create a python virtual environment in the ALIGN public directory using following 
+```
+python -m venv general
+source general/bin/activate
+```
+create a .sp file using "vim inverter.sp" and then use the pre-layout inverter spice netlist to get a file as shown below:
 
 
 
+
+Bring this inverter.sp file to ALIGN-public/examples folder
+
+
+Now move into work directory and use the following command to generate LEF and GDS of the inverter
+```
+schematic2layout.py ../ALIGN-pdk-sky130/examples/inverter -p ../ALIGN-pdk-sky130/SKY130_PDK/
+```
+ALIGN tool runs and the path to .gds is shown
+
+Navigate to /usr/bin. Here klayout tool resides 
+Use the following command to view the LEF and GDS
+klayout <generated path to gds>
+klayout <generated path to lef>
+
+#### INVERTER LEF view
+
+
+
+
+
+
+### Inverter GDS view
+
+
+
+
+
+
+Now come to magic tool and open it using magic -T sky130A.tech
+Import the inverter GDS using import GDS.
 
 
 
