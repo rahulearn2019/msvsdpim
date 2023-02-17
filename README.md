@@ -371,6 +371,112 @@ Input pulse specification in both
 With discussions it was found that the post-layout simulation of inverter is incorrect the command ngspice inverter.spice gives the WARNING -
 ![Screenshot from 2023-02-11 02-41-26](https://user-images.githubusercontent.com/50217106/219765428-3f8e6139-ae88-4d1c-9258-44513b91f168.png)
 
-which means that the spice netlist is incorrect.
+which means that the spice netlist is incorrect in a way that tool finds multiple iterations of the same subcircuit and after investigating it was found that the subckt definition imported from pre-layout netlist had the same ports as the subckt definition created from magic.
+After this correction and re-running ngspice in the inverter post-layout netlist, the following error pops up.
+```
+here is the generated error :* ngspice-37 : Circuit level simulation program
+** The U. C. Berkeley CAD Group
+** Copyright 1985-1994, Regents of the University of California.
+** Copyright 2001-2022, The ngspice team.
+** Please get your ngspice manual from http://ngspice.sourceforge.net/docs.html
+** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html
+** Creation Date: Wed Feb  8 14:58:15 UTC 2023
+******
 
-After some corrections made to the netlist and using the command ngspice inverter.spice, the following error pops up.
+Note: No compatibility mode selected!
+
+
+Circuit: * ngspice file created from inverter.ext - technology: sky130a
+
+ngspice 36 -> run
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Warning: v1: no DC value, transient time 0 value used
+Note: Starting dynamic gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Note: One successful gmin step
+Trying gmin =   1.0000E-06 Note: One successful gmin step
+Trying gmin =   1.0000E-07 Note: One successful gmin step
+Trying gmin =   1.0000E-08 Note: One successful gmin step
+Trying gmin =   1.0000E-09 Note: One successful gmin step
+Trying gmin =   1.0000E-10 Note: One successful gmin step
+Trying gmin =   1.0000E-11 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Warning: Dynamic gmin stepping failed
+Note: Starting true gmin stepping
+Trying gmin =   1.0000E-03 Warning: Further gmin increment
+Trying gmin =   5.6234E-03 Warning: Further gmin increment
+Trying gmin =   8.6596E-03 Note: One successful gmin step
+Trying gmin =   6.9783E-03 Note: One successful gmin step
+Trying gmin =   5.0481E-03 Note: One successful gmin step
+Trying gmin =   3.1059E-03 Warning: Further gmin increment
+Trying gmin =   4.4709E-03 Warning: Further gmin increment
+Trying gmin =   4.8971E-03 Note: One successful gmin step
+Trying gmin =   4.6791E-03 Note: One successful gmin step
+Trying gmin =   4.3702E-03 Warning: singular matrix:  check nodes x27.vsubs and x27.vsubs
+
+Warning: Further gmin increment
+Trying gmin =   4.5999E-03 Warning: Further gmin increment
+Trying gmin =   4.6592E-03 Note: One successful gmin step
+Trying gmin =   4.6295E-03 Warning: Further gmin increment
+Trying gmin =   4.6518E-03 Note: One successful gmin step
+Trying gmin =   4.6406E-03 Note: One successful gmin step
+Trying gmin =   4.6239E-03 Warning: singular matrix:  check nodes x27.vsubs and x27.vsubs
+
+Warning: Further gmin increment
+Trying gmin =   4.6364E-03 Warning: Further gmin increment
+Trying gmin =   4.6396E-03 Warning: Further gmin increment
+Trying gmin =   4.6403E-03 Warning: singular matrix:  check nodes x27.vsubs and x27.vsubs
+
+Warning: Further gmin increment
+Trying gmin =   4.6405E-03 Warning: Last gmin step failed
+Warning: True gmin stepping failed
+Note: Starting source stepping
+Supplies reduced to   0.0000% Note: One successful source step
+Supplies reduced to   0.1000% Note: One successful source step
+Supplies reduced to   0.2000% Note: One successful source step
+Supplies reduced to   0.3500% Note: One successful source step
+Supplies reduced to   0.5750% Note: One successful source step
+Supplies reduced to   0.9125% Note: One successful source step
+Supplies reduced to   1.4188% Note: One successful source step
+Supplies reduced to   2.1781% Note: One successful source step
+Supplies reduced to   3.3172% Note: One successful source step
+Supplies reduced to   5.0258% Note: One successful source step
+Supplies reduced to   7.5887% Note: One successful source step
+Supplies reduced to  11.4330% Note: One successful source step
+Supplies reduced to  17.1995% Supplies reduced to  11.4330% Note: One successful source step
+Supplies reduced to  12.2980% Supplies reduced to  11.4330% Note: One successful source step
+Supplies reduced to  11.5628% Note: One successful source step
+Supplies reduced to  11.7574% Supplies reduced to  11.5628% Note: One successful source step
+Supplies reduced to  11.5919% Note: One successful source step
+Supplies reduced to  11.6357% Supplies reduced to  11.5919% Note: One successful source step
+Supplies reduced to  11.5963% Note: One successful source step
+Supplies reduced to  11.6029% Note: One successful source step
+Supplies reduced to  11.6095% Supplies reduced to  11.6029% Note: One successful source step
+Supplies reduced to  11.6036% Note: One successful source step
+Supplies reduced to  11.6045% Supplies reduced to  11.6036% Note: One successful source step
+Supplies reduced to  11.6036% Note: One successful source step
+Supplies reduced to  11.6037% Warning: source stepping failed
+Note: Transient op started
+Note: Transient op finished successfully
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+y                                     0.715671
+a                                     -1.08398
+vp                                     0.71602
+x27.vsubs                            -0.739009
+vn                                    -1.08398
+v2#branch                         -9.42792e-08
+v1#branch                          6.15798e-08
+
+ Reference value :  0.00000e+00
+No. of Data Rows : 129
+```
+We can see that ngspice tells us the algorithms it used to obtain a solution that converges for the given netlist. It first tried Dynamic gmin stepping algorithm, then true gmin stepping algorithm, then then source stepping algorithm all of which failed and the transient solution was created based on few source steppings that were successfull.
+
