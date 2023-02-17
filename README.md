@@ -669,6 +669,7 @@ klayout <generated path to lef>
 
 Now come to magic tool and open it using magic -T sky130A.tech
 Import the inverter GDS using import GDS.
-
+We get the following view :
+ 
 
 
