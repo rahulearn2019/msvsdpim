@@ -568,5 +568,70 @@ Upon using ngspice upon this netlist, ngspice runs without any errors/warnings:
 
 The post-layout delay(calculated using methods shown above) then becomes:
 1.03428-1.01504 = 0.01924 which is 19.24ps
-The pre-layout delay was 13.2
+The pre-layout delay was 13.59ps
+
+
+### Function schematic - bottom hierarchy
+
+
+
+
+### Function Symbol
+
+
+
+
+### Function Testbench
+
+
+
+
+On simulating the function using ngspice, the and plotting the output following curve is obtained - 
+
+
+
+
+
+
+
+
+
+
+### Import Function Spice netlist to magic
+
+
+
+
+
+
+### Arrange the fets to create a layout of the function
+
+The layout is created using euler's path approach
+
+
+
+
+
+
+
+The layout is extracted and a spice netlist of the function is obtained which is edited with necessary changes to obtain the following plt
+
+
+
+
+
+
+Gmin stepping error encountered again
+
+
+
+
+
+
+### Inverter ALIGN
+
+
+
+
+
 
