@@ -353,7 +353,7 @@ When we expand at the 50% rise points(approximately selected), and click on the 
 
 Post Layout Delay 1.02765-1.01551 = 0.01241( 12.5ps)
 
-## Comparison of pre-LAYOUT  and post-LAYOUT
+### Comparison of pre-LAYOUT  and post-LAYOUT
 
 Input pulse specification in both 
 - Rise Time- 10ps
@@ -365,7 +365,7 @@ Input pulse specification in both
 - Post-Layout Delay Vout-Vin - 12.4ps
 
 
-## week2
+# week2
 
 
 With discussions it was found that the post-layout simulation of inverter is incorrect the command ngspice inverter.spice gives the WARNING
