@@ -368,7 +368,10 @@ Input pulse specification in both
 ## week2
 
 
-With discussions it was found that the post-layout simulation of inverter is incorrect the command ngspice inverter.spice gives the WARNING -
+With discussions it was found that the post-layout simulation of inverter is incorrect the command ngspice inverter.spice gives the WARNING
+```
+WARNING - redefinition of .subckt ignored 
+```
 ![Screenshot from 2023-02-11 02-41-26](https://user-images.githubusercontent.com/50217106/219765428-3f8e6139-ae88-4d1c-9258-44513b91f168.png)
 
 which means that the spice netlist is incorrect in a way that tool finds multiple iterations of the same subcircuit and after investigating it was found that the subckt definition imported from pre-layout netlist had the same ports as the subckt definition created from magic.
@@ -479,5 +482,12 @@ v1#branch                          6.15798e-08
 No. of Data Rows : 129
 ```
 We can see that ngspice tells us the algorithms it used to obtain a solution that converges for the given netlist. It first tried Dynamic gmin stepping algorithm, then true gmin stepping algorithm, then then source stepping algorithm all of which failed and the transient solution was created based on few source steppings that were successfull.
-
+The following plot was generated.
 ![Screenshot from 2023-02-18 00-57-11](https://user-images.githubusercontent.com/50217106/219768375-968681cf-6804-493a-a726-b0aa4dca142a.png)
+Clearly, input has been scaled and adjusted by the tool to get a solution.
+When a circuit simulation is performed, the SPICE simulator iteratively solves the set of equations that describe the circuit to determine the voltages and currents at each node in the circuit. If the simulator is unable to find a solution that satisfies the equations, it is said to be "non-convergent". In other words, the simulation is not able to settle on a stable set of voltages and currents.
+The warnings with "Further gmin increment" indicate that ngspice was unable to find a valid step size at the current gmin value and attempted to increment the value to find a valid one, but it still failed. The "singular matrix" warning indicates a possible issue with the circuit's topology, where the circuit matrix may have become singular, and there are one or more nodes that are indistinguishable from each other.
+
+From the research it was assumed that the spice netlist is such that few nodes have become indistinguishable and upon investigation it was found that the GLOBAL definitions of VDD and VSS were missing.
+After including the .GLOBAL definition our post-layout inverter natlist that has the parasitics looks like :
+
