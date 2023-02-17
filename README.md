@@ -1,5 +1,5 @@
 # msvsdpim
-## week0
+## week1
 | S. No.    | Week|Day|Action Item|Status|
 |----------|-----|--------|-------|-----------------------|
 |1.|0|1|Install Oracle virtual box with Ubuntu 20.04|:white_check_mark:|
@@ -363,3 +363,12 @@ Input pulse specification in both
 
 - Pre-Layout Delay Vout-Vin - 13.59ps
 - Post-Layout Delay Vout-Vin - 12.4ps
+
+
+## week2
+
+
+With discussions it was found that the post-layout simulation of inverter is incorrect the command ngspice inverter.spice gives the WARNING -
+
+
+which means that the spice netlist is incorrect.
