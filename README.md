@@ -1,5 +1,5 @@
 # msvsdpim
-## week1
+# week1
 
 ### Getting the tools
 Note: open_pdk has to be installed last so it can correctly associate the xschem and magic directories. Note: if the configure step fails during any process, its most likely due to missing additional packages, and they need to be installed (preferably from source) to complete the installation
