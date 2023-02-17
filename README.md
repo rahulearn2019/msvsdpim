@@ -369,6 +369,8 @@ Input pulse specification in both
 
 
 With discussions it was found that the post-layout simulation of inverter is incorrect the command ngspice inverter.spice gives the WARNING -
-
+![Screenshot from 2023-02-11 02-41-26](https://user-images.githubusercontent.com/50217106/219765428-3f8e6139-ae88-4d1c-9258-44513b91f168.png)
 
 which means that the spice netlist is incorrect.
+
+After some corrections made to the netlist and using the command ngspice inverter.spice, the following error pops up.
