@@ -490,4 +490,83 @@ The warnings with "Further gmin increment" indicate that ngspice was unable to f
 
 From the research it was assumed that the spice netlist is such that few nodes have become indistinguishable and upon investigation it was found that the GLOBAL definitions of VDD and VSS were missing.
 After including the .GLOBAL definition our post-layout inverter natlist that has the parasitics looks like :
+```
+* NGSPICE file created from inverter.ext - technology: sky130A
+
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.include /home/rahul/open_pdks/sky130/sky130A/libs.ref/sky130_fd_pr
+
+X27 vin vout VDD GND inverter
+
+
+V1 vin GND pulse(0 1.8 0 10ps 10ps 1ns 2ns)
+.save i(v1)
+V2 VDD GND 1.8
+.save i(v2)
+
+
+.tran 10p 4n
+.save all
+
+
+
+.subckt sky130_fd_pr__pfet_01v8_XGS3BL a_n73_n100# a_15_n100# w_n211_n319# a_n33_n197#
++ VSUBS
+X0 a_15_n100# a_n33_n197# a_n73_n100# w_n211_n319# sky130_fd_pr__pfet_01v8 ad=2.9e+11p pd=2.58e+06u as=2.9e+11p ps=2.58e+06u w=1e+06u l=150000u
+C0 a_15_n100# a_n73_n100# 0.16fF
+C1 a_n33_n197# w_n211_n319# 0.26fF
+C2 a_n73_n100# a_n33_n197# 0.03fF
+C3 a_n73_n100# w_n211_n319# 0.09fF
+C4 a_15_n100# a_n33_n197# 0.03fF
+C5 a_15_n100# w_n211_n319# 0.06fF
+C6 a_15_n100# VSUBS 0.02fF
+C7 a_n73_n100# VSUBS 0.02fF
+C8 a_n33_n197# VSUBS 0.05fF
+C9 w_n211_n319# VSUBS 1.07fF
+.ends
+
+.subckt sky130_fd_pr__nfet_01v8_648S5X a_n73_n100# a_n33_n188# a_15_n100# a_n175_n274#
+X0 a_15_n100# a_n33_n188# a_n73_n100# a_n175_n274# sky130_fd_pr__nfet_01v8 ad=2.9e+11p pd=2.58e+06u as=2.9e+11p ps=2.58e+06u w=1e+06u l=150000u
+C0 a_n73_n100# a_n33_n188# 0.03fF
+C1 a_15_n100# a_n73_n100# 0.16fF
+C2 a_15_n100# a_n33_n188# 0.03fF
+C3 a_15_n100# a_n175_n274# 0.08fF
+C4 a_n73_n100# a_n175_n274# 0.11fF
+C5 a_n33_n188# a_n175_n274# 0.30fF
+.ends
+
+.subckt inverter A Y VP VN
+XXM45 VP Y XM45/w_n211_n319# A VSUBS sky130_fd_pr__pfet_01v8_XGS3BL
+XXM44 Y A VN VSUBS sky130_fd_pr__nfet_01v8_648S5X
+C0 VP A 0.23fF
+C1 Y VP 0.06fF
+C2 Y A 0.04fF
+C3 VN XM45/w_n211_n319# 0.00fF
+C4 VP XM45/w_n211_n319# 0.16fF
+C5 A XM45/w_n211_n319# 0.08fF
+C6 A VN 0.27fF
+C7 Y XM45/w_n211_n319# 0.12fF
+C8 Y VN 0.07fF
+C9 A VSUBS 0.62fF
+C10 VN VSUBS 1.09fF
+C11 Y VSUBS 0.63fF
+C12 VP VSUBS 1.01fF
+C13 XM45/w_n211_n319# VSUBS 1.11fF
+.ends
+
+
+.GLOBAL VDD
+.GLOBAL GND
+
+.end
+```
+Upon using ngspice upon this netlist, ngspice runs without any errors/warnings:
+
+![Screenshot from 2023-02-16 03-42-23](https://user-images.githubusercontent.com/50217106/219775607-e19f1ca8-2353-4473-8734-f9e74c71c7b0.png)
+![Screenshot from 2023-02-16 03-42-32](https://user-images.githubusercontent.com/50217106/219775685-339567f1-6602-4ab4-a77c-ef9421095ea0.png)
+![Screenshot from 2023-02-16 03-42-16](https://user-images.githubusercontent.com/50217106/219775918-67914212-8e8e-469c-8fe1-4235e0399292.png)
+
+The post-layout delay(calculated using methods shown above) then becomes:
+1.03428-1.01504 = 0.01924 which is 19.24ps
+The pre-layout delay was 13.2
 
