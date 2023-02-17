@@ -480,3 +480,4 @@ No. of Data Rows : 129
 ```
 We can see that ngspice tells us the algorithms it used to obtain a solution that converges for the given netlist. It first tried Dynamic gmin stepping algorithm, then true gmin stepping algorithm, then then source stepping algorithm all of which failed and the transient solution was created based on few source steppings that were successfull.
 
+![Screenshot from 2023-02-18 00-57-11](https://user-images.githubusercontent.com/50217106/219768375-968681cf-6804-493a-a726-b0aa4dca142a.png)
