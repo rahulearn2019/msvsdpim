@@ -1,18 +1,6 @@
 # msvsdpim
 ## week1
-| S. No.    | Week|Day|Action Item|Status|
-|----------|-----|--------|-------|-----------------------|
-|1.|0|1|Install Oracle virtual box with Ubuntu 20.04|:white_check_mark:|
-|2.||2|Install Magic, ngspice and SKY130 PDKs|:white_check_mark:|
-|3.||2|Install ALIGN tool|:white_check_mark:|
-|4.||3|Create inverter and perform pre-layout using xschem or ngspice|:white_check_mark:|
-|5.||3|Inverter Post-layout characterization using 2)|:white_check_mark:|
-|6.||4|Inverter post-layout characterization using 3) |:white_check_mark:|
-|7.||4|Compare the results obtained in 5) and 6) |:white_check_mark:|
-|8.||5|Enroll in FREE VSD-custom layout course |:white_check_mark:|
-|9.||6|Create the design shown in section 7 of the course and perform pre-layout using xschem or ngspice||
-|10.||6|Post layout characterization using 2) and 3)||
-|11.||6|Update your findings on your GitHub repo with the title “Week 0”|:white_check_mark:|
+
 ### Getting the tools
 Note: open_pdk has to be installed last so it can correctly associate the xschem and magic directories. Note: if the configure step fails during any process, its most likely due to missing additional packages, and they need to be installed (preferably from source) to complete the installation
 ![image](https://user-images.githubusercontent.com/50217106/218158061-a319ea61-f115-48f8-8694-172a138004ba.png)
