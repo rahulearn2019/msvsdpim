@@ -26,12 +26,12 @@ To move the pins, try the above method- If it doesn't work, try the following:
 ![Screenshot from 2023-02-12 14-44-18](https://user-images.githubusercontent.com/50217106/218303808-412cb943-832d-42cf-b38c-dc95358cb18c.png)
 
 
+### cannot remove topmost cell in the window with pins and fets imported
+click on edit->select select area option->click on delete
+
 
 # Nightmare with ALIGN tool - You are not Alone!
 
 
 
 
-
-### cannot remove topmost cell in the window with pins and fets imported
-click on edit->select select area option->click on delete
