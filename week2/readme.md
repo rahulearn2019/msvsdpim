@@ -208,7 +208,10 @@ Symbol was created from the option - "create symbol for schematic" and then use 
 
 ### Function Testbench
 ![Screenshot from 2023-02-23 00-18-54](https://user-images.githubusercontent.com/50217106/220985156-86ab6713-f1a2-48d0-8b5e-47dcef141f0e.png)
+### Function Spice netlist
+```
 
+```
 On simulating the function using ngspice and plotting the output following curve is obtained - 
 ![Screenshot from 2023-02-19 23-41-38](https://user-images.githubusercontent.com/50217106/220985619-5ecf2664-49dc-489c-aa88-608f697ca7ed.png)
 
