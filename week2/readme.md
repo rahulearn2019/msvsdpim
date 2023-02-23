@@ -210,7 +210,59 @@ Symbol was created from the option - "create symbol for schematic" and then use 
 ![Screenshot from 2023-02-23 00-18-54](https://user-images.githubusercontent.com/50217106/220985156-86ab6713-f1a2-48d0-8b5e-47dcef141f0e.png)
 ### Function Spice netlist
 ```
+** sch_path: /home/rahul/Documents/function/function_top.sch
+.subckt function_top A B Y D C F E
+*.PININFO A:I B:I Y:O D:I C:I F:I E:I
+X27 VDD A B D C F E Y GND function_skeleton
+V1 VDD GND 1.8
+.save i(v1)
+VA A GND pulse(0 1.8 0 10ps 10ps 1ns 2ns)
+.save i(va)
+VB B GND pulse(0 1.8 0.1ns 10ps 10ps 1ns 2ns)
+.save i(vb)
+VC C GND pulse(0 1.8 0.2ns 10ps 10ps 1ns 2ns)
+.save i(vc)
+VF F GND pulse(0 1.8 0.5ns 10ps 10ps 1ns 2ns)
+.save i(vf)
+VD D GND pulse(0 1.8 0.3ns 10ps 10ps 1ns 2ns)
+.save i(vd)
+VE E GND pulse(0 1.8 0.4ns 10ps 10ps 1ns 2ns)
+.save i(ve)
+**** begin user architecture code
 
+** opencircuitdesign pdks install
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+
+
+
+.tran 0.01n 10n
+.save all
+
+**** end user architecture code
+.ends
+
+* expanding   symbol:  /home/rahul/Documents/function/function_skeleton.sym # of pins=9
+** sym_path: /home/rahul/Documents/function/function_skeleton.sym
+** sch_path: /home/rahul/Documents/function/function_skeleton.sch
+.subckt function_skeleton VP A B D C F E Y VN
+*.PININFO A:I B:I C:I D:I E:I F:I VP:B VN:B Y:O
+XM44 Y E net2 net2 sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 m=1
+XM45 net2 F VN VN sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 m=1
+XM46 Y A net1 net1 sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 m=1
+XM47 net3 D net5 net5 sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 m=1
+XM48 Y C net1 net1 sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 m=1
+XM49 net1 B VN VN sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 m=1
+XM50 net1 D VN VN sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 m=1
+XM51 net3 C net4 net4 sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 m=1
+XM52 net4 A VP VP sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 m=1
+XM53 net5 B VP VP sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 m=1
+XM54 Y E net3 net3 sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 m=1
+XM55 Y F net3 net3 sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 m=1
+.ends
+
+.GLOBAL GND
+.GLOBAL VDD
+.end
 ```
 On simulating the function using ngspice and plotting the output following curve is obtained - 
 ![Screenshot from 2023-02-19 23-41-38](https://user-images.githubusercontent.com/50217106/220985619-5ecf2664-49dc-489c-aa88-608f697ca7ed.png)
