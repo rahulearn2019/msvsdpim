@@ -279,8 +279,189 @@ The layout is created using euler's path approach
 ![Screenshot from 2023-02-22 13-21-12](https://user-images.githubusercontent.com/50217106/220985932-82acd4bd-053f-4e8b-a84c-7ea8dd925da6.png)
 
 
-The layout is extracted and a spice netlist of the function is obtained which is edited with necessary changes to obtain the following plot when ngspice is used-
+The layout is extracted and a spice netlist of the function is obtained which is edited with necessary changes(pre-layout excitations and .lib definitions to obtain 
+```
+* NGSPICE file created from function_skeleton.ext - technology: sky130A
 
+** opencircuitdesign pdks install
+.lib /usr/local/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+
+
+X27 VDD A B D C F E Y GND function_skeleton
+V1 VDD GND 1.8
+.save i(v1)
+VA A GND pulse(0 1.8 0 10ps 10ps 1ns 2ns)
+.save i(va)
+VB B GND pulse(0 1.8 0.1ns 10ps 10ps 1ns 2ns)
+.save i(vb)
+VC C GND pulse(0 1.8 0.2ns 10ps 10ps 1ns 2ns)
+.save i(vc)
+VF F GND pulse(0 1.8 0.5ns 10ps 10ps 1ns 2ns)
+.save i(vf)
+VD D GND pulse(0 1.8 0.3ns 10ps 10ps 1ns 2ns)
+.save i(vd)
+VE E GND pulse(0 1.8 0.4ns 10ps 10ps 1ns 2ns)
+.save i(ve)
+**** begin user architecture code
+
+
+.tran 0.01n 10n
+.save all
+
+.subckt sky130_fd_pr__nfet_01v8_648S5X a_n73_n100# a_n33_n188# a_15_n100# a_n175_n274#
+X0 a_15_n100# a_n33_n188# a_n73_n100# a_n175_n274# sky130_fd_pr__nfet_01v8 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.15
+C0 a_n33_n188# a_n73_n100# 0.03fF
+C1 a_15_n100# a_n73_n100# 0.16fF
+C2 a_15_n100# a_n33_n188# 0.03fF
+C3 a_15_n100# a_n175_n274# 0.08fF
+C4 a_n73_n100# a_n175_n274# 0.11fF
+C5 a_n33_n188# a_n175_n274# 0.30fF
+.ends
+
+.subckt sky130_fd_pr__pfet_01v8_XGS3BL a_n73_n100# a_15_n100# w_n211_n319# a_n33_n197#
++ VSUBS
+X0 a_15_n100# a_n33_n197# a_n73_n100# w_n211_n319# sky130_fd_pr__pfet_01v8 ad=0.29 pd=2.58 as=0.29 ps=2.58 w=1 l=0.15
+C0 a_15_n100# a_n33_n197# 0.03fF
+C1 a_15_n100# w_n211_n319# 0.06fF
+C2 a_n73_n100# a_15_n100# 0.16fF
+C3 w_n211_n319# a_n33_n197# 0.26fF
+C4 a_n73_n100# a_n33_n197# 0.03fF
+C5 a_n73_n100# w_n211_n319# 0.09fF
+C6 a_15_n100# VSUBS 0.02fF
+C7 a_n73_n100# VSUBS 0.02fF
+C8 a_n33_n197# VSUBS 0.05fF
+C9 w_n211_n319# VSUBS 1.07fF
+.ends
+
+.subckt function_skeleton VP A B D C F E Y VN
+XXM45 m1_n176_706# E m1_840_708# VSUBS sky130_fd_pr__nfet_01v8_648S5X
+XXM47 m1_n174_2024# Y w_n6_1802# E VSUBS sky130_fd_pr__pfet_01v8_XGS3BL
+XXM46 m1_n1862_706# A m1_n1194_708# VSUBS sky130_fd_pr__nfet_01v8_648S5X
+XXM48 m1_840_708# F VN VSUBS sky130_fd_pr__nfet_01v8_648S5X
+XXM49 VN D m1_n1194_708# VSUBS sky130_fd_pr__nfet_01v8_648S5X
+XXM50 m1_n1194_708# B VN VSUBS sky130_fd_pr__nfet_01v8_648S5X
+XXM51 m1_2824_2014# VP w_n6_1802# B VSUBS sky130_fd_pr__pfet_01v8_XGS3BL
+XXM52 m1_n174_2024# m1_2824_2014# w_n6_1802# D VSUBS sky130_fd_pr__pfet_01v8_XGS3BL
+XXM53 Y m1_n174_2024# w_n6_1802# F VSUBS sky130_fd_pr__pfet_01v8_XGS3BL
+XXM54 m1_n1188_2022# m1_n174_2024# w_n6_1802# C VSUBS sky130_fd_pr__pfet_01v8_XGS3BL
+XXM55 VP m1_n1188_2022# w_n6_1802# A VSUBS sky130_fd_pr__pfet_01v8_XGS3BL
+XXM44 m1_n1194_708# C m1_n176_706# VSUBS sky130_fd_pr__nfet_01v8_648S5X
+C0 m1_n1194_708# VN 1.03fF
+C1 A m1_n1862_706# 0.01fF
+C2 w_n6_1802# m1_n1194_708# 0.03fF
+C3 m1_n176_706# m1_n1194_708# 0.10fF
+C4 w_n6_1802# C 0.20fF
+C5 m1_n176_706# C 0.04fF
+C6 m1_840_708# E 0.01fF
+C7 C VP 0.01fF
+C8 C m1_n174_2024# 0.02fF
+C9 Y m1_n1194_708# 0.24fF
+C10 m1_n1188_2022# w_n6_1802# 0.41fF
+C11 C Y 0.21fF
+C12 m1_n1188_2022# VP 0.04fF
+C13 m1_n1188_2022# m1_n174_2024# -0.00fF
+C14 F m1_2824_2014# 0.00fF
+C15 m1_n1188_2022# Y 0.01fF
+C16 F VN 0.02fF
+C17 w_n6_1802# F 0.28fF
+C18 D m1_2824_2014# 0.02fF
+C19 m1_n176_706# F 0.00fF
+C20 D VN 0.02fF
+C21 D w_n6_1802# 0.26fF
+C22 C m1_n1194_708# 0.02fF
+C23 F VP 0.01fF
+C24 F m1_n174_2024# 0.03fF
+C25 D VP 0.01fF
+C26 F Y 0.11fF
+C27 D m1_n174_2024# 0.02fF
+C28 m1_n1188_2022# m1_n1194_708# 0.03fF
+C29 D Y 0.00fF
+C30 m1_n1188_2022# C 0.01fF
+C31 B m1_2824_2014# 0.01fF
+C32 F m1_n1194_708# 0.01fF
+C33 w_n6_1802# m1_n1862_706# 0.00fF
+C34 B VN 0.03fF
+C35 B w_n6_1802# 0.16fF
+C36 m1_n176_706# m1_n1862_706# 0.00fF
+C37 D m1_n1194_708# 0.03fF
+C38 E VN 0.00fF
+C39 E w_n6_1802# 0.27fF
+C40 m1_n1862_706# VP 0.02fF
+C41 B VP 0.02fF
+C42 E m1_n176_706# 0.03fF
+C43 B m1_n174_2024# 0.00fF
+C44 E VP 0.01fF
+C45 w_n6_1802# A 0.10fF
+C46 m1_n1862_706# Y 0.28fF
+C47 E m1_n174_2024# 0.03fF
+C48 m1_n176_706# A 0.00fF
+C49 m1_840_708# VN 0.03fF
+C50 m1_840_708# w_n6_1802# 0.02fF
+C51 E Y 0.29fF
+C52 m1_840_708# m1_n176_706# 0.00fF
+C53 A VP 0.03fF
+C54 A m1_n174_2024# 0.00fF
+C55 A Y 0.24fF
+C56 m1_n1862_706# m1_n1194_708# 0.00fF
+C57 m1_840_708# Y 0.09fF
+C58 B m1_n1194_708# 0.02fF
+C59 D F 0.05fF
+C60 E m1_n1194_708# 0.01fF
+C61 E C 0.05fF
+C62 A m1_n1194_708# 0.01fF
+C63 m1_840_708# m1_n1194_708# 0.11fF
+C64 C A 0.06fF
+C65 m1_n1188_2022# E 0.00fF
+C66 m1_840_708# C 0.00fF
+C67 m1_n1188_2022# A 0.01fF
+C68 E F 0.02fF
+C69 B D 0.06fF
+C70 w_n6_1802# m1_2824_2014# 0.53fF
+C71 w_n6_1802# VN 0.01fF
+C72 m1_2824_2014# VP 0.04fF
+C73 m1_n176_706# VN 0.00fF
+C74 w_n6_1802# m1_n176_706# 0.02fF
+C75 m1_840_708# F 0.02fF
+C76 m1_2824_2014# m1_n174_2024# -0.00fF
+C77 VP VN 0.01fF
+C78 w_n6_1802# VP 0.51fF
+C79 m1_n174_2024# VN 0.03fF
+C80 m1_2824_2014# Y 0.00fF
+C81 w_n6_1802# m1_n174_2024# 1.46fF
+C82 m1_n176_706# m1_n174_2024# 0.03fF
+C83 w_n6_1802# Y 0.91fF
+C84 m1_n174_2024# VP 0.26fF
+C85 m1_n176_706# Y 0.26fF
+C86 Y VP 0.05fF
+C87 Y m1_n174_2024# 0.13fF
+C88 m1_2824_2014# m1_n1194_708# 0.03fF
+C89 B VSUBS 0.57fF
+C90 D VSUBS 0.43fF
+C91 F VSUBS 0.40fF
+C92 E VSUBS 0.41fF
+C93 C VSUBS 0.49fF
+C94 A VSUBS 0.66fF
+C95 w_n6_1802# VSUBS 11.23fF
+C96 m1_n176_706# VSUBS 0.48fF
+C97 m1_n1188_2022# VSUBS -0.25fF
+C98 VP VSUBS 2.32fF
+C99 m1_n174_2024# VSUBS 0.07fF
+C100 m1_2824_2014# VSUBS -0.90fF
+C101 VN VSUBS 2.27fF
+C102 m1_n1194_708# VSUBS 1.08fF
+C103 m1_n1862_706# VSUBS 0.36fF
+C104 Y VSUBS -0.25fF
+C105 m1_840_708# VSUBS 0.06fF
+.ends
+
+
+.GLOBAL VDD
+.GLOBAL GND
+
+.end
+
+```
+the following plot when ngspice is used-
 ![Screenshot from 2023-02-21 16-33-04](https://user-images.githubusercontent.com/50217106/220986291-d0aed3b7-8a71-463c-8ff4-740d3fc6aa53.png)
 
 Clearly the pre and post layout does not matches.
