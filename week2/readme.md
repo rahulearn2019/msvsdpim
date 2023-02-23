@@ -260,17 +260,17 @@ klayout <generated path to gds>
 klayout <generated path to lef>
 
 #### INVERTER LEF view
-![Screenshot from 2023-02-18 03-29-10](https://user-images.githubusercontent.com/50217106/219805442-18a68c44-5cd9-4299-b45f-b756eb5f059d.png)
+
+![Screenshot from 2023-02-23 23-36-44](https://user-images.githubusercontent.com/50217106/220992548-b6c46ab2-1bde-4547-be1f-30b8fb81c4e4.png)
 
 #### Inverter GDS view
-
-![Screenshot from 2023-02-18 03-18-04](https://user-images.githubusercontent.com/50217106/219805364-90f8241e-7f42-46e2-9cf6-b5e1d44f7110.png)
+![Screenshot from 2023-02-23 23-36-33](https://user-images.githubusercontent.com/50217106/220992619-ea822a21-1373-45af-9426-1226819166fb.png)
 
 Now come to magic tool and open it using magic -T sky130A.tech
 Import the inverter GDS using import GDS.
 We get the following view :
+![Screenshot from 2023-02-23 23-35-25](https://user-images.githubusercontent.com/50217106/220992703-8e33d369-bf96-4930-8555-fc75321cdebe.png)
 
- 
 extract the spice netlist using the following commands :
 ```
  extract do local 
