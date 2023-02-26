@@ -78,9 +78,16 @@ $ make DESIGN_CONFIG=./designs/sky130hd/ibex/config.mk gui_final
 
 ## Temperature sensor Auxilliary Cells
 An overview of how the Temperature Sensor Generator (temp-sense-gen) works internally in OpenFASoC
+
+### Circuit
+This generator creates a compact mixed-signal temperature sensor. It consists of a ring oscillator whose frequency is controlled by the voltage drop over a MOSFET operating in subthreshold regime, where its dependency on temperature is exponential.
+
 ![image](https://user-images.githubusercontent.com/50217106/221423346-0e487e79-5845-4a6f-a3c1-5ca66f034d7e.png)
 
-
+The physical implementation of the analog blocks in the circuit is done using two manually designed standard cells:
+ 1. HEADER cell, containing the transistors in subthreshold operation;
+ 2. SLC cell, containing the Split-Control Level Converter.
+ 3. 
 ### SLC GDS view in kaylout
 ![Screenshot from 2023-02-24 21-53-31](https://user-images.githubusercontent.com/50217106/221422058-2938ba4d-ef5f-4497-a935-5a6c6f8f1430.png)
 ### Header GDS view in klayout
