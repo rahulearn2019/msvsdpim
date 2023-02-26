@@ -85,16 +85,14 @@ To run the default generator, ```cd``` into ```~/openfasoc/generators/temp_sense
 If a PDK_ROOT error arises, then provde PDK_ROOT before running the above 
 ```export PDK_ROOT=usr/local/share/pdk```
 If OpenROAD not found in path error arises, provide path to openROAD along with PDK_ROOT 
-```export OPENROAD=~/OpenROAD-flow-scripts/tools/OpenROAD/```
-```export PATH=/home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin:/home/rahul/OpenROAD-flow-scripts/tools/install/yosys/bin:/home/rahul/OpenROAD-flow-scripts/tools/install/LSOracle/bin:$PATH```
-
+```
+export OPENROAD=~/OpenROAD-flow-scripts/tools/OpenROAD/
+export PATH=/home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin:/home/rahul/OpenROAD-flow-scripts/tools/install/yosys/bin:/home/rahul/OpenROAD-flow-scripts/tools/install/LSOracle/bin:$PATH
+```
 The default circuit’s physical design generation can be divided into three parts:
-
-    Verilog generation
-
-    RTL-to-GDS flow (OpenROAD)
-
-    Post-layout verification (DRC and LVS)
+- Verilog generation
+- RTL-to-GDS flow (OpenROAD)
+- Post-layout verification (DRC and LVS)
 
 After a successful run the following message is displayed
 
