@@ -87,7 +87,7 @@ $ make DESIGN_CONFIG=./designs/sky130hd/ibex/config.mk gui_final
 ## Temperature Sensor Generation using OpenFASOC
 To run the default generator, ```cd``` into ```~/openfasoc/generators/temp_sense``` and use 
 ```make sky130hd_temp```
-If a PDK_ROOT error arises, then provde PDK_ROOT before running the above 
+If a PDK_ROOT error arises, then provide PDK_ROOT before running the above 
 ```export PDK_ROOT=usr/local/share/pdk```
 If OpenROAD not found in path error arises, provide path to openROAD along with PDK_ROOT 
 ```
