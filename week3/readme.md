@@ -77,6 +77,8 @@ $ make DESIGN_CONFIG=./designs/sky130hd/ibex/config.mk gui_final
 ![Screenshot from 2023-02-26 17-46-08](https://user-images.githubusercontent.com/50217106/221414499-7d4c1d2c-36ee-48aa-80f2-357638f82137.png)
 
 ## Temperature sensor Auxilliary Cells
+An overview of how the Temperature Sensor Generator (temp-sense-gen) works internally in OpenFASoC
+![image](https://user-images.githubusercontent.com/50217106/221423346-0e487e79-5845-4a6f-a3c1-5ca66f034d7e.png)
 
 
 ### SLC GDS view in kaylout
