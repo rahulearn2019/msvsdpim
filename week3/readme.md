@@ -111,6 +111,6 @@ In the following directory all the files corresponding to different stages of th
 To run verilog generation, type the command ```make sky130hd_temp_verilog```
 ![Screenshot from 2023-02-26 21-29-13](https://user-images.githubusercontent.com/50217106/221421589-717aedf0-c2c1-4acf-90b6-da178d9d6e64.png)
 
-Viewing the GDS view of the temperature generator-
+Viewing the GDS view of the temperature generator using klayout-
 
 ![Screenshot from 2023-02-26 17-50-19](https://user-images.githubusercontent.com/50217106/221420863-1664b395-33bf-4a11-a679-04900a5aa84b.png)
