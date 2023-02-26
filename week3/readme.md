@@ -1,12 +1,15 @@
 ## openFASOC
-openFASOC is a project focused on automated analog generation from user specification to GDSII with fully open-sourced tools. It is inspired from FASoC which sits on proprietary software. FASoC: Fully-Autonomous SoC Synthesis using Customizable Cell-Based Synthesizable Analog Circuits. The FASoC Program is focused on developing a complete system-on-chip(SoC) synthesis tool from user specification to GDSII. FASoC leverages a differentiating technology to automatically synthesize "correct-by-construction" Verilog descriptions for both analog and digital circuits and nable a protable, single pass implementation flow. The SoC synthesis tool realizes analog circuits, including PLLs, power management, ADCs, and sensor interfaces by recasting them as structures composed largely of digital components while maintaining analog performance. They are then expressed as synthesizable Verilog blocks composed of digital standard cells augmented with a few auxilliary cells generated with an automatic cell generation tool. This project is led by a team of researcheers at the Universities of Michigan, Virginia,a nd ARM.
+openFASOC is a project focused on automated analog generation from user specification to GDSII with fully open-sourced tools. It is inspired from FASoC which sits on proprietary software. FASoC: Fully-Autonomous SoC Synthesis using Customizable Cell-Based Synthesizable Analog Circuits. The FASoC Program is focused on developing a complete system-on-chip(SoC) synthesis tool from user specification to GDSII. FASoC leverages a differentiating technology to automatically synthesize "correct-by-construction" Verilog descriptions for both analog and digital circuits and nable a protable, single pass implementation flow. The SoC synthesis tool realizes analog circuits, including PLLs, power management, ADCs, and sensor interfaces by recasting them as structures composed largely of digital components while maintaining analog performance. They are then expressed as synthesizable Verilog blocks composed of digital standard cells augmented with a few auxilliary cells generated with an automatic cell generation tool. This project is led by a team of researchers at the Universities of Michigan, Virginia,a nd ARM.
 
 ## Installation of openFASOC
 ```
 $ git clone https://github.com/idea-fasoc/openfasoc
 $ sudo ./dependencies.sh
-
 ```
+## Run OpenFASOC 
+Go to one of the generators in openfasoc and open the terminal there, then use "make". All the generator specific targets are listed.
+![Screenshot from 2023-02-24 22-52-36](https://user-images.githubusercontent.com/50217106/221419872-ae748f29-6d7b-4e79-b8f3-d347391ccc26.png)
+
 ## Yosys
 Yosys is  aframework for for Verilog RTL Synthesis. It currently has extensive Verilog-2005 support and provides a basic set of synthesis algorithms for various application domains. Yosys can be adapted to perform any synthesis job by combinign the existing passes(algorithms) using synthesis scripts and adding additional passes as needed by extending the Yosys C++ code base. Yosys is controlled using Synthesis scripts
 ## Installation of Yosys
@@ -33,13 +36,25 @@ git config --global advice.detached head false
 ```
 
 ## OpenROAD
-OpenROAD is a foundational building block in open-source digital flow like OpenROAD-flow-scripts, OpenLANE from Efabless, Silicon Compiler Systems; as well as OpenFASoC for mixed-signal design flow.
+OpenROAD is a foundational building block in open-source digital flow like OpenROAD-flow-scripts, OpenLANE from Efabless, Silicon Compiler Systems; as well as OpenFASoC for mixed-signal design flow. OpenROAD is an open-source software development platform for designing and optimizing integrated circuits (ICs). It is a full RTL-to-GDSII (Register Transfer Level to Graphic Data System II) implementation flow that includes tools for design, synthesis, placement, routing, timing analysis, and verification.
+- Problem: Hardware design requires too much effort, cost and time.
+- Challenge: Costs and the “expertise gap” block system designers’ access to advanced technology.
+- Objective:  Enable no-human-in-loop, 24-hour design to remove the barrier to hardware innovation
 
 ## Installtion of OpenROAD
-
+cd
+git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD.git
+cd OpenROAD
+sudo ./etc/DependencyInstaller.sh                      //Dependencies need some superuser permissions
+cd
+git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts
+cd OpenROAD-flow-scripts
+./build_openroad.sh –local
+export OPENROAD=~/OpenROAD-flow-scripts/tools/OpenROAD
+export PATH=/home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin:/home/rahul/OpenROAD-flow-scripts/tools/install/yosys/bin:/home/rahul/OpenROAD-flow-scripts/tools/install/LSOracle/bin:$PATH
 
 ## Testing installation of OpenROAD
-We perform RTL2GDS of ibex RISC-V 32 bit CPU core
+We perform RTL2GDS of ibex. ibex is a 32 bit RISC-V CPU core ( RV32IMC/EMC ) with a two-stage pipeline. 
 ```
 cd OpenROAD-flow-scripts
 cd flow
@@ -57,4 +72,31 @@ $ make DESIGN_CONFIG=./designs/sky130hd/ibex/config.mk gui_final
 ## Temperature sensor Auxilliary Cells
 
 
-## OpenROAD flow for Temperature sensor
+## Temperature Sensor Generation using OpenFASOC
+To run the default generator, ```cd``` into ```~/openfasoc/generators/temp_sense``` and use 
+```make sky130hd_temp```
+If a PDK_ROOT error arises, then provde PDK_ROOT before running the above 
+```export PDK_ROOT=usr/local/share/pdk```
+If OpenROAD not found in path error arises, provide path to openROAD along with PDK_ROOT 
+```export OPENROAD=~/OpenROAD-flow-scripts/tools/OpenROAD/```
+```export PATH=/home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin:/home/rahul/OpenROAD-flow-scripts/tools/install/yosys/bin:/home/rahul/OpenROAD-flow-scripts/tools/install/LSOracle/bin:$PATH```
+
+The default circuit’s physical design generation can be divided into three parts:
+
+    Verilog generation
+
+    RTL-to-GDS flow (OpenROAD)
+
+    Post-layout verification (DRC and LVS)
+
+After a successful run the following message is displayed
+
+![Screenshot from 2023-02-26 14-08-37](https://user-images.githubusercontent.com/50217106/221420486-877d2b7a-b937-41f8-a129-cee7dbeae548.png)
+
+### Verilog Generation
+To run verilog generation, type the command ```make sky130hd_temp_verilog```
+image-
+
+Viewing the GDS view of the temperature generator-
+
+![Screenshot from 2023-02-26 17-50-19](https://user-images.githubusercontent.com/50217106/221420863-1664b395-33bf-4a11-a679-04900a5aa84b.png)
