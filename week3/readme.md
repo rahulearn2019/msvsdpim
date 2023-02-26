@@ -42,6 +42,7 @@ OpenROAD is a foundational building block in open-source digital flow like OpenR
 - Objective:  Enable no-human-in-loop, 24-hour design to remove the barrier to hardware innovation
 
 ## Installtion of OpenROAD
+```
 cd
 git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD.git
 cd OpenROAD
@@ -52,7 +53,7 @@ cd OpenROAD-flow-scripts
 ./build_openroad.sh –local
 export OPENROAD=~/OpenROAD-flow-scripts/tools/OpenROAD
 export PATH=/home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin:/home/rahul/OpenROAD-flow-scripts/tools/install/yosys/bin:/home/rahul/OpenROAD-flow-scripts/tools/install/LSOracle/bin:$PATH
-
+```
 ## Testing installation of OpenROAD
 We perform RTL2GDS of ibex. ibex is a 32 bit RISC-V CPU core ( RV32IMC/EMC ) with a two-stage pipeline. 
 ```
@@ -63,7 +64,13 @@ make DESIGN_CONFIG=./designs/sky130hd/ibex/config.mk
 ![Screenshot from 2023-02-26 16-40-11](https://user-images.githubusercontent.com/50217106/221414408-2727fef3-905a-43f6-bd9f-720ccf99e506.png)
 OpenROAD performs 6 iterations to reach the optimized design with the algorthms it uses to perform RTL2GDS.
 ![Screenshot from 2023-02-26 16-59-39](https://user-images.githubusercontent.com/50217106/221416830-ded37c1c-1c7c-44ff-ab04-8395baf46e01.png)
-To view the design that is generated suing this test command 
+
+### SDCs used for ibex 
+![Screenshot from 2023-02-26 17-23-56](https://user-images.githubusercontent.com/50217106/221421344-5ecf8b2c-d472-445f-9887-832f0cd26d04.png)
+### GDS view of ibex on klayout
+![Screenshot from 2023-02-26 17-18-00](https://user-images.githubusercontent.com/50217106/221421360-5dac2fc8-00e0-473d-ba9e-28d0ef982b21.png)
+![Screenshot from 2023-02-26 17-21-24](https://user-images.githubusercontent.com/50217106/221421367-a28a638d-905a-446a-adab-f6a57e576725.png)
+To view ibex using OpenROAD's GUI
 ```
 $ make DESIGN_CONFIG=./designs/sky130hd/ibex/config.mk gui_final
 ```
