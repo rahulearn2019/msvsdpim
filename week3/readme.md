@@ -103,6 +103,10 @@ After a successful run the following message is displayed
 
 ![Screenshot from 2023-02-26 14-08-37](https://user-images.githubusercontent.com/50217106/221420486-877d2b7a-b937-41f8-a129-cee7dbeae548.png)
 
+In the following directory all the files corresponding to different stages of the RTL2GDS flow is saved.
+
+![Screenshot from 2023-02-26 17-53-39](https://user-images.githubusercontent.com/50217106/221422433-ee88f14f-24be-45f7-8a4a-0b1bea51b39c.png)
+
 ### Verilog Generation
 To run verilog generation, type the command ```make sky130hd_temp_verilog```
 ![Screenshot from 2023-02-26 21-29-13](https://user-images.githubusercontent.com/50217106/221421589-717aedf0-c2c1-4acf-90b6-da178d9d6e64.png)
