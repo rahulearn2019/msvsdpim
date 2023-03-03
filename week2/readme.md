@@ -891,10 +891,8 @@ This is the exact same order in which FETs were imported to xschem window for ma
 ### Function schematic and Testbench and simulation
 ![Screenshot from 2023-03-03 14-22-19](https://user-images.githubusercontent.com/50217106/222678403-ee12934d-4e5e-4393-a42a-86b564df7a25.png)
 ![Screenshot from 2023-03-03 00-52-51](https://user-images.githubusercontent.com/50217106/222678438-693587b4-1d60-46ae-94f7-e3caad7d7232.png)
-![Screenshot from 2023-03-03 00-54-35](https://user-images.githubusercontent.com/50217106/222678544-28562bb8-cae8-4648-9
+![Screenshot from 2023-03-03 00-54-35](https://user-images.githubusercontent.com/50217106/222678544-28562bb8-cae8-4648-9b88-3df6ec676a57.png)
 ![Screenshot from 2023-03-03 00-55-28](https://user-images.githubusercontent.com/50217106/222678592-4364a915-4a90-41fd-90fd-4d99e4b5c9d2.png)
-b88-3df6ec676a57.png)
-
 
 ### .spice generated - Observe the order of FETs in the .subckt description - all PFETs followed by all nfets - in the exact order they were imported to xschem
 
