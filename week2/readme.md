@@ -1271,11 +1271,10 @@ C56 F GND 1.89fF
 
 ### Obtained simulations
 
+![Screenshot from 2023-03-03 14-54-57](https://user-images.githubusercontent.com/50217106/222683327-b5ccaf03-2162-4586-94b8-40c6028defde.png)
 
+![Screenshot from 2023-03-03 13-09-15](https://user-images.githubusercontent.com/50217106/222683354-f449915c-d58e-41a2-aefd-d2bc101dacd0.png)
 
-
-
-### Comparison Pre
 
 
 
