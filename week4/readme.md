@@ -372,3 +372,13 @@ C9 OUT GND 6.41fF
 ![Screenshot from 2023-03-03 20-11-52](https://user-images.githubusercontent.com/50217106/222777261-9a53c644-0e3e-4d53-b5e4-1dd8c0e7858f.png)
 
 ### Why increasing nf(no. of fingers of MOSFET) gives accurate results?
+
+Ring oscillator generates a periodic-oscillating waveform which oscillates at a frequency that depends on our MOSFET parameters. Lower drain capacitance at FETs(which is a result of intrinsic drain capacitance and wire capacitance) means lower RC during charging or discharging hence faster response. Wider transistor means lower resitance and fatser charging. But wider transistor will have larger instrinsic capacitances. A large instrinsic capacitance means slower charging and discharging times. If the capacitor is not able to completely charge-dicharge it assumes a constant value with time in the presence of continuous excitation(my intiution) and hence the constant signal at the output. So, if we reduce width capacitances will be low but resistances will be large and if we increase width capacitances will be hiand resistances will be low. To tackle this trade-off we have multi-finger mosfet technique which reduces both capacitances and resistances.
+
+When nf=2 we get a waveform that has value of around 1.7V and is constant with time. It looks like a noise instead of a meaningful signal. 
+The width of transistor is fixed to 1050n.The number of fingers =2, refer to the number of fingers in parallel .i.e the width of transistor is divided by nf value
+![Screenshot 2023-03-04 025147](https://user-images.githubusercontent.com/50217106/222831926-cb1b81fc-b6fd-4992-af23-f16ffdf17aa7.png)
+
+So, width 1050n will have a large capacitance if nf is low. If we increase nf value, the width of transistor(1050n) is reduced and effective area of transistor is reduced and leads to reduced intrinsic capacitances and resitances(parasitics). This allows the capacitnaces at drain to respond(charge-discharge completely) and hence the proper wave-form at the output when we increase nf value to 10. 
+
+Inferences were drawn from this paper - https://www.sciencedirect.com/science/article/abs/pii/S002627142100411X
