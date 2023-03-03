@@ -76,15 +76,62 @@ The .sp file was randomly manipulated until ALIGN stopped giving the error - "Pl
 ![Screenshot from 2023-03-02 23-34-45](https://user-images.githubusercontent.com/50217106/222687446-0607c37c-e83c-465e-bfdf-8e4d677d9281.png)
 ![Screenshot from 2023-03-02 23-46-02](https://user-images.githubusercontent.com/50217106/222687498-ccfb3e99-0474-4294-b028-f536a9315221.png)
 
+### GDS read in Klayout
+![Screenshot from 2023-02-27 21-25-34](https://user-images.githubusercontent.com/50217106/222694994-5d5317c5-0d2c-4dcf-9b8a-69ff1742493d.png)
+![Screenshot from 2023-02-27 21-35-03](https://user-images.githubusercontent.com/50217106/222695010-96b43f93-2221-4352-9bb5-22bf22134ef2.png)
+
 ### GDS read in Magic
-
-
+![Screenshot from 2023-02-28 01-08-31](https://user-images.githubusercontent.com/50217106/222695026-a5541e3d-c1e6-4909-b51a-faaf6b9f9025.png)
 
 
 ### spice simulation of extracted layout
 generated .spice
 ```
 
+X0 m1_742_2240# m1_774_4424# STAGE2_INV_3570141_0_0_1677780962_0/li_663_571# m1_742_2240# sky130_fd_pr__pfet_01v8 ad=0.27825 pd=2.63 as=0.147 ps=1.33 w=1.05 l=0.15
+X1 STAGE2_INV_3570141_0_0_1677780962_0/li_663_571# m1_774_4424# m1_742_2240# m1_742_2240# sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.27825 ps=2.63 w=1.05 l=0.15
+X2 m1_742_2240# m1_774_4424# STAGE2_INV_3570141_0_0_1677780962_0/li_663_571# m1_742_2240# sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X3 STAGE2_INV_3570141_0_0_1677780962_0/li_663_571# m1_774_4424# m1_742_2240# m1_742_2240# sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X4 m1_430_1568# STAGE2_INV_3570141_0_0_1677780962_0/li_663_571# VSUBS VSUBS sky130_fd_pr__nfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X5 VSUBS STAGE2_INV_3570141_0_0_1677780962_0/li_663_571# m1_430_1568# VSUBS sky130_fd_pr__nfet_01v8 ad=0.27825 pd=2.63 as=0.147 ps=1.33 w=1.05 l=0.15
+X6 m1_430_1568# STAGE2_INV_3570141_0_0_1677780962_0/li_663_571# VSUBS VSUBS sky130_fd_pr__nfet_01v8 ad=0.147 pd=1.33 as=0.27825 ps=2.63 w=1.05 l=0.15
+X7 VSUBS STAGE2_INV_3570141_0_0_1677780962_0/li_663_571# m1_430_1568# VSUBS sky130_fd_pr__nfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X8 STAGE2_INV_3570141_0_0_1677780962_0/li_663_571# m1_774_4424# VSUBS VSUBS sky130_fd_pr__nfet_01v8 ad=0.588 pd=5.32 as=2.5515 ps=23.76 w=1.05 l=0.15
+X9 VSUBS m1_774_4424# STAGE2_INV_3570141_0_0_1677780962_0/li_663_571# VSUBS sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X10 STAGE2_INV_3570141_0_0_1677780962_0/li_663_571# m1_774_4424# VSUBS VSUBS sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X11 VSUBS m1_774_4424# STAGE2_INV_3570141_0_0_1677780962_0/li_663_571# VSUBS sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X12 m1_742_2240# STAGE2_INV_3570141_0_0_1677780962_0/li_663_571# m1_430_1568# m1_742_2240# sky130_fd_pr__pfet_01v8 ad=2.5515 pd=23.76 as=0.588 ps=5.32 w=1.05 l=0.15
+X13 m1_430_1568# STAGE2_INV_3570141_0_0_1677780962_0/li_663_571# m1_742_2240# m1_742_2240# sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X14 m1_742_2240# STAGE2_INV_3570141_0_0_1677780962_0/li_663_571# m1_430_1568# m1_742_2240# sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X15 m1_430_1568# STAGE2_INV_3570141_0_0_1677780962_0/li_663_571# m1_742_2240# m1_742_2240# sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X16 m1_774_4424# m1_430_1568# VSUBS VSUBS sky130_fd_pr__nfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X17 VSUBS m1_430_1568# m1_774_4424# VSUBS sky130_fd_pr__nfet_01v8 ad=0.27825 pd=2.63 as=0.147 ps=1.33 w=1.05 l=0.15
+X18 m1_774_4424# m1_430_1568# VSUBS VSUBS sky130_fd_pr__nfet_01v8 ad=0.147 pd=1.33 as=0.27825 ps=2.63 w=1.05 l=0.15
+X19 VSUBS m1_430_1568# m1_774_4424# VSUBS sky130_fd_pr__nfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X20 m1_742_2240# m1_430_1568# m1_774_4424# m1_742_2240# sky130_fd_pr__pfet_01v8 ad=0.27825 pd=2.63 as=0.147 ps=1.33 w=1.05 l=0.15
+X21 m1_774_4424# m1_430_1568# m1_742_2240# m1_742_2240# sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.27825 ps=2.63 w=1.05 l=0.15
+X22 m1_742_2240# m1_430_1568# m1_774_4424# m1_742_2240# sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X23 m1_774_4424# m1_430_1568# m1_742_2240# m1_742_2240# sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+C0 m1_430_1568# STAGE2_INV_3570141_0_0_1677780962_0/li_663_571# 0.62fF
+C1 m1_430_1568# m1_774_4424# 0.71fF
+C2 VDD OUT 0.26fF
+C3 GND VDD 1.07fF
+C4 STAGE2_INV_3570141_0_0_1677780962_0/li_663_571# m1_774_4424# 0.79fF
+C5 m1_430_1568# VDD 1.13fF
+C6 m1_430_1568# OUT 0.00fF
+C7 m1_430_1568# m1_742_2240# 3.42fF
+C8 m1_430_1568# GND 0.05fF
+C9 STAGE2_INV_3570141_0_0_1677780962_0/li_663_571# VDD 0.13fF
+C10 STAGE2_INV_3570141_0_0_1677780962_0/li_663_571# OUT 0.01fF
+C11 m1_742_2240# STAGE2_INV_3570141_0_0_1677780962_0/li_663_571# 4.09fF
+C12 VDD m1_774_4424# 0.15fF
+C13 m1_742_2240# m1_774_4424# 3.44fF
+C14 GND STAGE2_INV_3570141_0_0_1677780962_0/li_663_571# 0.42fF
+C15 VDD VSUBS 0.51fF
+C16 m1_430_1568# VSUBS 2.95fF **FLOATING
+C17 STAGE2_INV_3570141_0_0_1677780962_0/li_663_571# VSUBS 1.83fF **FLOATING
+C18 m1_742_2240# VSUBS 10.22fF **FLOATING
+C19 m1_774_4424# VSUBS 4.20fF **FLOATING
 ```
 final .spice to ngspice
 ```
@@ -92,6 +139,7 @@ final .spice to ngspice
 ```
 simulation
 
+![Screenshot from 2023-02-28 01-24-50](https://user-images.githubusercontent.com/50217106/222695054-17e27079-61ba-4253-8336-7a0cbd285888.png)
 
 
 
