@@ -371,3 +371,4 @@ C9 OUT GND 6.41fF
 
 ![Screenshot from 2023-03-03 20-11-52](https://user-images.githubusercontent.com/50217106/222777261-9a53c644-0e3e-4d53-b5e4-1dd8c0e7858f.png)
 
+### Why increasing nf(no. of fingers of MOSFET) gives accurate results?
