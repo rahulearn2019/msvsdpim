@@ -33,6 +33,3 @@ click on edit->select select area option->click on delete
 # Nightmare with ALIGN tool - You are not Alone!
 
 
-
-If you don't use "ext2spice lvs" you will not get the pins in the spice netlist, magic will use self assigned pins.
-If you use "ext2spice lvs" even then you might not get all the pins in the spice netlist, in my case VP(vdd) pin was replaced with something else. I manually chnaged that pin to VP and then performed spice analysis/
