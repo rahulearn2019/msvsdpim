@@ -895,32 +895,378 @@ This is the exact same order in which FETs were imported to xschem window for ma
 ![Screenshot from 2023-03-03 00-55-28](https://user-images.githubusercontent.com/50217106/222678592-4364a915-4a90-41fd-90fd-4d99e4b5c9d2.png)
 
 ### .spice generated - Observe the order of FETs in the .subckt description - all PFETs followed by all nfets - in the exact order they were imported to xschem
+```
+** sch_path: /home/rahul/Documents/func1/funcTop.sch
+.subckt funcTop B A D C F E out A B C D F E
+*.PININFO B:I A:I D:I C:I F:I E:I out:O A:I B:I C:I D:I F:I E:I
+x1 VDD B A D C F E out GND func1
+V1 B GND pulse(0 1.8 0.1n 10p 10p 1n 2n)
+.save i(v1)
+V2 A GND pulse(0 1.8 0 10p 10p 1n 2n)
+.save i(v2)
+V3 C GND pulse(0 1.8 0.2n 10p 10p 1n 2n)
+.save i(v3)
+V4 D GND pulse(0 1.8 0.3n 10p 10p 1n 2n)
+.save i(v4)
+V5 E GND pulse(0 1.8 0.4n 10p 10p 1n 2n)
+.save i(v5)
+V6 F GND pulse(0 1.8 0.5n 10p 10p 1n 2n)
+.save i(v6)
+V7 VDD GND 1.8
+.save i(v7)
+**** begin user architecture code
+
+.param mc_mm_switch=0
+.param mc_pr_switch=0
+.include /usr/local/share/pdk/sky130A/libs.tech/ngspice/corners/tt.spice
+.include /usr/local/share/pdk/sky130A/libs.tech/ngspice/r+c/res_typical__cap_typical.spice
+.include /usr/local/share/pdk/sky130A/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice
+.include /usr/local/share/pdk/sky130A/libs.tech/ngspice/corners/tt/specialized_cells.spice
 
 
+.tran 0.01n 20n
+.save all
 
+**** end user architecture code
+.ends
+
+* expanding   symbol:  /home/rahul/Documents/func1/func1.sym # of pins=9
+** sym_path: /home/rahul/Documents/func1/func1.sym
+** sch_path: /home/rahul/Documents/func1/func1.sch
+.subckt func1 VDD B A D C F E out GND
+*.PININFO VDD:B GND:B A:I B:I C:I D:I F:I E:I out:O
+XM1 net2 B VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 m=1
+XM2 net1 A VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 m=1
+XM3 net3 C net1 net1 sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 m=1
+XM4 net3 D net2 net2 sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 m=1
+XM5 out E net3 net3 sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 m=1
+XM6 out F net3 net3 sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 m=1
+XM7 out E net5 net5 sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 m=1
+XM8 out C net4 net4 sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 m=1
+XM9 out A net4 net4 sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 m=1
+XM10 net4 B GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 m=1
+XM11 net4 D GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 m=1
+XM12 net5 F GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 m=1
+.ends
+
+.GLOBAL GND
+.GLOBAL VDD
+.end
+```
 
 ### .sp from .spice
 
-
+ ```
+ .subckt func1 VDD B A D C F E out GND
+*.PININFO VDD:B GND:B A:I B:I C:I D:I F:I E:I out:O
+XM1 net2 B VDD VDD sky130_fd_pr__pfet_01v8 L=150n W=1050n nf=4
+XM2 net1 A VDD VDD sky130_fd_pr__pfet_01v8 L=150n W=1050n nf=4
+XM3 net3 C net1 net1 sky130_fd_pr__pfet_01v8 L=150n W=1050n nf=4
+XM4 net3 D net2 net2 sky130_fd_pr__pfet_01v8 L=150n W=1050n nf=4
+XM5 out E net3 net3 sky130_fd_pr__pfet_01v8 L=150n W=1050n nf=4
+XM6 out F net3 net3 sky130_fd_pr__pfet_01v8 L=150n W=1050n nf=4
+XM7 out E net5 net5 sky130_fd_pr__nfet_01v8 L=150n W=1050n nf=4
+XM8 out C net4 net4 sky130_fd_pr__nfet_01v8 L=150n W=1050n nf=4
+XM9 out A net4 net4 sky130_fd_pr__nfet_01v8 L=150n W=1050n nf=4
+XM10 net4 B GND GND sky130_fd_pr__nfet_01v8 L=150n W=1050n nf=4
+XM11 net4 D GND GND sky130_fd_pr__nfet_01v8 L=150n W=1050n nf=4
+XM12 net5 F GND GND sky130_fd_pr__nfet_01v8 L=150n W=1050n nf=4
+.ends func1
+```
 
 ### Generated GDS viewed in klayout --- Notice the difference in Layout
-
+![Screenshot from 2023-03-03 01-10-43](https://user-images.githubusercontent.com/50217106/222680711-233d98a6-c045-49ff-bbf4-f5108ae687d0.png)
 
 
 ### Generated GDS read in Magic --- Notice the difference in layout, also Note that ALIGN has generated a layout with DRCs.
 
+![Screenshot from 2023-03-03 01-15-15](https://user-images.githubusercontent.com/50217106/222680730-843b79e5-1a4d-418e-a19a-cad74adf40ec.png)
+![Screenshot from 2023-03-03 12-51-21](https://user-images.githubusercontent.com/50217106/222680747-0f8d861a-c445-4d57-9ef3-b536ffb212f7.png)
 
-
+After corrrecting the DRCs the layout is saved amd extracted 
+ ![Screenshot from 2023-03-03 12-57-56](https://user-images.githubusercontent.com/50217106/222682143-dadaca3b-0d01-4fa9-8ede-7b18097c21e5.png)
+ 
+ ```
+ extract all
+ ext2spice cthresh 0 rthresh 0
+ ext2spice
+ ```
 
 ### .spice generated from magic
 ```
-
+X0 VDD F m1_602_1232# VDD sky130_fd_pr__pfet_01v8 ad=0.27825 pd=2.63 as=0.147 ps=1.33 w=1.05 l=0.15
+X1 m1_602_1232# F VDD VDD sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.27825 ps=2.63 w=1.05 l=0.15
+X2 VDD F m1_602_1232# VDD sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X3 m1_602_1232# F VDD VDD sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X4 VDD D VDD VDD sky130_fd_pr__pfet_01v8 ad=7.1925 pd=66.2 as=0 ps=0 w=1.05 l=0.15
+X5 VDD D VDD VDD sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X6 VDD D VDD VDD sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X7 VDD D VDD VDD sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X8 VDD C VDD VDD sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X9 VDD C VDD VDD sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X10 VDD C VDD VDD sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X11 VDD C VDD VDD sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X12 OUT m1_1462_3164# GND GND sky130_fd_pr__nfet_01v8 ad=0.147 pd=1.33 as=0.27825 ps=2.63 w=1.05 l=0.15
+X13 GND m1_1462_3164# OUT GND sky130_fd_pr__nfet_01v8 ad=0.27825 pd=2.63 as=0.147 ps=1.33 w=1.05 l=0.15
+X14 OUT m1_1462_3164# GND GND sky130_fd_pr__nfet_01v8 ad=0.147 pd=1.33 as=0.27825 ps=2.63 w=1.05 l=0.15
+X15 GND m1_1462_3164# OUT GND sky130_fd_pr__nfet_01v8 ad=0.27825 pd=2.63 as=0.147 ps=1.33 w=1.05 l=0.15
+X16 GND m1_1086_3248# GND GND sky130_fd_pr__nfet_01v8 ad=7.392 pd=68.68 as=0 ps=0 w=1.05 l=0.15
+X17 GND m1_1086_3248# GND GND sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X18 GND m1_1086_3248# GND GND sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X19 GND m1_1086_3248# GND GND sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X20 OUT INV_21710508_0_0_1677786008_0/m1_226_560# GND GND sky130_fd_pr__nfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X21 GND INV_21710508_0_0_1677786008_0/m1_226_560# OUT GND sky130_fd_pr__nfet_01v8 ad=0.27825 pd=2.63 as=0.147 ps=1.33 w=1.05 l=0.15
+X22 OUT INV_21710508_0_0_1677786008_0/m1_226_560# GND GND sky130_fd_pr__nfet_01v8 ad=0.147 pd=1.33 as=0.27825 ps=2.63 w=1.05 l=0.15
+X23 GND INV_21710508_0_0_1677786008_0/m1_226_560# OUT GND sky130_fd_pr__nfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X24 VDD INV_21710508_0_0_1677786008_0/m1_226_560# OUT VDD sky130_fd_pr__pfet_01v8 ad=0.27825 pd=2.63 as=0.147 ps=1.33 w=1.05 l=0.15
+X25 OUT INV_21710508_0_0_1677786008_0/m1_226_560# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.27825 ps=2.63 w=1.05 l=0.15
+X26 VDD INV_21710508_0_0_1677786008_0/m1_226_560# OUT VDD sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X27 OUT INV_21710508_0_0_1677786008_0/m1_226_560# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X28 VDD m1_1086_3248# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X29 VDD m1_1462_3164# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X30 VDD m1_1086_3248# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.27825 pd=2.63 as=0.147 ps=1.33 w=1.05 l=0.15
+X31 VDD m1_1462_3164# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X32 VDD m1_1086_3248# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.27825 ps=2.63 w=1.05 l=0.15
+X33 VDD m1_1086_3248# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X34 VDD m1_1462_3164# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X35 VDD m1_1462_3164# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X36 OUT C GND GND sky130_fd_pr__nfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X37 GND C OUT GND sky130_fd_pr__nfet_01v8 ad=0.27825 pd=2.63 as=0.147 ps=1.33 w=1.05 l=0.15
+X38 OUT C GND GND sky130_fd_pr__nfet_01v8 ad=0.147 pd=1.33 as=0.27825 ps=2.63 w=1.05 l=0.15
+X39 GND C OUT GND sky130_fd_pr__nfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X40 GND F GND GND sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X41 GND F GND GND sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X42 GND F GND GND sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X43 GND F GND GND sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X44 GND li_1437_5023# GND GND sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X45 GND li_1437_5023# GND GND sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X46 GND li_1437_5023# GND GND sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X47 GND li_1437_5023# GND GND sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+C0 m1_1462_3164# E 0.01fF
+C1 m1_1086_3248# VDD 2.28fF
+C2 C li_1437_5023# 0.47fF
+C3 m1_1086_3248# m1_1462_3164# 0.87fF
+C4 m1_1462_3164# VDD 1.64fF
+C5 C F 0.00fF
+C6 F E 0.00fF
+C7 B VDD 0.20fF
+C8 VDD li_1437_5023# 0.08fF
+C9 m1_1086_3248# F 0.04fF
+C10 F VDD 1.94fF
+C11 F m1_1462_3164# 0.00fF
+C12 OUT A 0.52fF
+C13 B F 0.01fF
+C14 m1_602_1232# OUT 0.00fF
+C15 A E 0.04fF
+C16 D OUT 0.05fF
+C17 VDD A 0.13fF
+C18 C OUT 0.20fF
+C19 C D 0.67fF
+C20 OUT E 0.06fF
+C21 OUT INV_21710508_0_0_1677786008_0/m1_226_560# 0.69fF
+C22 D E 0.00fF
+C23 D INV_21710508_0_0_1677786008_0/m1_226_560# 0.00fF
+C24 B A 0.01fF
+C25 m1_602_1232# m1_1086_3248# 0.00fF
+C26 m1_1086_3248# OUT 0.04fF
+C27 m1_602_1232# VDD 1.55fF
+C28 m1_1086_3248# D 0.00fF
+C29 OUT VDD 3.70fF
+C30 D VDD 1.72fF
+C31 F A 0.00fF
+C32 m1_602_1232# m1_1462_3164# 0.00fF
+C33 m1_1462_3164# OUT 0.99fF
+C34 m1_1462_3164# D 0.00fF
+C35 m1_1086_3248# C 0.00fF
+C36 B OUT 0.14fF
+C37 OUT li_1437_5023# 0.01fF
+C38 m1_1086_3248# E 0.01fF
+C39 C VDD 1.82fF
+C40 VDD E 0.16fF
+C41 m1_602_1232# F 0.21fF
+C42 INV_21710508_0_0_1677786008_0/m1_226_560# VDD 1.65fF
+C43 F OUT 0.01fF
+C44 C m1_1462_3164# 0.00fF
+C45 A GND 0.40fF
+C46 B GND 0.56fF
+C47 E GND 0.00fF
+C48 VDD GND 23.57fF 
+**FLOATING
+C49 li_1437_5023# GND 1.56fF 
+**FLOATING
+C50 OUT GND 2.40fF 
+**FLOATING
+C51 INV_21710508_0_0_1677786008_0/m1_226_560# GND 1.79fF 
+**FLOATING
+C52 m1_1086_3248# GND 3.49fF 
+**FLOATING
+C53 m1_1462_3164# GND 2.57fF 
+**FLOATING
+C54 C GND 1.28fF 
+**FLOATING
+C55 m1_602_1232# GND 0.48fF 
+**FLOATING
+C56 F GND 1.89fF 
+**FLOATING
 
 ```
 
 ### Final .spice after adding pre-layout excitations and library definitions
 
+```
+ x1 VDD B A D C F E out GND func1
+V1 B GND pulse(0 1.8 0.1n 10p 10p 1n 2n)
+.save i(v1)
+V2 A GND pulse(0 1.8 0 10p 10p 1n 2n)
+.save i(v2)
+V3 C GND pulse(0 1.8 0.2n 10p 10p 1n 2n)
+.save i(v3)
+V4 D GND pulse(0 1.8 0.3n 10p 10p 1n 2n)
+.save i(v4)
+V5 E GND pulse(0 1.8 0.4n 10p 10p 1n 2n)
+.save i(v5)
+V6 F GND pulse(0 1.8 0.5n 10p 10p 1n 2n)
+.save i(v6)
+V7 VDD GND 1.8
+.save i(v7)
 
+
+
+**** begin user architecture code
+
+.param mc_mm_switch=0
+.param mc_pr_switch=0
+.include /usr/local/share/pdk/sky130A/libs.tech/ngspice/corners/tt.spice
+.include /usr/local/share/pdk/sky130A/libs.tech/ngspice/r+c/res_typical__cap_typical.spice
+.include /usr/local/share/pdk/sky130A/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice
+.include /usr/local/share/pdk/sky130A/libs.tech/ngspice/corners/tt/specialized_cells.spice
+
+.tran 0.01n 20n
+.save all
+
+.subckt func1 VDD B A D C F E out GND
+X0 VDD F m1_602_1232# VDD sky130_fd_pr__pfet_01v8 ad=0.27825 pd=2.63 as=0.147 ps=1.33 w=1.05 l=0.15
+X1 m1_602_1232# F VDD VDD sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.27825 ps=2.63 w=1.05 l=0.15
+X2 VDD F m1_602_1232# VDD sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X3 m1_602_1232# F VDD VDD sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X4 VDD D VDD VDD sky130_fd_pr__pfet_01v8 ad=7.1925 pd=66.2 as=0 ps=0 w=1.05 l=0.15
+X5 VDD D VDD VDD sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X6 VDD D VDD VDD sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X7 VDD D VDD VDD sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X8 VDD C VDD VDD sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X9 VDD C VDD VDD sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X10 VDD C VDD VDD sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X11 VDD C VDD VDD sky130_fd_pr__pfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X12 OUT m1_1462_3164# GND GND sky130_fd_pr__nfet_01v8 ad=0.147 pd=1.33 as=0.27825 ps=2.63 w=1.05 l=0.15
+X13 GND m1_1462_3164# OUT GND sky130_fd_pr__nfet_01v8 ad=0.27825 pd=2.63 as=0.147 ps=1.33 w=1.05 l=0.15
+X14 OUT m1_1462_3164# GND GND sky130_fd_pr__nfet_01v8 ad=0.147 pd=1.33 as=0.27825 ps=2.63 w=1.05 l=0.15
+X15 GND m1_1462_3164# OUT GND sky130_fd_pr__nfet_01v8 ad=0.27825 pd=2.63 as=0.147 ps=1.33 w=1.05 l=0.15
+X16 GND m1_1086_3248# GND GND sky130_fd_pr__nfet_01v8 ad=7.392 pd=68.68 as=0 ps=0 w=1.05 l=0.15
+X17 GND m1_1086_3248# GND GND sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X18 GND m1_1086_3248# GND GND sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X19 GND m1_1086_3248# GND GND sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X20 OUT INV_21710508_0_0_1677786008_0/m1_226_560# GND GND sky130_fd_pr__nfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X21 GND INV_21710508_0_0_1677786008_0/m1_226_560# OUT GND sky130_fd_pr__nfet_01v8 ad=0.27825 pd=2.63 as=0.147 ps=1.33 w=1.05 l=0.15
+X22 OUT INV_21710508_0_0_1677786008_0/m1_226_560# GND GND sky130_fd_pr__nfet_01v8 ad=0.147 pd=1.33 as=0.27825 ps=2.63 w=1.05 l=0.15
+X23 GND INV_21710508_0_0_1677786008_0/m1_226_560# OUT GND sky130_fd_pr__nfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X24 VDD INV_21710508_0_0_1677786008_0/m1_226_560# OUT VDD sky130_fd_pr__pfet_01v8 ad=0.27825 pd=2.63 as=0.147 ps=1.33 w=1.05 l=0.15
+X25 OUT INV_21710508_0_0_1677786008_0/m1_226_560# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.27825 ps=2.63 w=1.05 l=0.15
+X26 VDD INV_21710508_0_0_1677786008_0/m1_226_560# OUT VDD sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X27 OUT INV_21710508_0_0_1677786008_0/m1_226_560# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X28 VDD m1_1086_3248# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X29 VDD m1_1462_3164# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X30 VDD m1_1086_3248# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.27825 pd=2.63 as=0.147 ps=1.33 w=1.05 l=0.15
+X31 VDD m1_1462_3164# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X32 VDD m1_1086_3248# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.27825 ps=2.63 w=1.05 l=0.15
+X33 VDD m1_1086_3248# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X34 VDD m1_1462_3164# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X35 VDD m1_1462_3164# VDD VDD sky130_fd_pr__pfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X36 OUT C GND GND sky130_fd_pr__nfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X37 GND C OUT GND sky130_fd_pr__nfet_01v8 ad=0.27825 pd=2.63 as=0.147 ps=1.33 w=1.05 l=0.15
+X38 OUT C GND GND sky130_fd_pr__nfet_01v8 ad=0.147 pd=1.33 as=0.27825 ps=2.63 w=1.05 l=0.15
+X39 GND C OUT GND sky130_fd_pr__nfet_01v8 ad=0.147 pd=1.33 as=0.147 ps=1.33 w=1.05 l=0.15
+X40 GND F GND GND sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X41 GND F GND GND sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X42 GND F GND GND sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X43 GND F GND GND sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X44 GND li_1437_5023# GND GND sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X45 GND li_1437_5023# GND GND sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X46 GND li_1437_5023# GND GND sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+X47 GND li_1437_5023# GND GND sky130_fd_pr__nfet_01v8 ad=0 pd=0 as=0 ps=0 w=1.05 l=0.15
+C0 m1_1462_3164# E 0.01fF
+C1 m1_1086_3248# VDD 2.28fF
+C2 C li_1437_5023# 0.47fF
+C3 m1_1086_3248# m1_1462_3164# 0.87fF
+C4 m1_1462_3164# VDD 1.64fF
+C5 C F 0.00fF
+C6 F E 0.00fF
+C7 B VDD 0.20fF
+C8 VDD li_1437_5023# 0.08fF
+C9 m1_1086_3248# F 0.04fF
+C10 F VDD 1.94fF
+C11 F m1_1462_3164# 0.00fF
+C12 OUT A 0.52fF
+C13 B F 0.01fF
+C14 m1_602_1232# OUT 0.00fF
+C15 A E 0.04fF
+C16 D OUT 0.05fF
+C17 VDD A 0.13fF
+C18 C OUT 0.20fF
+C19 C D 0.67fF
+C20 OUT E 0.06fF
+C21 OUT INV_21710508_0_0_1677786008_0/m1_226_560# 0.69fF
+C22 D E 0.00fF
+C23 D INV_21710508_0_0_1677786008_0/m1_226_560# 0.00fF
+C24 B A 0.01fF
+C25 m1_602_1232# m1_1086_3248# 0.00fF
+C26 m1_1086_3248# OUT 0.04fF
+C27 m1_602_1232# VDD 1.55fF
+C28 m1_1086_3248# D 0.00fF
+C29 OUT VDD 3.70fF
+C30 D VDD 1.72fF
+C31 F A 0.00fF
+C32 m1_602_1232# m1_1462_3164# 0.00fF
+C33 m1_1462_3164# OUT 0.99fF
+C34 m1_1462_3164# D 0.00fF
+C35 m1_1086_3248# C 0.00fF
+C36 B OUT 0.14fF
+C37 OUT li_1437_5023# 0.01fF
+C38 m1_1086_3248# E 0.01fF
+C39 C VDD 1.82fF
+C40 VDD E 0.16fF
+C41 m1_602_1232# F 0.21fF
+C42 INV_21710508_0_0_1677786008_0/m1_226_560# VDD 1.65fF
+C43 F OUT 0.01fF
+C44 C m1_1462_3164# 0.00fF
+C45 A GND 0.40fF
+C46 B GND 0.56fF
+C47 E GND 0.00fF
+C48 VDD GND 23.57fF 
+**FLOATING
+C49 li_1437_5023# GND 1.56fF 
+**FLOATING
+C50 OUT GND 2.40fF 
+**FLOATING
+C51 INV_21710508_0_0_1677786008_0/m1_226_560# GND 1.79fF 
+**FLOATING
+C52 m1_1086_3248# GND 3.49fF 
+**FLOATING
+C53 m1_1462_3164# GND 2.57fF 
+**FLOATING
+C54 C GND 1.28fF 
+**FLOATING
+C55 m1_602_1232# GND 0.48fF 
+**FLOATING
+C56 F GND 1.89fF 
+**FLOATING
+.ends
+
+.GLOBAL VDD
+.GLOBAL GND
+
+.end
+
+```
 
 
 ### Obtained simulations
