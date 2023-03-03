@@ -1,6 +1,6 @@
 ## 4-bit Asynchronous UP counter with OpenFASOC
 
-### Ring osciallator schematic and Testbench and Simulation
+### Ring oscillator schematic and Testbench and Simulation
 
 ![Screenshot from 2023-03-03 15-43-43](https://user-images.githubusercontent.com/50217106/222694226-e67ce089-24cd-44cc-871c-eaa41e7fb08d.png)
 
