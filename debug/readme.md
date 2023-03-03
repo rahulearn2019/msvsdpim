@@ -31,5 +31,5 @@ click on edit->select select area option->click on delete
 
 
 # Nightmare with ALIGN tool - You are not Alone!
-
+ALIGN has been dealt with in detail in week2. ALIGN is looking for patterns in .sp file to generate the layout. It will generate different layouts for different order of FETs in the .sp irrespective of them corresponding to the same circuit. The order of fets in .spice depends on the order in which you import fets to make the schematic in xschem. 
 
