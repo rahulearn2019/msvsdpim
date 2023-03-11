@@ -71,7 +71,7 @@ XM6 net1 out GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) *
 ![Screenshot from 2023-03-02 23-29-48](https://user-images.githubusercontent.com/50217106/222692361-346232a7-93cf-4706-8785-349c4bf578ee.png)
 
 ### Manipulations in .sp 
-As per the findings in week2 that - ALIGN generates correct Layout when PFETs and NFETs form two collections in the .spice(pfets imported at once and bfets imported at once in xschem) is not completely correct. While making this ring oscillator schematic this was taken care, still ALIGN gives some error. If this erroneous layout is extrated in magic then the .spice will not have out pin. ALIGN is looking for patterns in .sp file for generating layout. 
+As per the findings in week2 that - ALIGN generates correct Layout when PFETs and NFETs form two collections in the .spice(pfets imported at once and nfets imported at once in xschem) is not completely correct. While making this ring oscillator schematic, this was taken care, still ALIGN gives some error. If this erroneous layout is extrated in magic then the .spice will not have "out" pin. ALIGN is looking for patterns in .sp file for generating layout. 
 The .sp file was randomly manipulated until ALIGN stopped giving the error - "Placer warning - terminal 1 is dangling set it to origin"
 
 ![Screenshot from 2023-03-02 23-34-45](https://user-images.githubusercontent.com/50217106/222687446-0607c37c-e83c-465e-bfdf-8e4d677d9281.png)
