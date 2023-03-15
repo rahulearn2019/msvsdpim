@@ -13,3 +13,5 @@ It is necessary to size the transistors correctly to get the desired output. For
 
 ## ADC using OPAMP
 
+To provide the reference voltage at inverting terminal of OP-AMP, two diode connected mosfets are used. A diode connected mosfet acts as a resistor of resistance 1/gm.  
+
