@@ -5,8 +5,11 @@ We use a open-loop OP-AMP which will function as a comparator. To it's non-inver
 
 ![ezgif-2-f14b8dd1d5](https://user-images.githubusercontent.com/50217106/225022772-5a5328e0-358e-4b11-9254-6b7dcc2dc1b6.jpg)
 
-## OPAMP schematic - Testing in Common Mode
+## OPAMP schematic - Testing in Differential Mode
 
+![Screenshot from 2023-03-16 03-50-05](https://user-images.githubusercontent.com/50217106/225456631-bcaaf820-9ed7-49ed-875d-81c96c511e2d.png)
+
+![Screenshot from 2023-03-16 03-49-53](https://user-images.githubusercontent.com/50217106/225456637-59a87e08-137d-4a55-a052-c9f2b5776ac9.png)
 
 It is necessary to size the transistors correctly to get the desired output. For amplifier design, we need to make sure all the transistors are in saturation. Digital sizing techniques are not applicable in CMOS analog design.
 
