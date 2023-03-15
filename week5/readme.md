@@ -5,7 +5,7 @@ We use a open-loop OP-AMP which will function as a comparator. To it's non-inver
 
 ![ezgif-2-f14b8dd1d5](https://user-images.githubusercontent.com/50217106/225022772-5a5328e0-358e-4b11-9254-6b7dcc2dc1b6.jpg)
 
-## OPAMP schematic - Testing in Differential Mode
+## 2 stage CMOS OPAMP schematic - Testing in Differential Mode
 
 ![Screenshot from 2023-03-16 03-50-05](https://user-images.githubusercontent.com/50217106/225456631-bcaaf820-9ed7-49ed-875d-81c96c511e2d.png)
 
