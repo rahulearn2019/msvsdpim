@@ -28,6 +28,8 @@ Potential at the referene node supposed to be 0.9 is noisy but SNR is small as s
 ![Screenshot from 2023-03-16 03-10-28](https://user-images.githubusercontent.com/50217106/225452172-27879a37-6a7a-4cf7-a287-7a9484524f1c.png)
 
 - Pre-Layout Schematic
+
+```
 ** sch_path: /home/rahul/Documents/adc/adc_top.sch
 **.subckt adc_top VDD out VDD VDD vin vin
 *.iopin VDD
@@ -102,3 +104,4 @@ XM9 OUT net4 VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) *
 .ends
 
 .GLOBAL GND
+```
