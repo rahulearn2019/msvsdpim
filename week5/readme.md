@@ -10,7 +10,7 @@ We use a open-loop OP-AMP which will function as a comparator. To it's non-inver
 
 It is necessary to size the transistors correctly to get the desired output. For amplifier design, we need to make sure all the transistors are in saturation. Digital sizing techniques are not applicable in CMOS analog design.
 
-## ADC using OPAMP
+## ADC using OPAMP - PreLayout
 
 To provide the reference voltage at inverting terminal of OP-AMP, two diode connected mosfets are used. A diode connected mosfet acts as a resistor of resistance 1/gm.  
 Potential at the referene node supposed to be 0.9 is noisy but SNR is small as shown below
