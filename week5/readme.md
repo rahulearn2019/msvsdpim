@@ -114,12 +114,12 @@ XM9 OUT net4 VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) *
 
 ```
 
-lef
-
 gds
-
+![Screenshot from 2023-03-16 13-12-07](https://user-images.githubusercontent.com/50217106/226037671-3f8255ac-46df-4581-a348-cb2911496a36.png)
 
 gds read in magic
+
+![Screenshot from 2023-03-16 13-21-28](https://user-images.githubusercontent.com/50217106/226037763-d6b12046-74a2-4a00-a038-eee167b7de89.png)
 
 
 generated spice
@@ -128,5 +128,5 @@ generated spice
 
 spice with pre-layout excitations
 
-
+![Screenshot from 2023-03-16 13-53-09](https://user-images.githubusercontent.com/50217106/226037806-5b59cb3c-0ffc-49cd-a85a-a1ed12a7ab05.png)
 
