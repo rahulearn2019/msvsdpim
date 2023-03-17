@@ -105,3 +105,28 @@ XM9 OUT net4 VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) *
 
 .GLOBAL GND
 ```
+
+# ADC layout using ALIGN and postlayout analysis
+
+
+.sp 
+```
+
+```
+
+lef
+
+gds
+
+
+gds read in magic
+
+
+generated spice
+
+
+
+spice with pre-layout excitations
+
+
+
