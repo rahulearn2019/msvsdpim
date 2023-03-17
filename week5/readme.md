@@ -111,7 +111,17 @@ XM9 OUT net4 VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) *
 
 .sp 
 ```
-
+.subckt adc_down VDD OUT Vp Vn VSS
+XM1 net3 Vp net1 net1 sky130_fd_pr__nfet_01v8 L=150n W=420n
+XM2 net2 Vn net1 net1 sky130_fd_pr__nfet_01v8 L=150n W=420n
+XM3 net2 net2 VDD VDD sky130_fd_pr__pfet_01v8 L=150n W=840n
+XM4 net3 net2 VDD VDD sky130_fd_pr__pfet_01v8 L=150n W=840n
+XM5 net1 net4 VSS VSS sky130_fd_pr__nfet_01v8 L=150n W=420n
+XM6 VDD VDD net4 net4 sky130_fd_pr__nfet_01v8 L=150n W=420n
+XM7 net4 net4 VSS VSS sky130_fd_pr__nfet_01v8 L=150n W=420n
+XM8 OUT net3 VDD VDD sky130_fd_pr__pfet_01v8 L=150n W=1680n
+XM9 OUT net4 VSS VSS sky130_fd_pr__nfet_01v8 L=150n W=420n
+.ends adc_down
 ```
 
 gds
