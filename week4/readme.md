@@ -1,4 +1,6 @@
 ## 4-bit Asynchronous UP counter with OpenFASOC
+First we need to generate the GDS of the analog blocks using ALIGN. For the design - 4-bit Asynchronous UP counter we have the ring oscillator and the one-bit ADC.
+## GDS generation of Ring-oscillator with verifying the functionality of generated layout using NGSPICE
 
 ### Ring oscillator schematic and Testbench and Simulation
 
