@@ -140,3 +140,15 @@ spice with pre-layout excitations
 
 ![Screenshot from 2023-03-16 13-53-09](https://user-images.githubusercontent.com/50217106/226037806-5b59cb3c-0ffc-49cd-a85a-a1ed12a7ab05.png)
 
+## Verilog files required as input to the openFASOC flow
+### Top level 
+
+
+
+### ring oscillator
+
+
+
+### 1-bit ADC
+
+
