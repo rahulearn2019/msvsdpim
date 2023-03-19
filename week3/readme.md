@@ -123,3 +123,7 @@ To run verilog generation, type the command ```make sky130hd_temp_verilog```
 Viewing the GDS view of the temperature generator using klayout-
 
 ![Screenshot from 2023-02-26 17-50-19](https://user-images.githubusercontent.com/50217106/221420863-1664b395-33bf-4a11-a679-04900a5aa84b.png)
+
+
+#### Reference
+- https://openfasoc.readthedocs.io/en/latest/flow-tempsense.html
