@@ -147,7 +147,6 @@ No matter what is the W and L value and nf corresponding to a W and L the output
 module async4bituc(
  input VDD,
  input VSS,
- input in,
  input vref,
  output out
  );
