@@ -15,7 +15,7 @@ It is necessary to size the transistors correctly to get the desired output. For
 
 ## ADC using OPAMP - PreLayout
 
-To provide the reference voltage at inverting terminal of OP-AMP, two diode connected mosfets are used. A diode connected mosfet acts as a resistor of resistance 1/gm.  
+To provide the reference voltage at inverting terminal of OP-AMP, two diode connected mosfets are used. A diode connected mosfet acts as a resistor of resistance 1/gm (gm = transconductance of FET small signal model) 
 Potential at the referene node supposed to be 0.9 is noisy but SNR is small as shown below
 ![Screenshot from 2023-03-16 03-09-31](https://user-images.githubusercontent.com/50217106/225452408-89c2574b-d5eb-4d24-b33f-27603df8577a.png)
 
