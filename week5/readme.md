@@ -144,7 +144,7 @@ No matter what is the W and L value and nf corresponding to a W and L the output
 ## Verilog files required as input to the openFASOC flow
 ### Top level 
 ```
-module asyncUPcount(
+module avsd4bituc(
  input VDD;
  input VSS;
  input in;
