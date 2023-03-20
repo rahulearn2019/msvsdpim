@@ -143,13 +143,47 @@ spice with pre-layout excitations
 No matter what is the W and L value and nf corresponding to a W and L the output is always clamped to VDD for this schematic
 ## Verilog files required as input to the openFASOC flow
 ### Top level 
-
-
-
+```
+module asyncUPcount(
+ input VDD;
+ input VSS;
+ input in;
+ input vref;
+ output out;
+ );
+ wire interface;
+ 
+ 1bitADC adc1(
+ .VDD(VDD), .VSS(VSS), .vin(interface), .out(out), .vref(vref)
+ );
+ 
+ ringosc osc1(
+ .VDD(VDD), .VSS(VSS), .out(interface)
+ );
+ 
+endmodule
+```
 ### ring oscillator
+```
+module ringosc(
+ input VDD;
+ input GND;
+ output osc;
+ 
+);
 
-
-
+endmodule
+```
 ### 1-bit ADC
+```
+module 1bitADC(
+ input VDD;
+ input VSS;
+ input vin;
+ input vref;
+ output out;
+);
 
 
+endmodule
+```
