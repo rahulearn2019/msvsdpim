@@ -145,11 +145,11 @@ No matter what is the W and L value and nf corresponding to a W and L the output
 ### Top level 
 ```
 module async4bituc(
- input VDD;
- input VSS;
- input in;
- input vref;
- output out;
+ input VDD,
+ input VSS,
+ input in,
+ input vref,
+ output out
  );
  wire interface;
  
@@ -166,9 +166,9 @@ endmodule
 ### ring oscillator
 ```
 module ringosc(
- input VDD;
- input GND;
- output osc;
+ input VDD,
+ input GND,
+ output osc
  
 );
 
@@ -177,11 +177,11 @@ endmodule
 ### 1-bit ADC
 ```
 module onebitADC(
- input VDD;
- input VSS;
- input vin;
- input vref;
- output out;
+ input VDD,
+ input VSS,
+ input vin,
+ input vref,
+ output out
 );
 
 
