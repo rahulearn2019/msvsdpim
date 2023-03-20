@@ -153,7 +153,7 @@ module async4bituc(
  );
  wire interface;
  
- 1bitADC adc1(
+ onebitADC adc1(
  .VDD(VDD), .VSS(VSS), .vin(interface), .out(out), .vref(vref)
  );
  
@@ -176,7 +176,7 @@ endmodule
 ```
 ### 1-bit ADC
 ```
-module 1bitADC(
+module onebitADC(
  input VDD;
  input VSS;
  input vin;
