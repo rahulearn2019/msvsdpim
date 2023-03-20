@@ -157,7 +157,7 @@ module async4bituc(
  );
  
  ringosc osc1(
- .VDD(VDD), .VSS(VSS), .out(interface)
+ .VDD(VDD), .VSS(VSS), .osc(interface)
  );
  
 endmodule
@@ -166,7 +166,7 @@ endmodule
 ```
 module ringosc(
  input VDD,
- input GND,
+ input VSS,
  output osc
  
 );
