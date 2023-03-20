@@ -141,7 +141,7 @@ spice with pre-layout excitations
 ![Screenshot from 2023-03-16 13-53-09](https://user-images.githubusercontent.com/50217106/226037806-5b59cb3c-0ffc-49cd-a85a-a1ed12a7ab05.png)
 
 No matter what is the W and L value and nf corresponding to a W and L the output is always clamped to VDD for this schematic
-## Verilog files required as input to the openFASOC flow
+## Verilog files required as input to the openFASOC flow for verilog generation
 ### Top level 
 ```
 module async4bituc(
