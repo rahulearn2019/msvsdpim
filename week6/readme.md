@@ -8,13 +8,13 @@ The necessary sub-directories for avsd4bituc are created.
 
 ![Screenshot from 2023-03-21 03-45-24](https://user-images.githubusercontent.com/50217106/226679150-da9f3152-0875-4fb8-bbee-5d908d267302.png)
 
-contents of the test.json file
+- contents of the test.json file
 ![Screenshot from 2023-03-21 21-55-28](https://user-images.githubusercontent.com/50217106/226679622-c338be0f-15bc-4068-bf26-8f03b4304bc7.png)
 
 modifications in toplevel makefile - edit the commands that will be used for different purposes - verilog generation, rtl2gds etc.
 ![Screenshot from 2023-03-21 03-45-33](https://user-images.githubusercontent.com/50217106/226678613-44fdf5ba-1ee5-41a2-8268-d09fc99f936d.png)
 
-contebts of the tools directory 
+- contents of the tools directory 
 
 ![Screenshot from 2023-03-21 21-58-33](https://user-images.githubusercontent.com/50217106/226680028-e45414a2-0a3d-48de-8699-02d96ee274ef.png)
 
@@ -204,7 +204,7 @@ print("# Place and Route finished")
 
 ```
 
-The content of parse_rpt.py python script :
+- The content of parse_rpt.py python script :
 
 ![Screenshot from 2023-03-21 21-59-19](https://user-images.githubusercontent.com/50217106/226681726-51d8dbea-79f6-4472-93da-71607ca46e40.png)
 
