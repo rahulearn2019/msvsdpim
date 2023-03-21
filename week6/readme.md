@@ -18,6 +18,7 @@ Include the frequency parameter in test.json file, and min and max frequency val
 
 These values can be edited in parameters.py file in tools folder
 
+
 The same frequency values are fed in modelfile.csv file present in tools directory.
 ![Screenshot from 2023-03-22 01-06-28](https://user-images.githubusercontent.com/50217106/226722348-f1ecce7d-5dac-4c6f-88c4-5b61c71b3913.png)
 
@@ -228,10 +229,10 @@ The LEF and GDS of the auxilliary cells are placed in avsd4bituc/blocks/sky130hd
 ![Screenshot from 2023-03-21 20-01-19](https://user-images.githubusercontent.com/50217106/226682130-094d3d7a-bc7f-456b-b725-3fe2016b6bb8.png)
 
 The config.mk file in design directory is modified -
-1. DESIGN_NICKNAME is changes
+1. DESIGN_NICKNAME is changed
 2. DESIGN_NAME is changed
 3. verilog file top-module name is changed
-4. Additional GDS and LEF file names are cahnged
+4. Additional GDS and LEF file names are changed
 5. Custom connections are removed if any
 6. Domain Instances are removed if any
 
@@ -242,4 +243,6 @@ Now a shell is opened in the avsd4bituc directory in generators and to generate 
 
 ![Screenshot from 2023-03-22 00-13-49](https://user-images.githubusercontent.com/50217106/226722896-2d6e1235-8771-4661-a25f-b2585d025522.png)
 
+Verilog files are generated - in our design the verilog files from avsd4bituc/src is copied into avsd4bituc/flow/design/src directory
 
+![Screenshot from 2023-03-22 01-21-56](https://user-images.githubusercontent.com/50217106/226725377-87b82655-b9b2-4de5-b47b-12b1b4a95e6a.png)
