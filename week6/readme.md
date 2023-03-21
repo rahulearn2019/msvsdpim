@@ -218,3 +218,22 @@ The LEF and GDS of the auxilliary cells are placed in avsd4bituc/blocks/sky130hd
 ![Screenshot from 2023-03-21 20-01-36](https://user-images.githubusercontent.com/50217106/226682116-0272ff73-fda6-4d24-871f-5ce5811e9a77.png)
 
 ![Screenshot from 2023-03-21 20-01-19](https://user-images.githubusercontent.com/50217106/226682130-094d3d7a-bc7f-456b-b725-3fe2016b6bb8.png)
+
+The config.mk file in design directory is modified -
+1. DESIGN_NICKNAME is changes
+2. DESIGN_NAME is changed
+3. verilog file top-module name is changed
+4. Additional GDS and LEF file names are cahnged
+5. Custom connections are removed if any
+6. Domain Instances are removed if any
+
+![Screenshot from 2023-03-21 22-39-11](https://user-images.githubusercontent.com/50217106/226687952-974a0516-800e-404c-b8ae-49ef8bd36dfa.png)
+
+
+Now a shell is opened in the avsd4bituc directory in generators and to generate verilog the corresponding code defined in top level makefile is used. In my case - make sky130hds_auc_verlog
+
+The following error comes when trying to genrate verilog
+
+![Screenshot from 2023-03-21 20-31-54](https://user-images.githubusercontent.com/50217106/226688999-c4bab896-35c8-4d63-b120-fac60080aacd.png)
+
+
