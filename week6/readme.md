@@ -8,6 +8,10 @@ The necessary sub-directories for avsd4bituc are created.
 
 ![Screenshot from 2023-03-21 03-45-24](https://user-images.githubusercontent.com/50217106/226679150-da9f3152-0875-4fb8-bbee-5d908d267302.png)
 
+The dummy verilog files are placed in the src directory -
+
+![Screenshot from 2023-03-21 22-23-07](https://user-images.githubusercontent.com/50217106/226683811-c87877b5-df45-4a49-9c7e-f7a1f04b1d3b.png)
+
 - contents of the test.json file
 ![Screenshot from 2023-03-21 21-55-28](https://user-images.githubusercontent.com/50217106/226679622-c338be0f-15bc-4068-bf26-8f03b4304bc7.png)
 
