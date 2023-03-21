@@ -94,6 +94,14 @@ The physical implementation of the analog blocks in the circuit is done using tw
 ![Screenshot from 2023-02-24 21-52-50](https://user-images.githubusercontent.com/50217106/221422049-b4d49bb9-deb1-44ae-9e06-e137592b9a8e.png)
 
 ## Temperature Sensor Generation using OpenFASOC
+### Verilog Generation
+To run verilog generation, type the command ```make sky130hd_temp_verilog```
+![Screenshot from 2023-02-26 21-29-13](https://user-images.githubusercontent.com/50217106/221421589-717aedf0-c2c1-4acf-90b6-da178d9d6e64.png)
+
+Viewing the GDS view of the temperature generator using klayout-
+
+![Screenshot from 2023-02-26 17-50-19](https://user-images.githubusercontent.com/50217106/221420863-1664b395-33bf-4a11-a679-04900a5aa84b.png)
+
 To run the default generator, ```cd``` into ```~/openfasoc/generators/temp_sense``` and use 
 ```make sky130hd_temp```
 If a PDK_ROOT error arises, then provide PDK_ROOT before running the above 
@@ -115,15 +123,6 @@ After a successful run the following message is displayed
 In the following directory all the files corresponding to different stages of the RTL2GDS flow is saved.
 
 ![Screenshot from 2023-02-26 17-53-39](https://user-images.githubusercontent.com/50217106/221422433-ee88f14f-24be-45f7-8a4a-0b1bea51b39c.png)
-
-### Verilog Generation
-To run verilog generation, type the command ```make sky130hd_temp_verilog```
-![Screenshot from 2023-02-26 21-29-13](https://user-images.githubusercontent.com/50217106/221421589-717aedf0-c2c1-4acf-90b6-da178d9d6e64.png)
-
-Viewing the GDS view of the temperature generator using klayout-
-
-![Screenshot from 2023-02-26 17-50-19](https://user-images.githubusercontent.com/50217106/221420863-1664b395-33bf-4a11-a679-04900a5aa84b.png)
-
 
 #### Reference
 - https://openfasoc.readthedocs.io/en/latest/flow-tempsense.html
