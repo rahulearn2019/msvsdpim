@@ -38,8 +38,8 @@ avsd4bituc-gen.py file is created and modifed as shown - name of the auxilliary 
 
 Here's the complete avsd4bituc-gen.py script
 <details open>
-	<summary> avsd4bituc-gen.py netlist</summary>
-	<br>
+<summary> avsd4bituc-gen.py netlist</summary>
+<br>
 ```
 #!/usr/bin/python3
 
