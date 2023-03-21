@@ -87,7 +87,6 @@ This generator creates a compact mixed-signal temperature sensor. It consists of
 The physical implementation of the analog blocks in the circuit is done using two manually designed standard cells:
  1. HEADER cell, containing the transistors in subthreshold operation;
  2. SLC cell, containing the Split-Control Level Converter.
- 3. 
 ### SLC GDS view in kaylout
 ![Screenshot from 2023-02-24 21-53-31](https://user-images.githubusercontent.com/50217106/221422058-2938ba4d-ef5f-4497-a935-5a6c6f8f1430.png)
 ### Header GDS view in klayout
