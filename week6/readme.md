@@ -37,8 +37,10 @@ avsd4bituc-gen.py file is created and modifed as shown - name of the auxilliary 
 ![Screenshot from 2023-03-21 20-17-21](https://user-images.githubusercontent.com/50217106/226677709-4fb05f65-b7c4-4a53-a69d-0b7e68b4f9c4.png)
 
 Here's the complete avsd4bituc-gen.py script
+<details open>
+	<summary> avsd4bituc-gen.py netlist</summary>
+	<br>
 
-```
 #!/usr/bin/python3
 
 import json
@@ -216,8 +218,7 @@ if p.returncode:
     exit(1)
 print("#----------------------------------------------------------------------")
 print("# Place and Route finished")
-
-```
+</details>
 
 ### The content of parse_rpt.py python script :
 
