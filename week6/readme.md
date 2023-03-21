@@ -40,7 +40,7 @@ Here's the complete avsd4bituc-gen.py script
 <details open>
 	<summary> avsd4bituc-gen.py netlist</summary>
 	<br>
-
+```
 #!/usr/bin/python3
 
 import json
@@ -218,6 +218,7 @@ if p.returncode:
     exit(1)
 print("#----------------------------------------------------------------------")
 print("# Place and Route finished")
+```
 </details>
 
 ### The content of parse_rpt.py python script :
