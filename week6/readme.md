@@ -13,7 +13,7 @@ The dummy verilog files are placed in the src directory -
 
 ![Screenshot from 2023-03-21 22-23-07](https://user-images.githubusercontent.com/50217106/226683811-c87877b5-df45-4a49-9c7e-f7a1f04b1d3b.png)
 
-#### contents of the test.json file
+### contents of the test.json file
 Include the frequency parameter in test.json file, and min and max frequency values are given according to the min max frequency vlaues defined in parameters.py script by default. In my case in parameters.py, by default min_freq is 5Mhz and max frequency is 12 Mhz. I went with the same frequencies for the design. 
 ![Screenshot from 2023-03-22 01-06-07](https://user-images.githubusercontent.com/50217106/226722166-5de39b89-33fc-45f6-bc59-4cae4412db85.png)
 
@@ -25,10 +25,10 @@ The same frequency values are fed in modelfile.csv file present in tools directo
 
 ![Screenshot from 2023-03-22 01-06-28](https://user-images.githubusercontent.com/50217106/226722335-17e836b1-a2d0-4903-a950-d385f0229edd.png)
 
-#### modifications in toplevel makefile - edit the commands that will be used for different purposes - verilog generation, rtl2gds etc.
+### modifications in toplevel makefile - edit the commands that will be used for different purposes - verilog generation, rtl2gds etc.
 ![Screenshot from 2023-03-21 03-45-33](https://user-images.githubusercontent.com/50217106/226678613-44fdf5ba-1ee5-41a2-8268-d09fc99f936d.png)
 
-#### contents of the tools directory 
+### contents of the tools directory 
 
 ![Screenshot from 2023-03-21 21-58-33](https://user-images.githubusercontent.com/50217106/226680028-e45414a2-0a3d-48de-8699-02d96ee274ef.png)
 
@@ -218,12 +218,12 @@ print("# Place and Route finished")
 
 ```
 
-- The content of parse_rpt.py python script :
+### The content of parse_rpt.py python script :
 
 ![Screenshot from 2023-03-21 21-59-19](https://user-images.githubusercontent.com/50217106/226681726-51d8dbea-79f6-4472-93da-71607ca46e40.png)
 
 
-The LEF and GDS of the auxilliary cells are placed in avsd4bituc/blocks/sky130hd - lef and gds folders respectively
+### The LEF and GDS of the auxilliary cells are placed in avsd4bituc/blocks/sky130hd - lef and gds folders respectively
 
 ![Screenshot from 2023-03-21 20-01-36](https://user-images.githubusercontent.com/50217106/226682116-0272ff73-fda6-4d24-871f-5ce5811e9a77.png)
 
