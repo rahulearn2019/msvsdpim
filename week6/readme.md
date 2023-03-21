@@ -17,10 +17,10 @@ Include the frequency parameter in test.json file, and min and max frequency val
 ![Screenshot from 2023-03-22 01-06-07](https://user-images.githubusercontent.com/50217106/226722166-5de39b89-33fc-45f6-bc59-4cae4412db85.png)
 
 These values can be edited in parameters.py file in tools folder
-
+![Screenshot from 2023-03-22 00-57-14(1)](https://user-images.githubusercontent.com/50217106/226736571-98ceff51-cee0-4311-9301-94821063f290.jpg)
 
 The same frequency values are fed in modelfile.csv file present in tools directory.
-![Screenshot from 2023-03-22 01-06-28](https://user-images.githubusercontent.com/50217106/226722348-f1ecce7d-5dac-4c6f-88c4-5b61c71b3913.png)
+![Screenshot from 2023-03-22 02-15-51](https://user-images.githubusercontent.com/50217106/226737026-ed361147-f77a-4556-89d9-8ba54ff4b9e8.png)
 
 ![Screenshot from 2023-03-22 01-06-28](https://user-images.githubusercontent.com/50217106/226722335-17e836b1-a2d0-4903-a950-d385f0229edd.png)
 
