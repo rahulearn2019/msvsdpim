@@ -12,13 +12,21 @@ The dummy verilog files are placed in the src directory -
 
 ![Screenshot from 2023-03-21 22-23-07](https://user-images.githubusercontent.com/50217106/226683811-c87877b5-df45-4a49-9c7e-f7a1f04b1d3b.png)
 
-- contents of the test.json file
-![Screenshot from 2023-03-21 21-55-28](https://user-images.githubusercontent.com/50217106/226679622-c338be0f-15bc-4068-bf26-8f03b4304bc7.png)
+#### contents of the test.json file
+Include the frequency parameter in test.json file, and min and max frequency values are given according to the min max frequency vlaues defined in parameters.py script by default. In my case in parameters.py, by default min_freq is 5Mhz and max frequency is 12 Mhz. I went with the same frequencies for the design. 
+![Screenshot from 2023-03-22 01-06-07](https://user-images.githubusercontent.com/50217106/226722166-5de39b89-33fc-45f6-bc59-4cae4412db85.png)
 
-modifications in toplevel makefile - edit the commands that will be used for different purposes - verilog generation, rtl2gds etc.
+These values can be edited in parameters.py file in tools folder
+
+The same frequency values are fed in modelfile.csv file present in tools directory.
+![Screenshot from 2023-03-22 01-06-28](https://user-images.githubusercontent.com/50217106/226722348-f1ecce7d-5dac-4c6f-88c4-5b61c71b3913.png)
+
+![Screenshot from 2023-03-22 01-06-28](https://user-images.githubusercontent.com/50217106/226722335-17e836b1-a2d0-4903-a950-d385f0229edd.png)
+
+#### modifications in toplevel makefile - edit the commands that will be used for different purposes - verilog generation, rtl2gds etc.
 ![Screenshot from 2023-03-21 03-45-33](https://user-images.githubusercontent.com/50217106/226678613-44fdf5ba-1ee5-41a2-8268-d09fc99f936d.png)
 
-- contents of the tools directory 
+#### contents of the tools directory 
 
 ![Screenshot from 2023-03-21 21-58-33](https://user-images.githubusercontent.com/50217106/226680028-e45414a2-0a3d-48de-8699-02d96ee274ef.png)
 
@@ -232,8 +240,6 @@ The config.mk file in design directory is modified -
 
 Now a shell is opened in the avsd4bituc directory in generators and to generate verilog the corresponding code defined in top level makefile is used. In my case - "make sky130hd_auc_verlog"
 
-The following error comes when trying to genrate verilog
-
-![Screenshot from 2023-03-21 20-31-54](https://user-images.githubusercontent.com/50217106/226688999-c4bab896-35c8-4d63-b120-fac60080aacd.png)
+![Screenshot from 2023-03-22 00-13-49](https://user-images.githubusercontent.com/50217106/226722896-2d6e1235-8771-4661-a25f-b2585d025522.png)
 
 
