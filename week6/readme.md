@@ -22,7 +22,7 @@ modifications in toplevel makefile - edit the commands that will be used for dif
 
 ![Screenshot from 2023-03-21 21-58-33](https://user-images.githubusercontent.com/50217106/226680028-e45414a2-0a3d-48de-8699-02d96ee274ef.png)
 
-avsd4bituc-gen.py file is created and modifed as shown - name of the auxilliary cells in dummy verilog and name of the top level module is include
+avsd4bituc-gen.py file is created and modifed as shown - name of the auxilliary cells in dummy verilog and name of the top level module is included
 ![Screenshot from 2023-03-21 20-17-21](https://user-images.githubusercontent.com/50217106/226677709-4fb05f65-b7c4-4a53-a69d-0b7e68b4f9c4.png)
 
 Here's the complete avsd4bituc-gen.py script
@@ -230,7 +230,7 @@ The config.mk file in design directory is modified -
 ![Screenshot from 2023-03-21 22-39-11](https://user-images.githubusercontent.com/50217106/226687952-974a0516-800e-404c-b8ae-49ef8bd36dfa.png)
 
 
-Now a shell is opened in the avsd4bituc directory in generators and to generate verilog the corresponding code defined in top level makefile is used. In my case - make sky130hds_auc_verlog
+Now a shell is opened in the avsd4bituc directory in generators and to generate verilog the corresponding code defined in top level makefile is used. In my case - "make sky130hd_auc_verlog"
 
 The following error comes when trying to genrate verilog
 
