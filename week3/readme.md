@@ -94,6 +94,12 @@ The physical implementation of the analog blocks in the circuit is done using tw
 ![Screenshot from 2023-02-24 21-52-50](https://user-images.githubusercontent.com/50217106/221422049-b4d49bb9-deb1-44ae-9e06-e137592b9a8e.png)
 
 ## Temperature Sensor Generation using OpenFASOC
+
+The default circuit’s physical design generation can be divided into three parts:
+- Verilog generation
+- RTL-to-GDS flow (OpenROAD)
+- Post-layout verification (DRC and LVS)
+
 ### Verilog Generation
 To run verilog generation, type the command ```make sky130hd_temp_verilog```
 ![Screenshot from 2023-02-26 21-29-13](https://user-images.githubusercontent.com/50217106/221421589-717aedf0-c2c1-4acf-90b6-da178d9d6e64.png)
@@ -111,10 +117,6 @@ If OpenROAD not found in path error arises, provide path to openROAD along with 
 export OPENROAD=~/OpenROAD-flow-scripts/tools/OpenROAD/
 export PATH=/home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin:/home/rahul/OpenROAD-flow-scripts/tools/install/yosys/bin:/home/rahul/OpenROAD-flow-scripts/tools/install/LSOracle/bin:$PATH
 ```
-The default circuit’s physical design generation can be divided into three parts:
-- Verilog generation
-- RTL-to-GDS flow (OpenROAD)
-- Post-layout verification (DRC and LVS)
 
 After a successful run the following message is displayed
 
