@@ -124,5 +124,31 @@ In the following directory all the files corresponding to different stages of th
 Viewing the GDS view of the temperature generator using klayout-
 
 ![Screenshot from 2023-02-26 17-50-19](https://user-images.githubusercontent.com/50217106/221420863-1664b395-33bf-4a11-a679-04900a5aa84b.png)
+
+For debugging purposes, it is also possible to generate only part of the flow, visualize the results in OpenROAD GUI or generate DEF files of all intermediary results. For doing so, the Makefile in ```temp-sense-gen/flow/``` contains special targets. After running ```make sky130hd_temp``` in ```/openfasoc/openfasoc/generators/temp-sense-gen/``` once, cd into the ```/openfasoc/openfasoc/generators/temp-sense-gen/flow/``` directory and use one of the commands from the following table.
+
+| make synth | Stops the flow after synthesis |
+
+| make floorplan | Stops the flow after floorplan |
+
+| make place | Stops the flow after placement |
+
+| make route | Stops the flow after routing |
+
+| make finish | Runs the whole RTL-to-GDS flow |
+
+| make gui_floorplan | Opens the design after floorplan in OpenROAD GUI |
+
+| make gui_place | Opens the design after placement in OpenROAD GUI |
+
+| make gui_route | Opens the design after routing in OpenROAD GUI |
+
+| make gui_final | Opens the finished design in OpenROAD GUI |
+
+| make all_defs | creates DEF files in flow/results/ of every step in the flow |
+
+| make print-ENV_VARIABLE_NAME | Prints the value of an env variable recognized by OpenROAD Flow |
+
 #### Reference
 - https://openfasoc.readthedocs.io/en/latest/flow-tempsense.html
+
