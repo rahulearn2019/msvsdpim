@@ -38,7 +38,7 @@ avsd4bituc-gen.py file is created and modifed as shown - name of the auxilliary 
 
 Here's the complete avsd4bituc-gen.py script
 
-```
+```python
 #!/usr/bin/python3
 
 import json
