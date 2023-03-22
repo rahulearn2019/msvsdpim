@@ -127,6 +127,8 @@ Viewing the GDS view of the temperature generator using klayout-
 
 For debugging purposes, it is also possible to generate only part of the flow, visualize the results in OpenROAD GUI or generate DEF files of all intermediary results. For doing so, the Makefile in ```temp-sense-gen/flow/``` contains special targets. After running ```make sky130hd_temp``` in ```/openfasoc/openfasoc/generators/temp-sense-gen/``` once, cd into the ```/openfasoc/openfasoc/generators/temp-sense-gen/flow/``` directory and use one of the commands from the following table.
 
+| Command | Description |
+| --- | --- |
 | make synth | Stops the flow after synthesis |
 
 | make floorplan | Stops the flow after floorplan |
