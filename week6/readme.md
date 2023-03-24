@@ -255,11 +255,21 @@ Verilog files are generated - in our design the verilog files from avsd4bituc/sr
 To run the remaining steps - synthesis, placement, routing and finishing - we cd into flow directory and open a shell, then the following commands are used one by one -
 ## Synthesis
 cd into flow directory and use -  ```make synth```
-The following error occurs - which is under investigation ---- WORK under progress
+The following error occurs 
 
 ![Screenshot from 2023-03-22 00-46-33](https://user-images.githubusercontent.com/50217106/226744189-dd1589be-658d-4d5f-bcca-d7c276561251.png)
 
+The verilog code had a wire variable ```interface``` which is a system defined variable, so after changing it to a valod user defined variable, synthesis runs properly.
 
+![Screenshot from 2023-03-23 04-13-54](https://user-images.githubusercontent.com/50217106/227645324-8301bfe4-1b2d-432c-92aa-cb61e251da79.png)
+
+To do floorplan of the design use ```make floorplan``` in the flow directory.
+
+The following error occurs which is under inverstigation :
+
+![Screenshot from 2023-03-23 04-26-32](https://user-images.githubusercontent.com/50217106/227645672-90b917c4-16b4-4d4b-9daf-34609adc21dc.png)
+
+### WORK under progress...
 	
 
 
