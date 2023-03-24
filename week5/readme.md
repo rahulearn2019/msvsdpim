@@ -150,14 +150,14 @@ module async4bituc(
  input vref,
  output out
  );
- wire interface;
+ wire inter1;
  
  onebitADC adc1(
- .VDD(VDD), .VSS(VSS), .vin(interface), .out(out), .vref(vref)
+ .VDD(VDD), .VSS(VSS), .vin(inter1), .out(out), .vref(vref)
  );
  
  ringosc osc1(
- .VDD(VDD), .VSS(VSS), .osc(interface)
+ .VDD(VDD), .VSS(VSS), .osc(inter1)
  );
  
 endmodule
