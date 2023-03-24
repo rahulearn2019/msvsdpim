@@ -259,7 +259,7 @@ The following error occurs
 
 ![Screenshot from 2023-03-22 00-46-33](https://user-images.githubusercontent.com/50217106/226744189-dd1589be-658d-4d5f-bcca-d7c276561251.png)
 
-The verilog code had a wire variable ```interface``` which is a system defined variable, so after changing it to a valod user defined variable, synthesis runs properly.
+The verilog code had a wire variable ```interface``` which is a system defined variable, so after changing it to a valid user defined variable, synthesis runs properly.
 
 ![Screenshot from 2023-03-23 04-13-54](https://user-images.githubusercontent.com/50217106/227645324-8301bfe4-1b2d-432c-92aa-cb61e251da79.png)
 
