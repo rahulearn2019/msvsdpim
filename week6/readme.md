@@ -1,8 +1,5 @@
 # RTL2GDS of the Analog design using openROAD( invoked by openFASOC)
 
-# Generator Flow
-![image](https://user-images.githubusercontent.com/50217106/226996331-2fbb1424-abe5-46a4-bfab-768ce5a7ace0.png)
-
 With the necessary input files - gds of analog blocks and their dummy verilog we can proceed with the openFASOC flow to generate the complete analog block GDS.    
 A directory - avsd4bituc, is created in the generators directory of openfasoc
 
