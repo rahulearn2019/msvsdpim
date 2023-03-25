@@ -1,0 +1,56 @@
+OpenROAD v2.0-6895-g5c85b36f8 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ODB-0222] Reading LEF file: /home/rahul/openfasoc/openfasoc/generators/avsd4bituc-gen/flow/../../../common/platforms/sky130hd/lef/sky130_fd_sc_hd.tlef
+[INFO ODB-0223]     Created 13 technology layers
+[INFO ODB-0224]     Created 25 technology vias
+[INFO ODB-0226] Finished LEF file:  /home/rahul/openfasoc/openfasoc/generators/avsd4bituc-gen/flow/../../../common/platforms/sky130hd/lef/sky130_fd_sc_hd.tlef
+[INFO ODB-0222] Reading LEF file: /home/rahul/openfasoc/openfasoc/generators/avsd4bituc-gen/flow/../../../common/platforms/sky130hd/lef/sky130_fd_sc_hd_merged.lef
+[INFO ODB-0225]     Created 441 library cells
+[INFO ODB-0226] Finished LEF file:  /home/rahul/openfasoc/openfasoc/generators/avsd4bituc-gen/flow/../../../common/platforms/sky130hd/lef/sky130_fd_sc_hd_merged.lef
+[INFO ODB-0222] Reading LEF file: ../blocks/sky130hd/lef/adc1.lef
+[WARNING ODB-0176] error: undefined layer (M2) referenced
+[WARNING ODB-0176] error: undefined layer (M3) referenced
+[WARNING ODB-0176] error: undefined layer (M2) referenced
+[WARNING ODB-0176] error: undefined layer (M2) referenced
+[WARNING ODB-0176] error: undefined layer (M2) referenced
+[WARNING ODB-0176] error: undefined layer (M2) referenced
+[WARNING ODB-0220] WARNING (LEFPARS-2001): No VERSION statement found, using the default value 5.8. See file ../blocks/sky130hd/lef/adc1.lef at line 730.
+
+[INFO ODB-0225]     Created 1 library cells
+[INFO ODB-0226] Finished LEF file:  ../blocks/sky130hd/lef/adc1.lef
+[INFO ODB-0222] Reading LEF file: ../blocks/sky130hd/lef/osc1.lef
+[WARNING ODB-0176] error: undefined layer (M3) referenced
+[WARNING ODB-0176] error: undefined layer (M3) referenced
+[WARNING ODB-0176] error: undefined layer (M2) referenced
+[WARNING ODB-0176] error: undefined layer (M2) referenced
+[WARNING ODB-0220] WARNING (LEFPARS-2001): No VERSION statement found, using the default value 5.8. See file ../blocks/sky130hd/lef/osc1.lef at line 586.
+
+[INFO ODB-0225]     Created 1 library cells
+[INFO ODB-0226] Finished LEF file:  ../blocks/sky130hd/lef/osc1.lef
+[WARNING STA-0198] /home/rahul/openfasoc/openfasoc/generators/avsd4bituc-gen/flow/results/sky130hd/4bituc/1_synth.v line 9, module onebitADC not found. Creating black box for adc1.
+[WARNING STA-0198] /home/rahul/openfasoc/openfasoc/generators/avsd4bituc-gen/flow/results/sky130hd/4bituc/1_synth.v line 16, module ringosc not found. Creating black box for osc1.
+[WARNING ORD-1013] instance adc1 LEF master onebitADC not found.
+[WARNING ORD-1013] instance osc1 LEF master ringosc not found.
+[WARNING STA-0322] instance '*' not found.
+number instances in verilog is 0
+[INFO IFP-0001] Added 42 rows of 258 sites.
+Signal 11 received
+Stack trace:
+ 0# 0x0000564D400885D8 in /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad
+ 1# 0x00007F9284F91090 in /lib/x86_64-linux-gnu/libc.so.6
+ 2# odb::dbGroup::addInst(odb::dbInst*) in /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad
+ 3# 0x0000564D405BA35D in /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad
+ 4# 0x0000564D404C74D3 in /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad
+ 5# TclNRRunCallbacks in /lib/x86_64-linux-gnu/libtcl8.6.so
+ 6# 0x00007F9288C5C924 in /lib/x86_64-linux-gnu/libtcl8.6.so
+ 7# Tcl_EvalEx in /lib/x86_64-linux-gnu/libtcl8.6.so
+ 8# Tcl_Eval in /lib/x86_64-linux-gnu/libtcl8.6.so
+ 9# sta::sourceTclFile(char const*, bool, bool, Tcl_Interp*) in /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad
+10# ord::tclAppInit(Tcl_Interp*) in /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad
+11# Tcl_MainEx in /lib/x86_64-linux-gnu/libtcl8.6.so
+12# main in /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad
+13# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+14# _start in /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad
+Command terminated by signal 11
+Elapsed time: 0:02.96[h:]min:sec. CPU time: user 0.33 sys 0.50 (28%). Peak memory: 103816KB.
