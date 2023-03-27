@@ -41,9 +41,53 @@ The output of ompamp functioning as comparator will be an input to our digital b
 ### ngspice simulation
 
 
+### pre-layout spice netlist
+
+
 ---> NOTE - The ADC circuit in the hierarchy has an I/O pin that shows GND pin. DO not name it as VSS or something. It will create problems in post-layout spice simulations. As NGSPICE understands GND and doesn't like any other name for it, even if it is in a subckt
 
 # ADC layout using ALIGN and postlayout SPICE analysis
+- .sp fed to ALIGN  
+```
+
+```
+
+## GDS view in klayout
+
+
+
+
+## Import GDS in magic
+Remove the ports imported by magic as they are the main source of problem in post layout simulations. Relabel the ports
+- check the layer they are present in by using ```what``` command over a port selected by ```select area``` command in tkcon window.  
+- To remove port use - ```port remove``` command and to remove label use ```erase label``` command
+- Then add label at the exact same location on the exact same layer, you may need to add a specific layers where the port layer is not accessible
+After adding ports use    
+ ```port makeall```   
+Now extract the layout to obtain spice netlist
+ 
+ 
+### Post-Layout spice after adding pre-layput excitations and lib definitions
+```
+
+
+```
+
+### Ngspice simulation output
+
+
+
+
+
+Pre-layout matches post-layout
+
+
+
+
+
+
+
+
 
 
 ## Verilog files required as input to the openFASOC flow for verilog generation
