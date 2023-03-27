@@ -27,120 +27,25 @@ Potential at the referene node supposed to be 0.9 is noisy but SNR is small as s
 
 ![Screenshot from 2023-03-16 03-10-28](https://user-images.githubusercontent.com/50217106/225452172-27879a37-6a7a-4cf7-a287-7a9484524f1c.png)
 
-- Pre-Layout Schematic
+## OPAMP modifications 
+The output of ompamp functioning as comparator will be an input to our digital block in the mixed signal design. There are several techniques used to minimize noise and obtain an ideal input for the digital block. An ideal input has minimum input signal transition(slew), complete signal swing and mimimum or no noise at all. To achive it a chain of inverters are added at the output to act as an interface circuitry and provide a near ideal signal to the digital block.
 
-```
-** sch_path: /home/rahul/Documents/adc/adc_top.sch
-**.subckt adc_top VDD out VDD VDD vin vin
-*.iopin VDD
-*.opin out
-*.iopin VDD
-*.iopin VDD
-*.ipin vin
-*.ipin vin
-x1 VDD out vin net1 GND adc_down
-XM1 VDD VDD net1 net1 sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
-+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=1 m=1
-XM3 net1 net1 GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
-+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=1 m=1
-V2 VDD GND 1.8
-.save i(v2)
-V1 vin GND sin(0.9 0.9 50Meg)
-.save i(v1)
-**** begin user architecture code
-
-.tran 0.01n 100n
-.save all
-
-
-.param mc_mm_switch=0
-.param mc_pr_switch=0
-.include /usr/local/share/pdk/sky130A/libs.tech/ngspice/corners/tt.spice
-.include /usr/local/share/pdk/sky130A/libs.tech/ngspice/r+c/res_typical__cap_typical.spice
-.include /usr/local/share/pdk/sky130A/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice
-.include /usr/local/share/pdk/sky130A/libs.tech/ngspice/corners/tt/specialized_cells.spice
-
-**** end user architecture code
-**.ends
-
-* expanding   symbol:  /home/rahul/Documents/adc/adc_down.sym # of pins=5
-** sym_path: /home/rahul/Documents/adc/adc_down.sym
-** sch_path: /home/rahul/Documents/adc/adc_down.sch
-.subckt adc_down VDD OUT Vp Vn VSS
-*.ipin Vn
-*.ipin Vp
-*.iopin VDD
-*.iopin VSS
-*.opin OUT
-XM1 net3 Vp net1 net1 sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
-+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=1 m=1
-XM2 net2 Vn net1 net1 sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
-+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=1 m=1
-XM3 net2 net2 VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
-+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=1 m=1
-XM4 net3 net2 VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
-+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=1 m=1
-XM5 net1 net4 VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
-+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=1 m=1
-XM6 VDD VDD net4 net4 sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
-+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=1 m=1
-XM7 net4 net4 VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
-+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=1 m=1
-XM8 OUT net3 VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=4 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
-+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=1 m=1
-XM9 OUT net4 VSS VSS sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
-+ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
-+ sa=0 sb=0 sd=0 mult=1 m=1
-.ends
-
-.GLOBAL GND
-```
-
-# ADC layout using ALIGN and postlayout analysis
-
-
-.sp 
-```
-.subckt adc_down VDD OUT Vp Vn VSS
-XM1 net3 Vp net1 net1 sky130_fd_pr__nfet_01v8 L=150n W=420n
-XM2 net2 Vn net1 net1 sky130_fd_pr__nfet_01v8 L=150n W=420n
-XM3 net2 net2 VDD VDD sky130_fd_pr__pfet_01v8 L=150n W=840n
-XM4 net3 net2 VDD VDD sky130_fd_pr__pfet_01v8 L=150n W=840n
-XM5 net1 net4 VSS VSS sky130_fd_pr__nfet_01v8 L=150n W=420n
-XM6 VDD VDD net4 net4 sky130_fd_pr__nfet_01v8 L=150n W=420n
-XM7 net4 net4 VSS VSS sky130_fd_pr__nfet_01v8 L=150n W=420n
-XM8 OUT net3 VDD VDD sky130_fd_pr__pfet_01v8 L=150n W=1680n
-XM9 OUT net4 VSS VSS sky130_fd_pr__nfet_01v8 L=150n W=420n
-.ends adc_down
-```
-
-gds
-![Screenshot from 2023-03-16 13-12-07](https://user-images.githubusercontent.com/50217106/226037671-3f8255ac-46df-4581-a348-cb2911496a36.png)
-
-gds read in magic
-
-![Screenshot from 2023-03-16 13-21-28](https://user-images.githubusercontent.com/50217106/226037763-d6b12046-74a2-4a00-a038-eee167b7de89.png)
-
-
-generated spice
+### xschem schematic
 
 
 
-spice with pre-layout excitations
+### testbench
 
-![Screenshot from 2023-03-16 13-53-09](https://user-images.githubusercontent.com/50217106/226037806-5b59cb3c-0ffc-49cd-a85a-a1ed12a7ab05.png)
 
-No matter what is the W and L value and nf corresponding to a W and L the output is always clamped to VDD for this schematic
+
+### ngspice simulation
+
+
+---> NOTE - The ADC circuit in the hierarchy has an I/O pin that shows GND pin. DO not name it as VSS or something. It will create problems in post-layout spice simulations. As NGSPICE understands GND and doesn't like any other name for it, even if it is in a subckt
+
+# ADC layout using ALIGN and postlayout SPICE analysis
+
+
 ## Verilog files required as input to the openFASOC flow for verilog generation
 ### Top level 
 ```verilog
