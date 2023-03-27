@@ -65,10 +65,15 @@ Remove the ports imported by magic as they are the main source of problem in pos
 After adding ports use    
  ```port makeall```   
 Now extract the layout to obtain spice netlist
- 
- 
+```
+extract all
+ext2spice cthresh 0 rthresh 0
+ext2spice
+```
+
 ### Post-Layout spice after adding pre-layput excitations and lib definitions
 ```
+
 
 
 ```
