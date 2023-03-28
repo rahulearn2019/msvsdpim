@@ -130,7 +130,7 @@ XM13 out net6 GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 ad='int((nf+1)/2) 
 
 ```
 
----> NOTE - The ADC circuit in the hierarchy has an I/O pin that shows GND pin. DO not name it as VSS or something. It will create problems in post-layout spice simulations. As NGSPICE understands GND and doesn't like any other name for it, even if it is in a subckt
+---> NOTE - The ADC circuit in the bottom hierarchy has an I/O pin that shows GND pin. DO not name it as VSS or something. It will create problems in post-layout spice simulations. As NGSPICE understands GND and doesn't like any other name for it, even if it is in a subckt
 
 ![Screenshot from 2023-03-28 01-23-59](https://user-images.githubusercontent.com/50217106/228070895-d100f490-445d-4f18-a7f2-06f5186c06f3.png)
 
@@ -163,7 +163,7 @@ XM13 out net6 GND GND sky130_fd_pr__nfet_01v8 L=150n W=1050n nf=4
 Remove the ports imported by magic as they are the main source of problem in post layout simulations. Relabel the ports
 - check the layer they are present in by using ```what``` command over a port selected by ```select area``` command in tkcon window.  
 - To remove port use - ```port remove``` command and to remove label use ```erase label``` command
-- Then add label at the exact same location on the exact same layer, you may need to add a specific layers where the port layer is not accessible
+- Then add label at the exact same location on the exact same layer, you may need to add a specific layers using ```paint``` or ```wire``` tools, where the port layer is not accessible.
 
 ![Screenshot from 2023-03-28 02-40-32](https://user-images.githubusercontent.com/50217106/228071735-33736dae-803e-4179-a4ed-2eb98acd1171.png)
 
