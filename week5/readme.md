@@ -355,11 +355,11 @@ module async4bituc(
  wire inter1;
  
  onebitADC adc1(
- .VDD(VDD), .VSS(VSS), .vin(inter1), .out(out), .vref(vref)
+ .VDD(VDD), .GND(VSS), .vin(inter1), .OUT(out), .VREF(vref)
  );
  
  ringosc osc1(
- .VDD(VDD), .VSS(VSS), .osc(inter1)
+ .VDD(VDD), .GND(VSS), .OUT(inter1)
  );
  
 endmodule
@@ -368,8 +368,8 @@ endmodule
 ```verilog
 module ringosc(
  input VDD,
- input VSS,
- output osc
+ output OUT,
+ input GND
  
 );
 
@@ -379,10 +379,10 @@ endmodule
 ```verilog
 module onebitADC(
  input VDD,
- input VSS,
- input vin,
- input vref,
- output out
+ input GND,
+ input VIN,
+ input VREF,
+ output OUT
 );
 
 
