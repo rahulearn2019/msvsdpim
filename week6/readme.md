@@ -9,9 +9,7 @@ The necessary sub-directories for avsd4bituc are created.
 
 ![Screenshot from 2023-03-21 03-45-24](https://user-images.githubusercontent.com/50217106/226679150-da9f3152-0875-4fb8-bbee-5d908d267302.png)
 
-The dummy verilog files are placed in the src directory -
-
-![Screenshot from 2023-03-21 22-23-07](https://user-images.githubusercontent.com/50217106/226683811-c87877b5-df45-4a49-9c7e-f7a1f04b1d3b.png)
+The dummy verilog files are placed in the src directory
 
 ### contents of the test.json file
 Include the frequency parameter in test.json file, and min and max frequency values are given according to the min max frequency vlaues defined in parameters.py script by default. In my case in parameters.py, by default min_freq is 5Mhz and max frequency is 12 Mhz. I went with the same frequencies for the design. 
