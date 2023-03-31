@@ -1,1 +1,1 @@
-GDS pbtained with OpenFASOC
+GDS obtained with OpenFASOC
