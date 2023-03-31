@@ -67,33 +67,40 @@ port make 1
 ### Concept of a voltage domain
 
 
-![Screenshot from 2023-03-21 22-39-11](https://user-images.githubusercontent.com/50217106/226687952-974a0516-800e-404c-b8ae-49ef8bd36dfa.png)
-
 Now a shell is opened in the avsd4bituc directory in generators and to generate verilog the corresponding code defined in top level makefile is used. In my case - "make sky130hd_auc_verilog"
 
 ![Screenshot from 2023-03-31 22-04-00](https://user-images.githubusercontent.com/50217106/229180452-ea9e3c96-57f2-494b-a7f7-9a5d1c967f1a.png)
 
-![Screenshot from 2023-03-22 01-21-56](https://user-images.githubusercontent.com/50217106/226725377-87b82655-b9b2-4de5-b47b-12b1b4a95e6a.png)
-
 To run the remaining steps - synthesis, placement, routing and finishing - we cd into flow directory and open a shell, then the following commands are used one by one -
 
 ```make synth```
-
+![Screenshot from 2023-03-31 22-04-21](https://user-images.githubusercontent.com/50217106/229181137-ac6ecba6-3ce4-47aa-8467-acc02fd1043e.png)
 
 ```make floorplan```
+![Screenshot from 2023-03-31 22-04-34](https://user-images.githubusercontent.com/50217106/229181225-b33eca80-c1dc-4b84-89ca-112a1d78d7b5.png)
 
+```make gui_floorplan```
+![Screenshot from 2023-03-31 22-04-58](https://user-images.githubusercontent.com/50217106/229181241-d6bd1db0-7449-46a1-9bc9-642689cca728.png)
 
 ```make place```
 
-
+``` make gui_place```
+Since the flow was placement of macros only, and there are no standard cells, floorplan and placement gui are same. It has been observed that floorplan stage uses the LEF while placement stage uses GDS. When origin co-ordinates in LEF and GDS are not matching, it leeds to displacement of cells in placement or floorplan stage.
+![Screenshot from 2023-03-31 22-05-19](https://user-images.githubusercontent.com/50217106/229182180-8257f39e-6456-4e64-96a8-370c1863c41e.png)
 ```make route```
 
+
+```make gui_route```
+
+![Screenshot from 2023-03-31 22-05-47](https://user-images.githubusercontent.com/50217106/229182254-d3c42b31-0e48-4d19-a083-af7892edbd90.png)
 
 ```make finish```
 ![Screenshot from 2023-03-31 22-06-17](https://user-images.githubusercontent.com/50217106/229180168-9ef30443-ff05-4844-b66c-5ca4cfe24e83.png)
 ![Screenshot from 2023-03-31 22-06-11](https://user-images.githubusercontent.com/50217106/229180221-1da11235-1c82-469d-9b59-502b51adab3b.png)
 
+The flow writes files genarated at individual steps in /avsd4bit-uc/flow/results
 
+![Screenshot from 2023-03-31 22-06-37](https://user-images.githubusercontent.com/50217106/229180119-d6d6cc7d-e801-4c7c-89e8-9e8f9276e541.png)
 
 
 
