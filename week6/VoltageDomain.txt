@@ -1,0 +1,31 @@
+In out floorplan.tcl script we can see there are two ways to initialize floorplan
+1. Using utilization factor
+2. Using die_area + core_area
+
+It can be seen in config.mk, our flow uses the 2nd method to create floorplan
+
+All other designs have used a smaller voltage domain VD1 using area is specified in config.mk using export VD1_area. Since, we have used other designs like temp_sens or pll as our reference, or config.mk also contains the same commands which creates a smaller voltage domain VD1 with the specified area.
+The cells to be placed in that smaller voltage domain is specified by domain_inst.txt ( export domain_inst_list) in confif.mk
+The script floorplan.tcl creates the voltage domain
+
+
+
+What is  a voltage domain in a design?
+As per the dynamic power equation P= a*C*V^2*f 
+a= switching probability
+C= capacitance being charged/discharged
+V= supply voltage
+f= clock frequency
+
+as supply voltage is sclaed down power reduces to a great extent. Hence, sub-systems that do not require higher speed of operation, can be operated at lower voltages, saving dynamic power.
+The design can have multiple voltages as per the performance requirement.
+*********IMPORTANT************
+sub-systems that operate at different voltages have separate power domains, each having separate supply and nets. This requires the use of level-shifters to pass a voltage signal from one domain
+to another
+
+*******
+To remove the voltage domain
+
+--remove export_domain_inst_list from config.mk
+-- remove export VD_1 area from config.mk
+--remove  create_voltage domain VD_1 from floorplan.tcl in the section - initialize floorplan using die_area core_area
