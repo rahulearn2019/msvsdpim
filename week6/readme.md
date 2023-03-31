@@ -71,7 +71,7 @@ port make 1
 
 Now a shell is opened in the avsd4bituc directory in generators and to generate verilog the corresponding code defined in top level makefile is used. In my case - "make sky130hd_auc_verilog"
 
-
+![Screenshot from 2023-03-31 22-04-00](https://user-images.githubusercontent.com/50217106/229180452-ea9e3c96-57f2-494b-a7f7-9a5d1c967f1a.png)
 
 ![Screenshot from 2023-03-22 01-21-56](https://user-images.githubusercontent.com/50217106/226725377-87b82655-b9b2-4de5-b47b-12b1b4a95e6a.png)
 
@@ -90,7 +90,8 @@ To run the remaining steps - synthesis, placement, routing and finishing - we cd
 
 
 ```make finish```
-
+![Screenshot from 2023-03-31 22-06-17](https://user-images.githubusercontent.com/50217106/229180168-9ef30443-ff05-4844-b66c-5ca4cfe24e83.png)
+![Screenshot from 2023-03-31 22-06-11](https://user-images.githubusercontent.com/50217106/229180221-1da11235-1c82-469d-9b59-502b51adab3b.png)
 
 
 
