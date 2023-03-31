@@ -25,22 +25,7 @@ The same frequency values are fed in modelfile.csv file present in tools directo
 ### modifications in toplevel makefile - edit the commands that will be used for different purposes - verilog generation, rtl2gds etc.
 ![Screenshot from 2023-03-21 03-45-33](https://user-images.githubusercontent.com/50217106/226678613-44fdf5ba-1ee5-41a2-8268-d09fc99f936d.png)
 
-### contents of the tools directory 
-
-![Screenshot from 2023-03-21 21-58-33](https://user-images.githubusercontent.com/50217106/226680028-e45414a2-0a3d-48de-8699-02d96ee274ef.png)
-
-avsd4bituc-gen.py file is created and modifed
-
-<details>
-<summary>avsd4bituc-gen.py script</summary>
-<br>
-
-```python
-
-```
-
-</details>
-
+#### avsd4bituc-gen.py, parameters.py and parse_rpt.py files in tools directory are modified as per generator directory structure
 
 ### The LEF and GDS of the auxilliary cells are placed in avsd4bituc/blocks/sky130hd - lef and gds folders respectively
 To create LEF and GDS
