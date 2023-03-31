@@ -67,11 +67,17 @@ To run the remaining steps - synthesis, placement, routing and finishing - we cd
 
 ```make place```
 
+![Screenshot from 2023-03-31 22-01-01](https://user-images.githubusercontent.com/50217106/229186331-9519f640-2e87-4f05-93c4-81795fd40e0f.png)
+
+![Screenshot from 2023-03-31 22-01-14](https://user-images.githubusercontent.com/50217106/229186364-98e58c76-9660-4bb9-b122-a19e8a5bfacb.png)
+
+
 ``` make gui_place```
 Since the flow was placement of macros only, and there are no standard cells, floorplan and placement gui are same. It has been observed that floorplan stage uses the LEF while placement stage uses GDS. When origin co-ordinates in LEF and GDS are not matching, it leeds to displacement of cells in placement or floorplan stage.
 ![Screenshot from 2023-03-31 22-05-19](https://user-images.githubusercontent.com/50217106/229182180-8257f39e-6456-4e64-96a8-370c1863c41e.png)
-```make route```
 
+```make route```
+![Screenshot from 2023-03-31 22-00-08](https://user-images.githubusercontent.com/50217106/229186202-76fcd4d4-5646-450b-959d-a30c78d3b2f9.png)
 
 ```make gui_route```
 
@@ -84,6 +90,26 @@ Since the flow was placement of macros only, and there are no standard cells, fl
 The flow writes files genarated at individual steps in /avsd4bit-uc/flow/results
 
 ![Screenshot from 2023-03-31 22-06-37](https://user-images.githubusercontent.com/50217106/229180119-d6d6cc7d-e801-4c7c-89e8-9e8f9276e541.png)
+
+## Final Layout viewed in KLAYOUT
+
+![Screenshot from 2023-03-31 21-55-58](https://user-images.githubusercontent.com/50217106/229185031-87969e08-c276-4ee2-94fb-facd609ed103.png)
+
+
+![Screenshot from 2023-03-31 22-39-02](https://user-images.githubusercontent.com/50217106/229185615-cda9b045-0a88-40f3-998d-4fb298552ad2.png)
+
+To check if design is DRC clean, ```make clean_all``` in flow directory and come to the generators folder and as per your makefile, use the make command that does complete verilog generation, RTL-GDS and physical verification. In my case - make sky130_auc_full
+
+![Screenshot from 2023-03-31 21-58-15](https://user-images.githubusercontent.com/50217106/229184959-5891ce57-e7be-405a-a290-1a5df15f5d26.png)
+
+
+
+
+
+
+Design is DRC clean for
+DIE_AREA =  0 0 100 100
+CORE_AREA = 10 10 90 90
 
 
 
