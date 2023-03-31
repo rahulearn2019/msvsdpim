@@ -76,7 +76,7 @@ Now a shell is opened in the avsd4bituc directory in generators and to generate 
 ![Screenshot from 2023-03-22 01-21-56](https://user-images.githubusercontent.com/50217106/226725377-87b82655-b9b2-4de5-b47b-12b1b4a95e6a.png)
 
 To run the remaining steps - synthesis, placement, routing and finishing - we cd into flow directory and open a shell, then the following commands are used one by one -
-## Synthesis
+
 ```make synth```
 
 
