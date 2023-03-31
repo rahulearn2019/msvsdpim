@@ -47,10 +47,7 @@ port make 1
 6. Domain Instances are removed if any(since we do not need any additional voltage domain. Domain instances LIST will use a domain_instances.txt which should contain cells to be placed in that domain.
 7. VD1 area is removed  represents the area that needs to be alloted to a smaller voltage domain)
 
-### Concept of a voltage domain
-
-
-Now a shell is opened in the avsd4bituc directory in generators and to generate verilog the corresponding code defined in top level makefile is used. In my case - "make sky130hd_auc_verilog"
+---> Now a shell is opened in the avsd4bituc directory in generators and to generate verilog the corresponding code defined in top level makefile is used. In my case - "make sky130hd_auc_verilog"
 
 ![Screenshot from 2023-03-31 22-04-00](https://user-images.githubusercontent.com/50217106/229180452-ea9e3c96-57f2-494b-a7f7-9a5d1c967f1a.png)
 
@@ -71,13 +68,14 @@ To run the remaining steps - synthesis, placement, routing and finishing - we cd
 
 ![Screenshot from 2023-03-31 22-01-14](https://user-images.githubusercontent.com/50217106/229186364-98e58c76-9660-4bb9-b122-a19e8a5bfacb.png)
 
-
 ``` make gui_place```
 Since the flow was placement of macros only, and there are no standard cells, floorplan and placement gui are same. It has been observed that floorplan stage uses the LEF while placement stage uses GDS. When origin co-ordinates in LEF and GDS are not matching, it leeds to displacement of cells in placement or floorplan stage.
 ![Screenshot from 2023-03-31 22-05-19](https://user-images.githubusercontent.com/50217106/229182180-8257f39e-6456-4e64-96a8-370c1863c41e.png)
 
 ```make route```
 ![Screenshot from 2023-03-31 22-00-08](https://user-images.githubusercontent.com/50217106/229186202-76fcd4d4-5646-450b-959d-a30c78d3b2f9.png)
+
+![Screenshot from 2023-03-31 22-40-19](https://user-images.githubusercontent.com/50217106/229188630-ccb9a604-db5f-4412-b24d-d4a19d2ce907.png)
 
 ```make gui_route```
 
