@@ -20,8 +20,6 @@ These values can be edited in parameters.py file in tools folder
 
 The same frequency values are fed in modelfile.csv file present in tools directory.
 
-![Screenshot from 2023-03-22 02-15-51](https://user-images.githubusercontent.com/50217106/226737026-ed361147-f77a-4556-89d9-8ba54ff4b9e8.png)
-
 ![Screenshot from 2023-03-22 01-06-28](https://user-images.githubusercontent.com/50217106/226722335-17e836b1-a2d0-4903-a950-d385f0229edd.png)
 
 ### modifications in toplevel makefile - edit the commands that will be used for different purposes - verilog generation, rtl2gds etc.
