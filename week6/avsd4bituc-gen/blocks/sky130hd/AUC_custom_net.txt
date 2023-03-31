@@ -1,3 +1,0 @@
-r_VIN
-vco0 VIN
-cp0 VIN
