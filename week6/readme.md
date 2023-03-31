@@ -57,11 +57,7 @@ port make 1
 - Write GDS - ```gds write onebitADC.gds```
 - write LEF - ```lef writeall```
 
-![Screenshot from 2023-03-21 20-01-36](https://user-images.githubusercontent.com/50217106/226682116-0272ff73-fda6-4d24-871f-5ce5811e9a77.png)
-
-![Screenshot from 2023-03-21 20-01-19](https://user-images.githubusercontent.com/50217106/226682130-094d3d7a-bc7f-456b-b725-3fe2016b6bb8.png)
-
-The config.mk file in design directory is modified -
+### The config.mk file in design directory is modified -
 1. DESIGN_NICKNAME is changed
 2. DESIGN_NAME is changed
 3. verilog file top-module name is changed
