@@ -1,0 +1,20 @@
+{
+	"detailedplace__design__instance__displacement__total": 0,
+	"detailedplace__design__instance__displacement__mean": 0,
+	"detailedplace__design__instance__displacement__max": 0,
+	"detailedplace__route__wirelength__estimated": 202.675,
+	"detailedplace__design__violations": 0,
+	"detailedplace__timing__setup__tns": 0,
+	"detailedplace__timing__setup__ws": 1e+39,
+	"detailedplace__design__io": 4,
+	"detailedplace__design__die__area": 10000,
+	"detailedplace__design__core__area": 6277.27,
+	"detailedplace__design__instance__count": 167,
+	"detailedplace__design__instance__area": 1160.17,
+	"detailedplace__design__instance__count__stdcell": 165,
+	"detailedplace__design__instance__area__stdcell": 589.315,
+	"detailedplace__design__instance__count__macros": 2,
+	"detailedplace__design__instance__area__macros": 570.851,
+	"detailedplace__design__instance__utilization": 0.18482,
+	"detailedplace__design__instance__utilization__stdcell": 0.103272
+}

@@ -1,0 +1,8 @@
+OpenROAD v2.0-6895-g5c85b36f8 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[WARNING PDN-1024] -verbose has been deprecated.
+[INFO PDN-0001] Inserting grid: grid
+[INFO PDN-0001] Inserting grid: CORE_macro_grid_2 - osc1
+[INFO PDN-0001] Inserting grid: CORE_macro_grid_2 - adc1
+Elapsed time: 0:00.62[h:]min:sec. CPU time: user 0.54 sys 0.07 (99%). Peak memory: 100844KB.

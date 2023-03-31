@@ -1,0 +1,194 @@
+OpenROAD v2.0-6895-g5c85b36f8 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO] Deleted 0 routing obstructions
+[INFO RCX-0431] Defined process_corner X with ext_model_index 0
+[INFO RCX-0029] Defined extraction corner X
+[INFO RCX-0008] extracting parasitics of async4bituc ...
+[INFO RCX-0435] Reading extraction model file /home/rahul/openfasoc/openfasoc/generators/avsd4bituc-gen/flow/../../../common/platforms/sky130hd/rcx_patterns.rules ...
+[INFO RCX-0436] RC segment generation async4bituc (max_merge_res 50.0) ...
+[INFO RCX-0040] Final 8 rc segments
+[INFO RCX-0439] Coupling Cap extraction async4bituc ...
+[INFO RCX-0440] Coupling threshhold is 0.1000 fF, coupling capacitance less than 0.1000 fF will be grounded.
+[INFO RCX-0043] 283 wires to be extracted
+[INFO RCX-0442] 93% completion -- 265 wires have been extracted
+[INFO RCX-0442] 100% completion -- 283 wires have been extracted
+[INFO RCX-0045] Extract 4 nets, 10 rsegs, 10 caps, 0 ccs
+[INFO RCX-0015] Finished extracting async4bituc.
+[INFO RCX-0016] Writing SPEF ...
+[INFO RCX-0443] 3 nets finished
+[INFO RCX-0017] Finished writing SPEF ...
+[WARNING PSM-0016] Voltage pad location (VSRC) file not specified, defaulting pad location to checkerboard pattern on core area.
+[WARNING PSM-0017] X direction bump pitch is not specified, defaulting to 140um.
+[WARNING PSM-0018] Y direction bump pitch is not specified, defaulting to 140um.
+[WARNING PSM-0063] Specified bump pitches of 140.000 and 140.000 are less than core width of 79.580 or core height of 78.880. Changing bump location to the center of the die at (49.910, 50.320).
+[WARNING PSM-0065] VSRC location not specified, using default checkerboard pattern with one VDD every size bumps in x-direction and one in two bumps in the y-direction
+[INFO PSM-0076] Setting metal node density to be standard cell height times 5.
+[WARNING PSM-0030] VSRC location at (49.910um, 50.320um) and size 10.000um, is not located on an existing power stripe node. Moving to closest node at (39.120um, 41.980um).
+[INFO PSM-0031] Number of PDN nodes on net VDD = 623.
+[INFO PSM-0064] Number of voltage sources = 1.
+[INFO PSM-0040] All PDN stripes on net VDD are connected.
+########## IR report #################
+Worstcase voltage: 1.80e+00 V
+Average IR drop  : 7.20e-11 V
+Worstcase IR drop: 1.90e-10 V
+######################################
+[WARNING PSM-0016] Voltage pad location (VSRC) file not specified, defaulting pad location to checkerboard pattern on core area.
+[WARNING PSM-0017] X direction bump pitch is not specified, defaulting to 140um.
+[WARNING PSM-0018] Y direction bump pitch is not specified, defaulting to 140um.
+[WARNING PSM-0063] Specified bump pitches of 140.000 and 140.000 are less than core width of 79.580 or core height of 78.880. Changing bump location to the center of the die at (49.910, 50.320).
+[WARNING PSM-0065] VSRC location not specified, using default checkerboard pattern with one VDD every size bumps in x-direction and one in two bumps in the y-direction
+[INFO PSM-0076] Setting metal node density to be standard cell height times 5.
+[WARNING PSM-0030] VSRC location at (49.910um, 50.320um) and size 10.000um, is not located on an existing power stripe node. Moving to closest node at (52.620um, 56.530um).
+[INFO PSM-0031] Number of PDN nodes on net VSS = 682.
+[INFO PSM-0064] Number of voltage sources = 1.
+[INFO PSM-0040] All PDN stripes on net VSS are connected.
+########## IR report #################
+Worstcase voltage: 8.58e-11 V
+Average IR drop  : 6.13e-11 V
+Worstcase IR drop: 8.58e-11 V
+######################################
+
+==========================================================================
+finish report_tns
+--------------------------------------------------------------------------
+tns 0.00
+
+==========================================================================
+finish report_wns
+--------------------------------------------------------------------------
+wns 0.00
+
+==========================================================================
+finish report_worst_slack
+--------------------------------------------------------------------------
+worst slack INF
+
+==========================================================================
+finish report_clock_skew
+--------------------------------------------------------------------------
+
+==========================================================================
+finish report_checks -path_delay min
+--------------------------------------------------------------------------
+No paths found.
+
+==========================================================================
+finish report_checks -path_delay max
+--------------------------------------------------------------------------
+No paths found.
+
+==========================================================================
+finish report_checks -unconstrained
+--------------------------------------------------------------------------
+Startpoint: vref (input port)
+Endpoint: adc1/VREF (internal pin)
+Path Group: (none)
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                          0.00    0.00 ^ input external delay
+                  0.00    0.00    0.00 ^ vref (in)
+     1    0.01                           vref (net)
+                  0.00    0.00    0.00 ^ adc1/VREF (onebitADC)
+                                  0.00   data arrival time
+-----------------------------------------------------------------------------
+(Path is unconstrained)
+
+
+
+==========================================================================
+finish report_check_types -max_slew -max_cap -max_fanout -violators
+--------------------------------------------------------------------------
+
+==========================================================================
+finish max_slew_check_slack
+--------------------------------------------------------------------------
+Inf
+
+==========================================================================
+finish max_slew_check_limit
+--------------------------------------------------------------------------
+Inf
+
+==========================================================================
+finish max_fanout_check_slack
+--------------------------------------------------------------------------
+1.0000000150474662e+30
+
+==========================================================================
+finish max_fanout_check_limit
+--------------------------------------------------------------------------
+1.0000000150474662e+30
+
+==========================================================================
+finish max_capacitance_check_slack
+--------------------------------------------------------------------------
+Inf
+
+==========================================================================
+finish max_capacitance_check_limit
+--------------------------------------------------------------------------
+Inf
+
+==========================================================================
+finish max_slew_violation_count
+--------------------------------------------------------------------------
+max slew violation count 0
+
+==========================================================================
+finish max_fanout_violation_count
+--------------------------------------------------------------------------
+max fanout violation count 0
+
+==========================================================================
+finish max_cap_violation_count
+--------------------------------------------------------------------------
+max cap violation count 0
+
+==========================================================================
+finish setup_violation_count
+--------------------------------------------------------------------------
+setup violation count 0
+
+==========================================================================
+finish hold_violation_count
+--------------------------------------------------------------------------
+hold violation count 0
+
+==========================================================================
+finish critical path delay
+--------------------------------------------------------------------------
+-1
+
+==========================================================================
+finish critical path slack
+--------------------------------------------------------------------------
+0
+
+==========================================================================
+finish slack div critical path delay
+--------------------------------------------------------------------------
+0.000000
+
+==========================================================================
+finish report_power
+--------------------------------------------------------------------------
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Combinational          0.00e+00   0.00e+00   3.30e-10   3.30e-10 100.0%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  0.00e+00   0.00e+00   3.30e-10   3.30e-10 100.0%
+                           0.0%       0.0%     100.0%
+
+==========================================================================
+finish report_design_area
+--------------------------------------------------------------------------
+Design area 1160 u^2 18% utilization.
+
+Elapsed time: 0:02.07[h:]min:sec. CPU time: user 1.23 sys 0.55 (86%). Peak memory: 226600KB.

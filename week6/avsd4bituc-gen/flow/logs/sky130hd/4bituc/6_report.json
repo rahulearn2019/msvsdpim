@@ -1,0 +1,15 @@
+{
+	"finish__timing__setup__tns": 0,
+	"finish__timing__setup__ws": 1e+39,
+	"finish__design__io": 4,
+	"finish__design__die__area": 10000,
+	"finish__design__core__area": 6277.27,
+	"finish__design__instance__count": 167,
+	"finish__design__instance__area": 1160.17,
+	"finish__design__instance__count__stdcell": 165,
+	"finish__design__instance__area__stdcell": 589.315,
+	"finish__design__instance__count__macros": 2,
+	"finish__design__instance__area__macros": 570.851,
+	"finish__design__instance__utilization": 0.18482,
+	"finish__design__instance__utilization__stdcell": 0.103272
+}

@@ -1,0 +1,305 @@
+OpenROAD v2.0-6895-g5c85b36f8 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO GRT-0020] Min routing layer: met1
+[INFO GRT-0021] Max routing layer: met5
+[INFO GRT-0022] Global adjustment: 0%
+[INFO GRT-0023] Grid origin: (0, 0)
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0088] Layer li1     Track-Pitch = 0.4600  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met1    Track-Pitch = 0.3400  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met2    Track-Pitch = 0.4600  line-2-Via Pitch: 0.3500
+[INFO GRT-0088] Layer met3    Track-Pitch = 0.6800  line-2-Via Pitch: 0.6150
+[INFO GRT-0088] Layer met4    Track-Pitch = 0.9200  line-2-Via Pitch: 1.0400
+[INFO GRT-0088] Layer met5    Track-Pitch = 3.4000  line-2-Via Pitch: 3.1100
+[INFO GRT-0019] Found 0 clock nets.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 2
+[INFO GRT-0003] Macros: 2
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VDD has wires outside die area.
+[WARNING GRT-0040] Net VSS has wires outside die area.
+[WARNING GRT-0040] Net VSS has wires outside die area.
+[WARNING GRT-0040] Net VSS has wires outside die area.
+[INFO GRT-0004] Blockages: 47
+
+[INFO GRT-0053] Routing resources analysis:
+          Routing      Original      Derated      Resource
+Layer     Direction    Resources     Resources    Reduction (%)
+---------------------------------------------------------------
+li1        Vertical            0             0          0.00%
+met1       Horizontal       3920          2071          47.17%
+met2       Vertical         2940          1891          35.68%
+met3       Horizontal       1960          1361          30.56%
+met4       Vertical         1176           518          55.95%
+met5       Horizontal        392           156          60.20%
+---------------------------------------------------------------
+
+[INFO GRT-0197] Via related to pin nodes: 5
+[INFO GRT-0198] Via related Steiner nodes: 0
+[INFO GRT-0199] Via filling finished.
+[INFO GRT-0111] Final number of vias: 8
+[INFO GRT-0112] Final usage 3D: 47
+
+[INFO GRT-0096] Final congestion report:
+Layer         Resource        Demand        Usage (%)    Max H / Max V / Total Overflow
+---------------------------------------------------------------------------------------
+li1                  0             0            0.00%             0 /  0 /  0
+met1              2071            11            0.53%             0 /  0 /  0
+met2              1891            12            0.63%             0 /  0 /  0
+met3              1361             0            0.00%             0 /  0 /  0
+met4               518             0            0.00%             0 /  0 /  0
+met5               156             0            0.00%             0 /  0 /  0
+---------------------------------------------------------------------------------------
+Total             5997            23            0.38%             0 /  0 /  0
+
+[INFO GRT-0018] Total wirelength: 338 um
+[INFO GRT-0014] Routed nets: 2
+[WARNING GRT-0026] Missing route to pin adc1/VREF.
+
+==========================================================================
+global route report_tns
+--------------------------------------------------------------------------
+tns 0.00
+
+==========================================================================
+global route report_wns
+--------------------------------------------------------------------------
+wns 0.00
+
+==========================================================================
+global route report_worst_slack
+--------------------------------------------------------------------------
+worst slack INF
+
+==========================================================================
+global route report_clock_skew
+--------------------------------------------------------------------------
+
+==========================================================================
+global route report_checks -path_delay min
+--------------------------------------------------------------------------
+No paths found.
+
+==========================================================================
+global route report_checks -path_delay max
+--------------------------------------------------------------------------
+No paths found.
+
+==========================================================================
+global route report_checks -unconstrained
+--------------------------------------------------------------------------
+Startpoint: vref (input port)
+Endpoint: adc1/VREF (internal pin)
+Path Group: (none)
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                          0.00    0.00 ^ input external delay
+                  0.00    0.00    0.00 ^ vref (in)
+     1    0.00                           vref (net)
+                  0.00    0.00    0.00 ^ adc1/VREF (onebitADC)
+                                  0.00   data arrival time
+-----------------------------------------------------------------------------
+(Path is unconstrained)
+
+
+
+==========================================================================
+global route report_check_types -max_slew -max_cap -max_fanout -violators
+--------------------------------------------------------------------------
+
+==========================================================================
+global route max_slew_check_slack
+--------------------------------------------------------------------------
+Inf
+
+==========================================================================
+global route max_slew_check_limit
+--------------------------------------------------------------------------
+Inf
+
+==========================================================================
+global route max_fanout_check_slack
+--------------------------------------------------------------------------
+1.0000000150474662e+30
+
+==========================================================================
+global route max_fanout_check_limit
+--------------------------------------------------------------------------
+1.0000000150474662e+30
+
+==========================================================================
+global route max_capacitance_check_slack
+--------------------------------------------------------------------------
+Inf
+
+==========================================================================
+global route max_capacitance_check_limit
+--------------------------------------------------------------------------
+Inf
+
+==========================================================================
+global route max_slew_violation_count
+--------------------------------------------------------------------------
+max slew violation count 0
+
+==========================================================================
+global route max_fanout_violation_count
+--------------------------------------------------------------------------
+max fanout violation count 0
+
+==========================================================================
+global route max_cap_violation_count
+--------------------------------------------------------------------------
+max cap violation count 0
+
+==========================================================================
+global route setup_violation_count
+--------------------------------------------------------------------------
+setup violation count 0
+
+==========================================================================
+global route hold_violation_count
+--------------------------------------------------------------------------
+hold violation count 0
+
+==========================================================================
+global route critical path delay
+--------------------------------------------------------------------------
+-1
+
+==========================================================================
+global route critical path slack
+--------------------------------------------------------------------------
+0
+
+==========================================================================
+global route slack div critical path delay
+--------------------------------------------------------------------------
+0.000000
+
+==========================================================================
+global route report_power
+--------------------------------------------------------------------------
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Combinational          0.00e+00   0.00e+00   3.30e-10   3.30e-10 100.0%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  0.00e+00   0.00e+00   3.30e-10   3.30e-10 100.0%
+                           0.0%       0.0%     100.0%
+
+==========================================================================
+global route report_design_area
+--------------------------------------------------------------------------
+Design area 1160 u^2 18% utilization.
+
+
+==========================================================================
+check_antennas
+--------------------------------------------------------------------------
+[WARNING ANT-0011] -report_violating_nets is deprecated.
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO ANT-0002] Found 0 net violations.
+[INFO ANT-0001] Found 0 pin violations.
+[WARNING FLW-0006] No clocks found.
+[INFO FLW-0011] Path endpoint count 1
+Elapsed time: 0:00.62[h:]min:sec. CPU time: user 0.50 sys 0.11 (98%). Peak memory: 156044KB.
