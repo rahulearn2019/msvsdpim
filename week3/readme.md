@@ -102,18 +102,22 @@ The default circuit’s physical design generation can be divided into three par
 - Post-layout verification (DRC and LVS)
 
 ### Verilog Generation
-To run verilog generation, type the command ```make sky130hd_temp_verilog```
-![Screenshot from 2023-02-26 21-29-13](https://user-images.githubusercontent.com/50217106/221421589-717aedf0-c2c1-4acf-90b6-da178d9d6e64.png)
+The platform determines the pdk that will be used by OpenFASOC for the design and it's location is provided by providing the PDK_ROOT environment variable in the ```/openfasoc/generators/temp_sense``` directory
 
-To run the default generator, ```cd``` into ```~/openfasoc/generators/temp_sense``` and use 
-```make sky130hd_temp```
-If a PDK_ROOT error arises, then provide PDK_ROOT before running the above 
 ```export PDK_ROOT=usr/local/share/pdk```
-If OpenROAD not found in path error arises, provide path to openROAD along with PDK_ROOT 
+
+Since OpenFASOC flow needs Yosys for logic synthesis, and OpenROAD for RTL2GDS and post-layout verification, we need to export the PATH and OPENROAD environment variables as below in the ```~/openfasoc/generators/temp_sense``` directory
+
 ```
 export OPENROAD=~/OpenROAD-flow-scripts/tools/OpenROAD/
 export PATH=/home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin:/home/rahul/OpenROAD-flow-scripts/tools/install/yosys/bin:/home/rahul/OpenROAD-flow-scripts/tools/install/LSOracle/bin:$PATH
 ```
+
+To generate verilog, type the command ```make sky130hd_temp_verilog```
+![Screenshot from 2023-02-26 21-29-13](https://user-images.githubusercontent.com/50217106/221421589-717aedf0-c2c1-4acf-90b6-da178d9d6e64.png)
+
+To build the default generator(temp_sense), ```cd``` into ```~/openfasoc/generators/temp_sense``` and use 
+```make sky130hd_temp```
 
 After a successful run the following message is displayed
 
