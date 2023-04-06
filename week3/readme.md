@@ -62,7 +62,7 @@ cd flow
 make DESIGN_CONFIG=./designs/sky130hd/ibex/config.mk
 ```
 ![Screenshot from 2023-02-26 16-40-11](https://user-images.githubusercontent.com/50217106/221414408-2727fef3-905a-43f6-bd9f-720ccf99e506.png)
-OpenROAD performs 6 iterations to reach the optimized design with the algorthms it uses to perform RTL2GDS.
+
 ![Screenshot from 2023-02-26 16-59-39](https://user-images.githubusercontent.com/50217106/221416830-ded37c1c-1c7c-44ff-ab04-8395baf46e01.png)
 
 ### SDCs used for ibex 
