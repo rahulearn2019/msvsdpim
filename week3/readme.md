@@ -51,8 +51,7 @@ cd
 git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts
 cd OpenROAD-flow-scripts
 ./build_openroad.sh –local
-export OPENROAD=~/OpenROAD-flow-scripts/tools/OpenROAD
-export PATH=/home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin:/home/rahul/OpenROAD-flow-scripts/tools/install/yosys/bin:/home/rahul/OpenROAD-flow-scripts/tools/install/LSOracle/bin:$PATH
+/tools/install/LSOracle/bin:$PATH
 ```
 ## Testing installation of OpenROAD
 We perform RTL2GDS of ibex. ibex is a 32 bit RISC-V CPU core ( RV32IMC/EMC ) with a two-stage pipeline. 
