@@ -51,7 +51,6 @@ cd
 git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts
 cd OpenROAD-flow-scripts
 ./build_openroad.sh –local
-
 ```
 ## Testing installation of OpenROAD
 We perform RTL2GDS of ibex. ibex is a 32 bit RISC-V CPU core ( RV32IMC/EMC ) with a two-stage pipeline. 
