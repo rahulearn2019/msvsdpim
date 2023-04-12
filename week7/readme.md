@@ -1,29 +1,35 @@
-# Design - In memory logic Operations using 8T-SRAM cells
+## Design - In memory logic Operations using 8T-SRAM cells
 
 
 
 
-# pre-layout analysis
-
-
-
-
-
-
-# .sp fed to ALIGN
+## pre-layout analysis
 
 
 
 
 
-# ALIGN generated layout in Klayout
+
+## .sp fed to ALIGN
 
 
 
 
-# OpenFASOC FLOW for MIXED SIGNAL BLOCK
+
+## ALIGN generated layout in Klayout
 
 
 
 
-# Verilog for MIXED SIGNAL BLOCK
+## OpenFASOC FLOW for MIXED SIGNAL BLOCK
+
+
+
+
+## Verilog for MIXED SIGNAL BLOCK
+
+
+
+
+
+
