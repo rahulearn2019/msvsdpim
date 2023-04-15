@@ -176,7 +176,7 @@ ext2spice cthresh 0 rthresh 0
 ext2spice
 ```
 
-### Post-Layout spice after adding pre-layput excitations and lib definitions
+### Post-Layout spice after adding pre-layout excitations and lib definitions
 ```
 * SPICE3 file created from ADC_FLASH_0.ext - technology: sky130A
 V1 VDD GND 1.8
