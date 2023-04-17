@@ -102,7 +102,7 @@ The default circuit’s physical design generation can be divided into three par
 ### Verilog Generation
 The platform determines the pdk that will be used by OpenFASOC for the design and it's location is provided by providing the PDK_ROOT environment variable in the ```/openfasoc/generators/temp_sense``` directory
 
-```export PDK_ROOT=usr/local/share/pdk```
+```export PDK_ROOT=/home/rahul/open_pdks/sky130/```
 
 Since OpenFASOC flow needs Yosys for logic synthesis, and OpenROAD for RTL2GDS and post-layout verification, we need to export the PATH and OPENROAD environment variables as below in the ```~/openfasoc/generators/temp_sense``` directory
 
