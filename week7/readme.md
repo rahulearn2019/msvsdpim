@@ -373,6 +373,7 @@ When the SRAM bit cells are both written with 1, NOR operation should give a 0 a
 Clearly post-layout results are similar to pre-layout
 
 ## OpenFASOC FLOW for MIXED SIGNAL BLOCK
+Our mixed signal block comprises of an analog block which is the 8TSRAM cells and read circuitry that performs NOR and OR, and the digital block comprises of a 2*1 MUX which selects one of the two logics depending on a select line input.
 
 ### Verilog for MIXED SIGNAL BLOCK
 
@@ -436,6 +437,64 @@ assign out = sel?in2:in1;
 endmodule
 
 ```
+
+The digital block 2_1 MUX will be placed as a standard cell in the design during the placement stage of the OpenFASOC flow, while the analog block will be treated as a macro and placed during the floorplan stage.
+
+### Verilog generation
+
+In the directory of the generator IMC-gen
+```export PDK_ROOT=/home/rahul/open_pdks/sky130/```
+```make sky130hd_imc_verilog```
+
+
+
+### OpenROAD flow 
+
+In the flow directory of the generator IMC-gen
+```export <<<path to OpenROAD
+
+
+```
+```make synth```
+
+
+
+
+
+```make floorplan```
+
+
+
+
+```make gui_floorplan```
+
+
+
+```make place```
+
+
+
+```make gui_place``
+
+
+
+```make route```
+
+
+
+
+```make gui_route```
+
+
+
+
+```make finish```
+
+
+
+
+
+The final GDS has some drc errors 
 
 
 
