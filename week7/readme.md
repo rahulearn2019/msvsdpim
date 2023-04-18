@@ -1,7 +1,15 @@
 ## Design - In memory logic Operations using 8T-SRAM cells
 
 
+8TSRAM cells are written with values either 0 or 1. The value stored is then fed to the read circuitry of 8TSRAM cells(Gate of the nfets) The RBL(Read Bit line) capacitor is precharged. Both 8TSRAM cells are written with 0 or 1, which is equivalent to providing input to a logic GATE. After the values are written, a read bit line enable mosfet switches on. This happens together with a read word line being enabled. This allows the precharged capacitor to discharge via any of the two nfets if their gate potential is high( gate potential high means that 8TSRAM cell has logic 1 written to it). This makes the precahrged capacitor potential mimic a logic value corresponding to a NOR operation. This NOR output from capacitor is input to a CMOS inverter to generate an OR operation. The verilog code of MUX gets input Data[1:0]. When Sel(select line) is 1 the output from the analog port generating logic operation OR is chosen. When Sel is 0 the output from the analog port generating NOR is chosen.
 
+
+![image](https://user-images.githubusercontent.com/50217106/232707806-afce17c3-e3ae-4f3d-a97a-a638a79ba1fb.png)
+
+![image](https://user-images.githubusercontent.com/50217106/232707976-989f9375-b24f-481d-9888-b9e408c57bb1.png)
+
+
+![image](https://user-images.githubusercontent.com/50217106/232708046-ea6f0d65-6657-4bca-a33d-ac6ceb79bab9.png)
 
 ## pre-layout analysis
 Design in Xschem
@@ -9,15 +17,20 @@ Design in Xschem
 ![Screenshot from 2023-04-16 00-41-30](https://user-images.githubusercontent.com/50217106/232278766-f15ea202-18b1-46bc-b0e5-67cea7ef1f21.png)
 
 ![Screenshot from 2023-04-16 00-41-39](https://user-images.githubusercontent.com/50217106/232278796-e2fbf48b-74a2-483c-adac-5765fbe0582d.png)
+
+The read operation happens when RWL is enabled(in my design it's enabled when it goes high).
+
 OR and NOR operation with 0 written to both 8TSRAM cells
 
+![Screenshot from 2023-04-18 12-58-23](https://user-images.githubusercontent.com/50217106/232706520-883406c0-8a0a-4109-b85b-ea412b6a5474.png)
 
 OR and NOR operation with 0 written to one and 1 written to another SRAM cell
 
+![Screenshot from 2023-04-18 12-59-41](https://user-images.githubusercontent.com/50217106/232706626-8f82a35d-60f3-455f-9702-28d707a9e523.png)
 
 OR and NOR operation with 1 written to both SRAM cells
 
-
+![Screenshot from 2023-04-18 13-00-55](https://user-images.githubusercontent.com/50217106/232706288-3bb588fc-b196-42cc-b716-842e72b9a938.png)
 
 Pre-layout SPICE
 ```
@@ -361,10 +374,7 @@ Clearly post-layout results are similar to pre-layout
 
 ## OpenFASOC FLOW for MIXED SIGNAL BLOCK
 
-
-
-
-## Verilog for MIXED SIGNAL BLOCK
+### Verilog for MIXED SIGNAL BLOCK
 
 
 
