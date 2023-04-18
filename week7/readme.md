@@ -494,7 +494,16 @@ In the flow directory of the generator IMC-gen
 
 
 
+
+![Screenshot from 2023-04-18 00-39-19](https://user-images.githubusercontent.com/50217106/232712742-fd7a560a-27a1-43db-bf28-c1fda355a3aa.png)
+
 The final GDS has some drc errors 
 
+magic view
+![Screenshot from 2023-04-18 00-47-37](https://user-images.githubusercontent.com/50217106/232713040-181fe7d8-f0d9-4e75-ab1e-3ca651bc8f50.png)
 
 
+
+klayout view
+
+![Screenshot from 2023-04-18 00-49-02](https://user-images.githubusercontent.com/50217106/232713189-90a2ec8d-923c-4b17-a174-585bad817283.png)
