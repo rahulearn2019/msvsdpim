@@ -499,10 +499,13 @@ In the flow directory of the generator IMC-gen
 
 The final GDS has some drc errors 
 
-magic view
+magic view - ```magic -T sky130A.tech``` and then read GDS
+
 ![Screenshot from 2023-04-18 00-47-37](https://user-images.githubusercontent.com/50217106/232713040-181fe7d8-f0d9-4e75-ab1e-3ca651bc8f50.png)
 
+magic view - ```magic -D XR```  and then read GDS
 
+![Screenshot from 2023-04-18 15-28-05](https://user-images.githubusercontent.com/50217106/232743708-5dc3af3d-f651-4a67-b415-8a827052ea4d.png)
 
 klayout view
 
