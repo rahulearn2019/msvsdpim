@@ -1,0 +1,20 @@
+
+22. Printing statistics.
+
+=== imc ===
+
+   Number of wires:                 14
+   Number of wire bits:             14
+   Number of public wires:          14
+   Number of public wire bits:      14
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  2
+     SRAMLOGIC                       1
+     sky130_fd_sc_hd__mux2_4         1
+
+   Area for cell type \SRAMLOGIC is unknown!
+
+   Chip area for module '\imc': 15.014400
+
