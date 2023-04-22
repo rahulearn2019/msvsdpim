@@ -1,0 +1,12 @@
+{
+    "module_name": "imc",
+    "generator": "IMC-gen",
+    "specifications": {
+    	"frequency" : {"min" :5, "max" : 12},
+      	"power": "",
+    	"error": "",
+    	"area": "",
+    	"optimization":"error",
+    	"model" :"modelfile.csv"
+	}
+}
