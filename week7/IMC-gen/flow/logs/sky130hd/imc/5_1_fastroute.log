@@ -1,0 +1,76 @@
+OpenROAD v2.0-6895-g5c85b36f8 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO GRT-0020] Min routing layer: met1
+[INFO GRT-0021] Max routing layer: met5
+[INFO GRT-0022] Global adjustment: 0%
+[INFO GRT-0023] Grid origin: (0, 0)
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0088] Layer li1     Track-Pitch = 0.4600  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met1    Track-Pitch = 0.3400  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met2    Track-Pitch = 0.4600  line-2-Via Pitch: 0.3500
+[INFO GRT-0088] Layer met3    Track-Pitch = 0.6800  line-2-Via Pitch: 0.6150
+[INFO GRT-0088] Layer met4    Track-Pitch = 0.9200  line-2-Via Pitch: 1.0400
+[INFO GRT-0088] Layer met5    Track-Pitch = 3.4000  line-2-Via Pitch: 3.1100
+[INFO GRT-0019] Found 0 clock nets.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 2
+[INFO GRT-0003] Macros: 1
+[INFO GRT-0004] Blockages: 30
+
+[INFO GRT-0053] Routing resources analysis:
+          Routing      Original      Derated      Resource
+Layer     Direction    Resources     Resources    Reduction (%)
+---------------------------------------------------------------
+li1        Vertical            0             0          0.00%
+met1       Horizontal       8820          4956          43.81%
+met2       Vertical         6615          4386          33.70%
+met3       Horizontal       4410          3065          30.50%
+met4       Vertical         2646          1204          54.50%
+met5       Horizontal        882           364          58.73%
+---------------------------------------------------------------
+
+[INFO GRT-0197] Via related to pin nodes: 49
+[INFO GRT-0198] Via related Steiner nodes: 0
+[INFO GRT-0199] Via filling finished.
+[INFO GRT-0111] Final number of vias: 74
+[INFO GRT-0112] Final usage 3D: 382
+
+[INFO GRT-0096] Final congestion report:
+Layer         Resource        Demand        Usage (%)    Max H / Max V / Total Overflow
+---------------------------------------------------------------------------------------
+li1                  0             0            0.00%             0 /  0 /  0
+met1              4956            58            1.17%             0 /  0 /  0
+met2              4386            65            1.48%             0 /  0 /  0
+met3              3065            35            1.14%             0 /  0 /  0
+met4              1204             2            0.17%             0 /  0 /  0
+met5               364             0            0.00%             0 /  0 /  0
+---------------------------------------------------------------------------------------
+Total            13975           160            1.14%             0 /  0 /  0
+
+[INFO GRT-0018] Total wirelength: 2477 um
+[INFO GRT-0014] Routed nets: 16
+[WARNING GRT-0026] Missing route to pin sramlogic/RBLprechargeEnable.
+Signal 11 received
+Stack trace:
+ 0# 0x000055E11AD8E5D8 in /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad
+ 1# 0x00007F57249A8090 in /lib/x86_64-linux-gnu/libc.so.6
+ 2# odb::dbTechLayer::getRoutingLevel() in /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad
+ 3# rsz::Resizer::layerRC(odb::dbTechLayer*, sta::Corner const*, double&, double&) const in /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad
+ 4# grt::MakeWireParasitics::makeRouteParasitics(odb::dbNet*, std::vector<grt::GSegment, std::allocator<grt::GSegment> >&, sta::Net*, sta::Corner*, sta::ParasiticAnalysisPt*, sta::Parasitic*, std::map<grt::RoutePt, sta::ParasiticNode*, std::less<grt::RoutePt>, std::allocator<std::pair<grt::RoutePt const, sta::ParasiticNode*> > >&) const in /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad
+ 5# grt::MakeWireParasitics::estimateParasitcs(odb::dbNet*, std::vector<grt::Pin, std::allocator<grt::Pin> >&, std::vector<grt::GSegment, std::allocator<grt::GSegment> >&) const in /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad
+ 6# grt::GlobalRouter::estimateRC() in /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad
+ 7# rsz::Resizer::estimateParasitics(rsz::ParasiticsSrc) in /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad
+ 8# 0x000055E11AEE0CDC in /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad
+ 9# TclNRRunCallbacks in /lib/x86_64-linux-gnu/libtcl8.6.so
+10# 0x00007F5728673924 in /lib/x86_64-linux-gnu/libtcl8.6.so
+11# Tcl_EvalEx in /lib/x86_64-linux-gnu/libtcl8.6.so
+12# Tcl_Eval in /lib/x86_64-linux-gnu/libtcl8.6.so
+13# sta::sourceTclFile(char const*, bool, bool, Tcl_Interp*) in /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad
+14# ord::tclAppInit(Tcl_Interp*) in /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad
+15# Tcl_MainEx in /lib/x86_64-linux-gnu/libtcl8.6.so
+16# main in /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad
+17# __libc_start_main in /lib/x86_64-linux-gnu/libc.so.6
+18# _start in /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad
+Command terminated by signal 11
+Elapsed time: 0:00.67[h:]min:sec. CPU time: user 0.25 sys 0.23 (73%). Peak memory: 157520KB.

@@ -1,0 +1,99 @@
+OpenROAD v2.0-6895-g5c85b36f8 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ODB-0222] Reading LEF file: /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/../../../common/platforms/sky130hd/lef/sky130_fd_sc_hd.tlef
+[INFO ODB-0223]     Created 13 technology layers
+[INFO ODB-0224]     Created 25 technology vias
+[INFO ODB-0226] Finished LEF file:  /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/../../../common/platforms/sky130hd/lef/sky130_fd_sc_hd.tlef
+[INFO ODB-0222] Reading LEF file: /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/../../../common/platforms/sky130hd/lef/sky130_fd_sc_hd_merged.lef
+[INFO ODB-0225]     Created 441 library cells
+[INFO ODB-0226] Finished LEF file:  /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/../../../common/platforms/sky130hd/lef/sky130_fd_sc_hd_merged.lef
+[INFO ODB-0222] Reading LEF file: ../blocks/sky130hd/lef/SRAMLOGIC.lef
+[INFO ODB-0225]     Created 1 library cells
+[INFO ODB-0226] Finished LEF file:  ../blocks/sky130hd/lef/SRAMLOGIC.lef
+[WARNING ORD-1011] LEF master SRAMLOGIC has no liberty cell.
+number instances in verilog is 2
+[WARNING IFP-0028] Core area lower left (20.000, 20.000) snapped to (20.240, 21.760).
+[INFO IFP-0001] Added 39 rows of 238 sites.
+[INFO RSZ-0026] Removed 0 buffers.
+Default units for flow
+ time 1ns
+ capacitance 1pF
+ resistance 1kohm
+ voltage 1v
+ current 1mA
+ power 1nW
+ distance 1um
+
+==========================================================================
+floorplan final report_tns
+--------------------------------------------------------------------------
+tns 0.00
+
+==========================================================================
+floorplan final report_wns
+--------------------------------------------------------------------------
+wns 0.00
+
+==========================================================================
+floorplan final report_worst_slack
+--------------------------------------------------------------------------
+worst slack INF
+
+==========================================================================
+floorplan final report_clock_skew
+--------------------------------------------------------------------------
+
+==========================================================================
+floorplan final report_checks -path_delay min
+--------------------------------------------------------------------------
+No paths found.
+
+==========================================================================
+floorplan final report_checks -path_delay max
+--------------------------------------------------------------------------
+No paths found.
+
+==========================================================================
+floorplan final report_checks -unconstrained
+--------------------------------------------------------------------------
+Startpoint: SEL (input port)
+Endpoint: out (output port)
+Path Group: (none)
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                          0.00    0.00 v input external delay
+                  0.00    0.00    0.00 v SEL (in)
+     1    0.00                           SEL (net)
+                  0.00    0.00    0.00 v _0_/S (sky130_fd_sc_hd__mux2_4)
+                  0.04    0.26    0.26 v _0_/X (sky130_fd_sc_hd__mux2_4)
+     1    0.00                           out (net)
+                  0.04    0.00    0.26 v out (out)
+                                  0.26   data arrival time
+-----------------------------------------------------------------------------
+(Path is unconstrained)
+
+
+
+==========================================================================
+floorplan final report_power
+--------------------------------------------------------------------------
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Combinational          4.76e-15   0.00e+00   8.21e-12   8.22e-12 100.0%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  4.76e-15   0.00e+00   8.21e-12   8.22e-12 100.0%
+                           0.1%       0.0%      99.9%
+
+==========================================================================
+floorplan final report_design_area
+--------------------------------------------------------------------------
+Design area 649 u^2 6% utilization.
+
+Elapsed time: 0:00.57[h:]min:sec. CPU time: user 0.52 sys 0.04 (99%). Peak memory: 104300KB.

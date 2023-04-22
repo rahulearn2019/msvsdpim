@@ -1,0 +1,133 @@
+OpenROAD v2.0-6895-g5c85b36f8 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO GPL-0002] DBU: 1000
+[INFO GPL-0003] SiteSize: 460 2720
+[INFO GPL-0004] CoreAreaLxLy: 20240 21760
+[INFO GPL-0005] CoreAreaUxUy: 129720 127840
+[INFO GPL-0006] NumInstances: 349
+[INFO GPL-0007] NumPlaceInstances: 1
+[INFO GPL-0008] NumFixedInstances: 247
+[INFO GPL-0009] NumDummyInstances: 101
+[INFO GPL-0010] NumNets: 14
+[INFO GPL-0011] NumPins: 28
+[INFO GPL-0012] DieAreaLxLy: 0 0
+[INFO GPL-0013] DieAreaUxUy: 150000 150000
+[INFO GPL-0014] CoreAreaLxLy: 20240 21760
+[INFO GPL-0015] CoreAreaUxUy: 129720 127840
+[INFO GPL-0016] CoreArea: 11613638400
+[INFO GPL-0017] NonPlaceInstsArea: 3930019200
+[INFO GPL-0018] PlaceInstsArea: 17516800
+[INFO GPL-0019] Util(%): 0.23
+[INFO GPL-0020] StdInstsArea: 17516800
+[INFO GPL-0021] MacroInstsArea: 0
+[InitialPlace]  Iter: 1 CG residual: 0.00000011 HPWL: 1854869
+[InitialPlace]  Iter: 2 CG residual: 0.00000011 HPWL: 1761535
+[InitialPlace]  Iter: 3 CG residual: 0.00000011 HPWL: 1761535
+[InitialPlace]  Iter: 4 CG residual: 0.00000011 HPWL: 1761535
+[InitialPlace]  Iter: 5 CG residual: 0.00000011 HPWL: 1761535
+[INFO GPL-0031] FillerInit: NumGCells: 263
+[INFO GPL-0032] FillerInit: NumGNets: 14
+[INFO GPL-0033] FillerInit: NumGPins: 28
+[INFO GPL-0023] TargetDensity: 0.60
+[INFO GPL-0024] AveragePlaceInstArea: 17516800
+[INFO GPL-0025] IdealBinArea: 29194666
+[INFO GPL-0026] IdealBinCnt: 397
+[INFO GPL-0027] TotalBinArea: 11613638400
+[INFO GPL-0028] BinCnt: 16 16
+[INFO GPL-0029] BinSize: 6843 6630
+[INFO GPL-0030] NumBins: 256
+[NesterovSolve] Iter: 1 overflow: 1.37011e-06 HPWL: 1263149
+[NesterovSolve] Snapshot saved at iter = 0
+[INFO GPL-0075] Routability numCall: 1 inflationIterCnt: 1 bloatIterCnt: 0
+[INFO GPL-0036] TileLxLy: 0 0
+[INFO GPL-0037] TileSize: 6900 6900
+[INFO GPL-0038] TileCnt: 21 21
+[INFO GPL-0039] numRoutingLayers: 6
+[INFO GPL-0040] NumTiles: 441
+[INFO GPL-0063] TotalRouteOverflowH2: 0.0
+[INFO GPL-0064] TotalRouteOverflowV2: 0.0
+[INFO GPL-0065] OverflowTileCnt2: 0
+[INFO GPL-0066] 0.5%RC: 0.6666666865348816
+[INFO GPL-0067] 1.0%RC: 0.6666666865348816
+[INFO GPL-0068] 2.0%RC: 0.6666666865348816
+[INFO GPL-0069] 5.0%RC: 0.6666666865348816
+[INFO GPL-0070] 0.5rcK: 1.0
+[INFO GPL-0071] 1.0rcK: 1.0
+[INFO GPL-0072] 2.0rcK: 0.0
+[INFO GPL-0073] 5.0rcK: 0.0
+[INFO GPL-0074] FinalRC: 0.6666667
+[NesterovSolve] Finished with Overflow: 0.000001
+
+==========================================================================
+global place report_tns
+--------------------------------------------------------------------------
+tns 0.00
+
+==========================================================================
+global place report_wns
+--------------------------------------------------------------------------
+wns 0.00
+
+==========================================================================
+global place report_worst_slack
+--------------------------------------------------------------------------
+worst slack INF
+
+==========================================================================
+global place report_clock_skew
+--------------------------------------------------------------------------
+
+==========================================================================
+global place report_checks -path_delay min
+--------------------------------------------------------------------------
+No paths found.
+
+==========================================================================
+global place report_checks -path_delay max
+--------------------------------------------------------------------------
+No paths found.
+
+==========================================================================
+global place report_checks -unconstrained
+--------------------------------------------------------------------------
+Startpoint: SEL (input port)
+Endpoint: out (output port)
+Path Group: (none)
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                          0.00    0.00 v input external delay
+                  0.00    0.00    0.00 v SEL (in)
+     1    0.01                           SEL (net)
+                  0.00    0.00    0.00 v _0_/S (sky130_fd_sc_hd__mux2_4)
+                  0.06    0.29    0.29 v _0_/X (sky130_fd_sc_hd__mux2_4)
+     1    0.01                           out (net)
+                  0.06    0.00    0.29 v out (out)
+                                  0.29   data arrival time
+-----------------------------------------------------------------------------
+(Path is unconstrained)
+
+
+
+==========================================================================
+global place report_power
+--------------------------------------------------------------------------
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Combinational          4.83e-15   1.90e-15   3.84e-10   3.84e-10 100.0%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  4.83e-15   1.90e-15   3.84e-10   3.84e-10 100.0%
+                           0.0%       0.0%     100.0%
+
+==========================================================================
+global place report_design_area
+--------------------------------------------------------------------------
+Design area 1392 u^2 12% utilization.
+
+Elapsed time: 0:00.64[h:]min:sec. CPU time: user 0.40 sys 0.23 (97%). Peak memory: 176364KB.
