@@ -515,4 +515,4 @@ klayout view
 To route the VDD and GND power nets to the macro VDD and GND pins, pre-global-route.tcl file is edited, pdn.tcl is edited, and two files VSS_CONNECTION.txt and VDD_CONNECTION.txt are added, and their paths are added in config.mk
 On running the flow again, the following error occurs - signal11 recieved
 
-
+![Screenshot from 2023-04-24 00-50-57](https://user-images.githubusercontent.com/50217106/233862135-b4eb995f-a072-4d9b-89cb-f5cdaaf94b16.png)
