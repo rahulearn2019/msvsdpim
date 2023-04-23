@@ -8,9 +8,9 @@ source $::env(SCRIPTS_DIR)/openfasoc/add_ndr_rules.tcl
 
 # Custom connections
 source $::env(SCRIPTS_DIR)/openfasoc/create_custom_connections.tcl
-if {[info exist ::env(GND_connection)]} {
+if {[info exist ::env(GND_CONNECTION)]} {
   create_custom_connections $::env(VSS_CONNECTION)
 }
-if {[info exist ::env(VDD_connection)]} {
+if {[info exist ::env(VDD_CONNECTION)]} {
   create_custom_connections $::env(VDD_CONNECTION)
 }
