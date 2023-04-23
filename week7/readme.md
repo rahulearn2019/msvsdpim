@@ -474,7 +474,7 @@ In the flow directory of the generator IMC-gen
 
 
 
-```make gui_place``
+```make gui_place```
 
 
 
@@ -510,3 +510,9 @@ magic view - ```magic -D XR```  and then read GDS
 klayout view
 
 ![Screenshot from 2023-04-18 00-49-02](https://user-images.githubusercontent.com/50217106/232713189-90a2ec8d-923c-4b17-a174-585bad817283.png)
+
+
+To route the VDD and GND power nets to the macro VDD and GND pins, pre-global-route.tcl file is edited, pdn.tcl is edited, and two files VSS_CONNECTION.txt and VDD_CONNECTION.txt are added, and their paths are added in config.mk
+On running the flow again, the following error occurs - signal11 recieved
+
+
