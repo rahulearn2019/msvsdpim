@@ -373,126 +373,30 @@ When the SRAM bit cells are both written with 1, NOR operation should give a 0 a
 Clearly post-layout results are similar to pre-layout
 
 ## OpenFASOC FLOW for MIXED SIGNAL BLOCK
-Our mixed signal block comprises of an analog block which is the 8TSRAM cells and read circuitry that performs NOR and OR, and the digital block comprises of a 2*1 MUX which selects one of the two logics depending on a select line input.
+Our mixed signal block comprises of an analog block which is the 8TSRAM cells and read circuitry that performs NOR and OR, and the digital block comprises of a 2*1 MUX which selects one of the two logics depending on a select line input. 
+Openfasoc treats the analog part of mixed signal block as a macro and places it on the core as per placement commands in manual_macro.tcl. For macros operating on differrent operating voltages different voltage domains can be created with commands in pdn.tcl. We need to provide GDS and LEF view of the macro to openfasoc. Macro is placed during the floorplanning stage of physical design flow
+Standard cells are used for the digital components and they are placed during placement stage in the openroad physical design flow.
 
 ### Verilog for MIXED SIGNAL BLOCK
 
 ```verilog
-module imc( input VDD, 
-	input GND, 
-	input WBL1, 
-	input WBLB1, 
-	input WBL2, 
-	input WBLB2, 
-	input RWL, 
-	input WWL, 
-	input SEL, 
-	input RBLprecharge, 
-	input RBLprechargeEnable,
-	output out, Q1, Q2
-);
-wire inter1;
-wire inter2;
 
-SRAMLOGIC sramlogic(.VDD(VDD), .GND(GND), .WBL1(WBL1), .WBLB1(WBLB1), .WBL2(WBL2), .WBLB2(WBLB2), .OR(inter1), .NOR(inter2), .Q1(Q1), .Q2(Q2), 
-	.RBLprechargeEnable(RBLprechargeEnable), .RBLprecharge(RBLprecharge), .RWL(RWL), .WWL(WWL)
-);
-
-MUX2_1 mux(.in1(inter1), .in2(inter2), .out(out), .sel(SEL)
-);
-
-
-endmodule
 ```
 
 ```verilog
-module SRAMLOGIC( input VDD,
-		input GND,
-		input WWL,
-		input RWL,
-		input WBL1,
-		input WBLB1,
-		input WBL2,
-		input WBLB2,
-		input RBLprecharge,
-		input RBLprechargeEnable,
-		output Q1, 
-		output Q2,
-		output NOR,
-		output OR
-	);
-endmodule
+
 ```
 
 ```verilog 
-module MUX2_1(
-       	input in1, 
-	input in2, 
-	input sel,
-	output out
-);
-
-assign out = sel?in2:in1;
-
-endmodule
-
 ```
 
 The digital block 2_1 MUX will be placed as a standard cell in the design during the placement stage of the OpenFASOC flow, while the analog block will be treated as a macro and placed during the floorplan stage.
 
-### Verilog generation
+
 
 In the directory of the generator IMC-gen
 ```export PDK_ROOT=/home/rahul/open_pdks/sky130/```
-```make sky130hd_imc_verilog```
-
-
-
-### OpenROAD flow 
-
-In the flow directory of the generator IMC-gen
-```export <<<path to OpenROAD
-
-
-```
-```make synth```
-
-
-
-
-
-```make floorplan```
-
-
-
-
-```make gui_floorplan```
-
-
-
-```make place```
-
-
-
-```make gui_place```
-
-
-
-```make route```
-
-
-
-
-```make gui_route```
-
-
-
-
-```make finish```
-
-
-
-
+```make sky130hd_imc_full```
 
 
 ![Screenshot from 2023-04-18 00-39-19](https://user-images.githubusercontent.com/50217106/232712742-fd7a560a-27a1-43db-bf28-c1fda355a3aa.png)
