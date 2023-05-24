@@ -1,0 +1,2635 @@
+# add --pex to also run pex simulations
+make[1]: Entering directory '/home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow'
+[INFO][FLOW] Using platform directory /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/../../../common/platforms/sky130hd
+/home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/util/markDontUse.py -p "sky130_fd_sc_hd__probe_p_8 sky130_fd_sc_hd__probec_p_8 sky130_fd_sc_hd__lpflow_bleeder_1 sky130_fd_sc_hd__lpflow_clkbufkapwr_1 sky130_fd_sc_hd__lpflow_clkbufkapwr_16 sky130_fd_sc_hd__lpflow_clkbufkapwr_2 sky130_fd_sc_hd__lpflow_clkbufkapwr_4 sky130_fd_sc_hd__lpflow_clkbufkapwr_8 sky130_fd_sc_hd__lpflow_clkinvkapwr_1 sky130_fd_sc_hd__lpflow_clkinvkapwr_16 sky130_fd_sc_hd__lpflow_clkinvkapwr_2 sky130_fd_sc_hd__lpflow_clkinvkapwr_4 sky130_fd_sc_hd__lpflow_clkinvkapwr_8 sky130_fd_sc_hd__lpflow_decapkapwr_12 sky130_fd_sc_hd__lpflow_decapkapwr_3 sky130_fd_sc_hd__lpflow_decapkapwr_4 sky130_fd_sc_hd__lpflow_decapkapwr_6 sky130_fd_sc_hd__lpflow_decapkapwr_8 sky130_fd_sc_hd__lpflow_inputiso0n_1 sky130_fd_sc_hd__lpflow_inputiso0p_1 sky130_fd_sc_hd__lpflow_inputiso1n_1 sky130_fd_sc_hd__lpflow_inputiso1p_1 sky130_fd_sc_hd__lpflow_inputisolatch_1 sky130_fd_sc_hd__lpflow_isobufsrc_1 sky130_fd_sc_hd__lpflow_isobufsrc_16 sky130_fd_sc_hd__lpflow_isobufsrc_2 sky130_fd_sc_hd__lpflow_isobufsrc_4 sky130_fd_sc_hd__lpflow_isobufsrc_8 sky130_fd_sc_hd__lpflow_isobufsrckapwr_16 sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_1 sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_2 sky130_fd_sc_hd__lpflow_lsbuf_lh_hl_isowell_tap_4 sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_4 sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_1 sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_2 sky130_fd_sc_hd__lpflow_lsbuf_lh_isowell_tap_4" -i /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/../../../common/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib -o /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/objects/sky130hd/imc//lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Opening file for replace: /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/../../../common/platforms/sky130hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Marked 36 cells as dont_use
+Commented 0 lines containing "original_pin"
+Replaced malformed functions 0
+Writing replaced file: /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/objects/sky130hd/imc//lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+mkdir -p /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc/ /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc/ /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/reports/sky130hd/imc/
+(/usr/bin/time -f 'Elapsed time: %E[h:]min:sec. CPU time: user %U sys %S (%P). Peak memory: %MKB.' /home/rahul/OpenROAD-flow-scripts/tools/install/yosys/bin/yosys -v 3 -c /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/scripts/synth.tcl) 2>&1 | tee /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc//1_1_yosys.log
+1. Executing Verilog-2005 frontend: ./design/src/imc/MUX2_1.v
+2. Executing Verilog-2005 frontend: ./design/src/imc/SRAMLOGIC.v
+3. Executing Verilog-2005 frontend: ./design/src/imc/imc.v
+4. Executing Liberty frontend.
+5. Executing Verilog-2005 frontend: /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/../../../common/platforms/sky130hd/cells_clkgate_hd.v
+6. Executing SYNTH pass.
+6.1. Executing HIERARCHY pass (managing design hierarchy).
+6.2. Executing AST frontend in derive mode using pre-parsed AST for module `\imc'.
+6.2.1. Analyzing design hierarchy..
+6.2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\MUX2_1'.
+6.2.3. Executing AST frontend in derive mode using pre-parsed AST for module `\SRAMLOGIC'.
+6.2.4. Analyzing design hierarchy..
+6.2.5. Analyzing design hierarchy..
+6.3. Executing PROC pass (convert processes to netlists).
+6.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+6.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+6.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+6.3.4. Executing PROC_INIT pass (extract init attributes).
+6.3.5. Executing PROC_ARST pass (detect async resets in processes).
+6.3.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+6.3.7. Executing PROC_DLATCH pass (convert process syncs to latches).
+6.3.8. Executing PROC_DFF pass (convert process syncs to FFs).
+6.3.9. Executing PROC_MEMWR pass (convert process memory writes to cells).
+6.3.10. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+6.3.11. Executing OPT_EXPR pass (perform const folding).
+6.4. Executing FLATTEN pass (flatten design).
+6.5. Executing OPT_EXPR pass (perform const folding).
+6.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+6.7. Executing CHECK pass (checking for obvious problems).
+6.8. Executing OPT pass (performing simple optimizations).
+6.8.1. Executing OPT_EXPR pass (perform const folding).
+6.8.2. Executing OPT_MERGE pass (detect identical cells).
+6.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+6.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+6.8.5. Executing OPT_MERGE pass (detect identical cells).
+6.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+6.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+6.8.8. Executing OPT_EXPR pass (perform const folding).
+6.8.9. Finished OPT passes. (There is nothing left to do.)
+6.9. Executing FSM pass (extract and optimize FSM).
+6.9.1. Executing FSM_DETECT pass (finding FSMs in design).
+6.9.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+6.9.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+6.9.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+6.9.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+6.9.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+6.9.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+6.9.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+6.10. Executing OPT pass (performing simple optimizations).
+6.10.1. Executing OPT_EXPR pass (perform const folding).
+6.10.2. Executing OPT_MERGE pass (detect identical cells).
+6.10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+6.10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+6.10.5. Executing OPT_MERGE pass (detect identical cells).
+6.10.6. Executing OPT_DFF pass (perform DFF optimizations).
+6.10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+6.10.8. Executing OPT_EXPR pass (perform const folding).
+6.10.9. Finished OPT passes. (There is nothing left to do.)
+6.11. Executing WREDUCE pass (reducing word size of cells).
+6.12. Executing PEEPOPT pass (run peephole optimizers).
+6.13. Executing OPT_CLEAN pass (remove unused cells and wires).
+6.14. Executing ALUMACC pass (create $alu and $macc cells).
+6.15. Executing SHARE pass (SAT-based resource sharing).
+6.16. Executing OPT pass (performing simple optimizations).
+6.16.1. Executing OPT_EXPR pass (perform const folding).
+6.16.2. Executing OPT_MERGE pass (detect identical cells).
+6.16.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+6.16.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+6.16.5. Executing OPT_MERGE pass (detect identical cells).
+6.16.6. Executing OPT_DFF pass (perform DFF optimizations).
+6.16.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+6.16.8. Executing OPT_EXPR pass (perform const folding).
+6.16.9. Finished OPT passes. (There is nothing left to do.)
+6.17. Executing MEMORY pass.
+6.17.1. Executing OPT_MEM pass (optimize memories).
+6.17.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+6.17.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+6.17.4. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+6.17.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+6.17.6. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+6.17.7. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+6.17.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+6.17.9. Executing MEMORY_COLLECT pass (generating $mem cells).
+6.18. Executing OPT_CLEAN pass (remove unused cells and wires).
+6.19. Executing OPT pass (performing simple optimizations).
+6.19.1. Executing OPT_EXPR pass (perform const folding).
+6.19.2. Executing OPT_MERGE pass (detect identical cells).
+6.19.3. Executing OPT_DFF pass (perform DFF optimizations).
+6.19.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+6.19.5. Finished fast OPT passes.
+6.20. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+6.21. Executing OPT pass (performing simple optimizations).
+6.21.1. Executing OPT_EXPR pass (perform const folding).
+6.21.2. Executing OPT_MERGE pass (detect identical cells).
+6.21.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+6.21.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+6.21.5. Executing OPT_MERGE pass (detect identical cells).
+6.21.6. Executing OPT_SHARE pass.
+6.21.7. Executing OPT_DFF pass (perform DFF optimizations).
+6.21.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+6.21.9. Executing OPT_EXPR pass (perform const folding).
+6.21.10. Finished OPT passes. (There is nothing left to do.)
+6.22. Executing TECHMAP pass (map to technology primitives).
+6.22.1. Executing Verilog-2005 frontend: /home/rahul/OpenROAD-flow-scripts/tools/install/yosys/bin/../share/yosys/techmap.v
+6.22.2. Continuing TECHMAP pass.
+6.23. Executing OPT pass (performing simple optimizations).
+6.23.1. Executing OPT_EXPR pass (perform const folding).
+6.23.2. Executing OPT_MERGE pass (detect identical cells).
+6.23.3. Executing OPT_DFF pass (perform DFF optimizations).
+6.23.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+6.23.5. Finished fast OPT passes.
+6.24. Executing ABC pass (technology mapping using ABC).
+6.24.1. Extracting gate netlist of module `\imc' to `<abc-temp-dir>/input.blif'..
+6.25. Executing OPT pass (performing simple optimizations).
+6.25.1. Executing OPT_EXPR pass (perform const folding).
+6.25.2. Executing OPT_MERGE pass (detect identical cells).
+6.25.3. Executing OPT_DFF pass (perform DFF optimizations).
+6.25.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+6.25.5. Finished fast OPT passes.
+6.26. Executing HIERARCHY pass (managing design hierarchy).
+6.26.1. Analyzing design hierarchy..
+6.26.2. Analyzing design hierarchy..
+6.27. Printing statistics.
+6.28. Executing CHECK pass (checking for obvious problems).
+7. Executing OPT pass (performing simple optimizations).
+7.1. Executing OPT_EXPR pass (perform const folding).
+7.2. Executing OPT_MERGE pass (detect identical cells).
+7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+7.5. Executing OPT_MERGE pass (detect identical cells).
+7.6. Executing OPT_DFF pass (perform DFF optimizations).
+7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+7.8. Executing OPT_EXPR pass (perform const folding).
+7.9. Rerunning OPT passes. (Maybe there is more to do..)
+7.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+7.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+7.12. Executing OPT_MERGE pass (detect identical cells).
+7.13. Executing OPT_DFF pass (perform DFF optimizations).
+7.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+7.15. Executing OPT_EXPR pass (perform const folding).
+7.16. Finished OPT passes. (There is nothing left to do.)
+8. Executing EXTRACT_FA pass (find and extract full/half adders).
+9. Executing TECHMAP pass (map to technology primitives).
+9.1. Executing Verilog-2005 frontend: /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/../../../common/platforms/sky130hd/cells_adders_hd.v
+9.2. Continuing TECHMAP pass.
+10. Executing TECHMAP pass (map to technology primitives).
+10.1. Executing Verilog-2005 frontend: /home/rahul/OpenROAD-flow-scripts/tools/install/yosys/bin/../share/yosys/techmap.v
+10.2. Continuing TECHMAP pass.
+11. Executing OPT pass (performing simple optimizations).
+11.1. Executing OPT_EXPR pass (perform const folding).
+11.2. Executing OPT_MERGE pass (detect identical cells).
+11.3. Executing OPT_DFF pass (perform DFF optimizations).
+11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+11.5. Finished fast OPT passes.
+12. Executing TECHMAP pass (map to technology primitives).
+12.1. Executing Verilog-2005 frontend: /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/../../../common/platforms/sky130hd/cells_latch_hd.v
+12.2. Continuing TECHMAP pass.
+13. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+13.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+14. Executing OPT pass (performing simple optimizations).
+14.1. Executing OPT_EXPR pass (perform const folding).
+14.2. Executing OPT_MERGE pass (detect identical cells).
+14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+14.5. Executing OPT_MERGE pass (detect identical cells).
+14.6. Executing OPT_DFF pass (perform DFF optimizations).
+14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+14.8. Executing OPT_EXPR pass (perform const folding).
+14.9. Finished OPT passes. (There is nothing left to do.)
+Using ABC speed script.
+[WARN][FLOW] No clock period constraints detected in design
+15. Executing ABC pass (technology mapping using ABC).
+15.1. Extracting gate netlist of module `\imc' to `<abc-temp-dir>/input.blif'..
+15.1.1. Executing ABC.
+15.1.2. Re-integrating ABC results.
+16. Executing SETUNDEF pass (replace undef values with defined constants).
+17. Executing SPLITNETS pass (splitting up multi-bit signals).
+18. Executing OPT_CLEAN pass (remove unused cells and wires).
+19. Executing HILOMAP pass (mapping to constant drivers).
+20. Executing INSBUF pass (insert buffer cells for connected wires).
+21. Executing CHECK pass (checking for obvious problems).
+22. Printing statistics.
+23. Executing Verilog backend.
+Warnings: 26 unique messages, 234 total
+End of script. Logfile hash: 2dfbc32323, CPU: user 0.53s system 0.25s, MEM: 41.27 MB peak
+Yosys 0.13+15 (git sha1 bc027b2ca, gcc 9.4.0-1ubuntu1~20.04.1 -fPIC -Os)
+Time spent: 38% 2x abc (0 sec), 15% 2x read_liberty (0 sec), ...
+Elapsed time: 0:02.91[h:]min:sec. CPU time: user 0.92 sys 0.31 (42%). Peak memory: 42620KB.
+mkdir -p /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc/ /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc/ /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/reports/sky130hd/imc/
+cp /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//1_1_yosys.v /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//1_synth.v
+mkdir -p /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc/ /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc/ /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/reports/sky130hd/imc/
+cp design/sky130hd/imc/constraint.sdc /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//1_synth.sdc
+(/usr/bin/time -f 'Elapsed time: %E[h:]min:sec. CPU time: user %U sys %S (%P). Peak memory: %MKB.' /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad -exit -no_init  /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/scripts/floorplan.tcl -metrics /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc//2_1_floorplan.json) 2>&1 | tee /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc//2_1_floorplan.log
+OpenROAD v2.0-6895-g5c85b36f8 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ODB-0222] Reading LEF file: /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/../../../common/platforms/sky130hd/lef/sky130_fd_sc_hd.tlef
+[INFO ODB-0223]     Created 13 technology layers
+[INFO ODB-0224]     Created 25 technology vias
+[INFO ODB-0226] Finished LEF file:  /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/../../../common/platforms/sky130hd/lef/sky130_fd_sc_hd.tlef
+[INFO ODB-0222] Reading LEF file: /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/../../../common/platforms/sky130hd/lef/sky130_fd_sc_hd_merged.lef
+[INFO ODB-0225]     Created 441 library cells
+[INFO ODB-0226] Finished LEF file:  /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/../../../common/platforms/sky130hd/lef/sky130_fd_sc_hd_merged.lef
+[INFO ODB-0222] Reading LEF file: ../blocks/sky130hd/lef/SRAMLOGIC.lef
+[WARNING ODB-0220] WARNING (LEFPARS-2008): NOWIREEXTENSIONATPIN statement is obsolete in version 5.6 or later.
+The NOWIREEXTENSIONATPIN statement will be ignored. See file ../blocks/sky130hd/lef/SRAMLOGIC.lef at line 2.
+
+[INFO ODB-0225]     Created 1 library cells
+[INFO ODB-0226] Finished LEF file:  ../blocks/sky130hd/lef/SRAMLOGIC.lef
+[WARNING ORD-1011] LEF master SRAMLOGIC has no liberty cell.
+number instances in verilog is 2
+[WARNING IFP-0028] Core area lower left (30.000, 30.000) snapped to (30.360, 32.640).
+[INFO IFP-0001] Added 32 rows of 194 sites.
+[INFO RSZ-0026] Removed 0 buffers.
+Default units for flow
+ time 1ns
+ capacitance 1pF
+ resistance 1kohm
+ voltage 1v
+ current 1mA
+ power 1nW
+ distance 1um
+
+==========================================================================
+floorplan final report_tns
+--------------------------------------------------------------------------
+tns 0.00
+
+==========================================================================
+floorplan final report_wns
+--------------------------------------------------------------------------
+wns 0.00
+
+==========================================================================
+floorplan final report_worst_slack
+--------------------------------------------------------------------------
+worst slack INF
+
+==========================================================================
+floorplan final report_clock_skew
+--------------------------------------------------------------------------
+
+==========================================================================
+floorplan final report_checks -path_delay min
+--------------------------------------------------------------------------
+No paths found.
+
+==========================================================================
+floorplan final report_checks -path_delay max
+--------------------------------------------------------------------------
+No paths found.
+
+==========================================================================
+floorplan final report_checks -unconstrained
+--------------------------------------------------------------------------
+Startpoint: SEL (input port)
+Endpoint: out (output port)
+Path Group: (none)
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                          0.00    0.00 v input external delay
+                  0.00    0.00    0.00 v SEL (in)
+     1    0.00                           SEL (net)
+                  0.00    0.00    0.00 v _0_/S (sky130_fd_sc_hd__mux2_4)
+                  0.04    0.26    0.26 v _0_/X (sky130_fd_sc_hd__mux2_4)
+     1    0.00                           out (net)
+                  0.04    0.00    0.26 v out (out)
+                                  0.26   data arrival time
+-----------------------------------------------------------------------------
+(Path is unconstrained)
+
+
+
+==========================================================================
+floorplan final report_power
+--------------------------------------------------------------------------
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Combinational          4.76e-15   0.00e+00   8.21e-12   8.22e-12 100.0%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  4.76e-15   0.00e+00   8.21e-12   8.22e-12 100.0%
+                           0.1%       0.0%      99.9%
+
+==========================================================================
+floorplan final report_design_area
+--------------------------------------------------------------------------
+Design area 649 u^2 8% utilization.
+
+Elapsed time: 0:05.62[h:]min:sec. CPU time: user 0.59 sys 0.16 (13%). Peak memory: 103608KB.
+(/usr/bin/time -f 'Elapsed time: %E[h:]min:sec. CPU time: user %U sys %S (%P). Peak memory: %MKB.' /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad -exit -no_init  /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/scripts/io_placement_random.tcl -metrics /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc//2_2_floorplan_io.json) 2>&1 | tee /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc//2_2_floorplan_io.log
+OpenROAD v2.0-6895-g5c85b36f8 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[WARNING PPL-0015] Macro sramlogic is not placed.
+Found 0 macro blocks.
+Using 1u default distance from corners.
+Using 2 tracks default min distance between IO pins.
+[INFO PPL-0007] Random pin placement.
+Elapsed time: 0:00.45[h:]min:sec. CPU time: user 0.38 sys 0.06 (99%). Peak memory: 98028KB.
+[INFO][FLOW] Using manual macro placement file ../blocks/sky130hd/manual_macro.tcl
+cp /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//2_2_floorplan_io.odb /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//2_3_floorplan_tdms.odb
+(/usr/bin/time -f 'Elapsed time: %E[h:]min:sec. CPU time: user %U sys %S (%P). Peak memory: %MKB.' /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad -exit -no_init  /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/scripts/macro_place.tcl -metrics /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc//2_4_mplace.json) 2>&1 | tee /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc//2_4_mplace.log
+OpenROAD v2.0-6895-g5c85b36f8 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO][FLOW-xxxx] Using manual macro placement file ../blocks/sky130hd/manual_macro.tcl
+Elapsed time: 0:00.47[h:]min:sec. CPU time: user 0.36 sys 0.06 (91%). Peak memory: 98280KB.
+(/usr/bin/time -f 'Elapsed time: %E[h:]min:sec. CPU time: user %U sys %S (%P). Peak memory: %MKB.' /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad -exit -no_init  /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/scripts/tapcell.tcl -metrics /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc//2_5_tapcell.json) 2>&1 | tee /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc//2_5_tapcell.log
+OpenROAD v2.0-6895-g5c85b36f8 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[WARNING TAP-0014] endcap_cpp option is deprecated.
+[INFO ODB-0303] The initial 32 rows (6208 sites) were cut with 1 shapes for a total of 51 rows (5448 sites).
+[INFO TAP-0004] Inserted 102 endcaps.
+[INFO TAP-0005] Inserted 79 tapcells.
+Elapsed time: 0:00.44[h:]min:sec. CPU time: user 0.38 sys 0.04 (95%). Peak memory: 97244KB.
+(/usr/bin/time -f 'Elapsed time: %E[h:]min:sec. CPU time: user %U sys %S (%P). Peak memory: %MKB.' /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad -exit -no_init  /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/scripts/pdn.tcl -metrics /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc//2_6_pdn.json) 2>&1 | tee /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc//2_6_pdn.log
+OpenROAD v2.0-6895-g5c85b36f8 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[WARNING PDN-1024] -verbose has been deprecated.
+[INFO PDN-0001] Inserting grid: grid
+[INFO PDN-0001] Inserting grid: CORE_macro_grid_1 - sramlogic
+Elapsed time: 0:00.82[h:]min:sec. CPU time: user 0.50 sys 0.09 (72%). Peak memory: 100104KB.
+cp /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//2_6_floorplan_pdn.odb /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//2_floorplan.odb
+(/usr/bin/time -f 'Elapsed time: %E[h:]min:sec. CPU time: user %U sys %S (%P). Peak memory: %MKB.' /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad -exit -no_init  /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/scripts/global_place_skip_io.tcl -metrics /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc//3_1_place_gp_skip_io.json) 2>&1 | tee /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc//3_1_place_gp_skip_io.log
+OpenROAD v2.0-6895-g5c85b36f8 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+Has top down IO Constraints. Skip global placement without IOs
+Elapsed time: 0:00.52[h:]min:sec. CPU time: user 0.42 sys 0.08 (96%). Peak memory: 97544KB.
+(/usr/bin/time -f 'Elapsed time: %E[h:]min:sec. CPU time: user %U sys %S (%P). Peak memory: %MKB.' /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad -exit -no_init  /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/scripts/io_placement.tcl -metrics /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc//3_2_place_iop.json) 2>&1 | tee /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc//3_2_place_iop.log
+OpenROAD v2.0-6895-g5c85b36f8 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+Found 1 macro blocks.
+Using 1u default distance from corners.
+Using 2 tracks default min distance between IO pins.
+[INFO PPL-0007] Random pin placement.
+Elapsed time: 0:00.64[h:]min:sec. CPU time: user 0.59 sys 0.04 (98%). Peak memory: 98204KB.
+(/usr/bin/time -f 'Elapsed time: %E[h:]min:sec. CPU time: user %U sys %S (%P). Peak memory: %MKB.' /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad -exit -no_init  /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/scripts/global_place.tcl -metrics /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc//3_3_place_gp.json) 2>&1 | tee /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc//3_3_place_gp.log
+OpenROAD v2.0-6895-g5c85b36f8 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO GPL-0002] DBU: 1000
+[INFO GPL-0003] SiteSize: 460 2720
+[INFO GPL-0004] CoreAreaLxLy: 30360 32640
+[INFO GPL-0005] CoreAreaUxUy: 119600 119680
+[INFO GPL-0006] NumInstances: 285
+[INFO GPL-0007] NumPlaceInstances: 1
+[INFO GPL-0008] NumFixedInstances: 182
+[INFO GPL-0009] NumDummyInstances: 102
+[INFO GPL-0010] NumNets: 14
+[INFO GPL-0011] NumPins: 28
+[INFO GPL-0012] DieAreaLxLy: 0 0
+[INFO GPL-0013] DieAreaUxUy: 150000 150000
+[INFO GPL-0014] CoreAreaLxLy: 30360 32640
+[INFO GPL-0015] CoreAreaUxUy: 119600 119680
+[INFO GPL-0016] CoreArea: 7767449600
+[INFO GPL-0017] NonPlaceInstsArea: 3916256000
+[INFO GPL-0018] PlaceInstsArea: 17516800
+[INFO GPL-0019] Util(%): 0.45
+[INFO GPL-0020] StdInstsArea: 17516800
+[INFO GPL-0021] MacroInstsArea: 0
+[InitialPlace]  Iter: 1 CG residual: 0.00000006 HPWL: 2057770
+[InitialPlace]  Iter: 2 CG residual: 0.00000006 HPWL: 1751140
+[InitialPlace]  Iter: 3 CG residual: 0.00000006 HPWL: 1751140
+[InitialPlace]  Iter: 4 CG residual: 0.00000006 HPWL: 1751140
+[InitialPlace]  Iter: 5 CG residual: 0.00000006 HPWL: 1751140
+[INFO GPL-0031] FillerInit: NumGCells: 131
+[INFO GPL-0032] FillerInit: NumGNets: 14
+[INFO GPL-0033] FillerInit: NumGPins: 28
+[INFO GPL-0023] TargetDensity: 0.60
+[INFO GPL-0024] AveragePlaceInstArea: 17516800
+[INFO GPL-0025] IdealBinArea: 29194666
+[INFO GPL-0026] IdealBinCnt: 266
+[INFO GPL-0027] TotalBinArea: 7767449600
+[INFO GPL-0028] BinCnt: 16 16
+[INFO GPL-0029] BinSize: 5578 5440
+[INFO GPL-0030] NumBins: 256
+[NesterovSolve] Iter: 1 overflow: 0 HPWL: 1260963
+[INFO GPL-0100] worst slack 1e+30
+[WARNING GPL-0102] No slacks found. Timing-driven mode disabled.
+[NesterovSolve] Snapshot saved at iter = 0
+[INFO GPL-0075] Routability numCall: 1 inflationIterCnt: 1 bloatIterCnt: 0
+[INFO GPL-0036] TileLxLy: 0 0
+[INFO GPL-0037] TileSize: 6900 6900
+[INFO GPL-0038] TileCnt: 21 21
+[INFO GPL-0039] numRoutingLayers: 6
+[INFO GPL-0040] NumTiles: 441
+[INFO GPL-0063] TotalRouteOverflowH2: 0.0
+[INFO GPL-0064] TotalRouteOverflowV2: 0.0
+[INFO GPL-0065] OverflowTileCnt2: 0
+[INFO GPL-0066] 0.5%RC: 0.7333333492279053
+[INFO GPL-0067] 1.0%RC: 0.7000000178813934
+[INFO GPL-0068] 2.0%RC: 0.6844444632530212
+[INFO GPL-0069] 5.0%RC: 0.6736842299762525
+[INFO GPL-0070] 0.5rcK: 1.0
+[INFO GPL-0071] 1.0rcK: 1.0
+[INFO GPL-0072] 2.0rcK: 0.0
+[INFO GPL-0073] 5.0rcK: 0.0
+[INFO GPL-0074] FinalRC: 0.7166667
+[NesterovSolve] Finished with Overflow: 0.000000
+
+==========================================================================
+global place report_tns
+--------------------------------------------------------------------------
+tns 0.00
+
+==========================================================================
+global place report_wns
+--------------------------------------------------------------------------
+wns 0.00
+
+==========================================================================
+global place report_worst_slack
+--------------------------------------------------------------------------
+worst slack INF
+
+==========================================================================
+global place report_clock_skew
+--------------------------------------------------------------------------
+
+==========================================================================
+global place report_checks -path_delay min
+--------------------------------------------------------------------------
+No paths found.
+
+==========================================================================
+global place report_checks -path_delay max
+--------------------------------------------------------------------------
+No paths found.
+
+==========================================================================
+global place report_checks -unconstrained
+--------------------------------------------------------------------------
+Startpoint: SEL (input port)
+Endpoint: out (output port)
+Path Group: (none)
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                          0.00    0.00 v input external delay
+                  0.00    0.00    0.00 v SEL (in)
+     1    0.01                           SEL (net)
+                  0.00    0.00    0.00 v _0_/S (sky130_fd_sc_hd__mux2_4)
+                  0.06    0.29    0.29 v _0_/X (sky130_fd_sc_hd__mux2_4)
+     1    0.01                           out (net)
+                  0.06    0.00    0.29 v out (out)
+                                  0.29   data arrival time
+-----------------------------------------------------------------------------
+(Path is unconstrained)
+
+
+
+==========================================================================
+global place report_power
+--------------------------------------------------------------------------
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Combinational          4.84e-15   1.99e-15   3.39e-10   3.39e-10 100.0%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  4.84e-15   1.99e-15   3.39e-10   3.39e-10 100.0%
+                           0.0%       0.0%     100.0%
+
+==========================================================================
+global place report_design_area
+--------------------------------------------------------------------------
+Design area 1258 u^2 16% utilization.
+
+Elapsed time: 0:02.34[h:]min:sec. CPU time: user 0.79 sys 0.16 (40%). Peak memory: 175976KB.
+cp /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//3_3_place_gp.odb /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//3_4_place_resized.odb
+(/usr/bin/time -f 'Elapsed time: %E[h:]min:sec. CPU time: user %U sys %S (%P). Peak memory: %MKB.' /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad -exit -no_init  /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/scripts/detail_place.tcl -metrics /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc//3_5_opendp.json) 2>&1 | tee /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc//3_5_opendp.log
+OpenROAD v2.0-6895-g5c85b36f8 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+Placement Analysis
+---------------------------------
+total displacement          3.3 u
+average displacement        0.0 u
+max displacement            3.3 u
+original HPWL            1260.4 u
+legalized HPWL           1260.4 u
+delta HPWL                    0 %
+
+[INFO FLW-0012] Placement violations .
+
+==========================================================================
+detailed place report_tns
+--------------------------------------------------------------------------
+tns 0.00
+
+==========================================================================
+detailed place report_wns
+--------------------------------------------------------------------------
+wns 0.00
+
+==========================================================================
+detailed place report_worst_slack
+--------------------------------------------------------------------------
+worst slack INF
+
+==========================================================================
+detailed place report_clock_skew
+--------------------------------------------------------------------------
+
+==========================================================================
+detailed place report_checks -path_delay min
+--------------------------------------------------------------------------
+No paths found.
+
+==========================================================================
+detailed place report_checks -path_delay max
+--------------------------------------------------------------------------
+No paths found.
+
+==========================================================================
+detailed place report_checks -unconstrained
+--------------------------------------------------------------------------
+Startpoint: SEL (input port)
+Endpoint: out (output port)
+Path Group: (none)
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                          0.00    0.00 v input external delay
+                  0.00    0.00    0.00 v SEL (in)
+     1    0.01                           SEL (net)
+                  0.00    0.00    0.00 v _0_/S (sky130_fd_sc_hd__mux2_4)
+                  0.06    0.29    0.29 v _0_/X (sky130_fd_sc_hd__mux2_4)
+     1    0.01                           out (net)
+                  0.06    0.00    0.29 v out (out)
+                                  0.29   data arrival time
+-----------------------------------------------------------------------------
+(Path is unconstrained)
+
+
+
+==========================================================================
+detailed place report_check_types -max_slew -max_cap -max_fanout -violators
+--------------------------------------------------------------------------
+
+==========================================================================
+detailed place max_slew_check_slack
+--------------------------------------------------------------------------
+1.4503165483474731
+
+==========================================================================
+detailed place max_slew_check_limit
+--------------------------------------------------------------------------
+1.5070849657058716
+
+==========================================================================
+detailed place max_slew_check_slack_limit
+--------------------------------------------------------------------------
+0.9623
+
+==========================================================================
+detailed place max_fanout_check_slack
+--------------------------------------------------------------------------
+1.0000000150474662e+30
+
+==========================================================================
+detailed place max_fanout_check_limit
+--------------------------------------------------------------------------
+1.0000000150474662e+30
+
+==========================================================================
+detailed place max_capacitance_check_slack
+--------------------------------------------------------------------------
+0.5285668969154358
+
+==========================================================================
+detailed place max_capacitance_check_limit
+--------------------------------------------------------------------------
+0.5365089774131775
+
+==========================================================================
+detailed place max_capacitance_check_slack_limit
+--------------------------------------------------------------------------
+0.9852
+
+==========================================================================
+detailed place max_slew_violation_count
+--------------------------------------------------------------------------
+max slew violation count 0
+
+==========================================================================
+detailed place max_fanout_violation_count
+--------------------------------------------------------------------------
+max fanout violation count 0
+
+==========================================================================
+detailed place max_cap_violation_count
+--------------------------------------------------------------------------
+max cap violation count 0
+
+==========================================================================
+detailed place setup_violation_count
+--------------------------------------------------------------------------
+setup violation count 0
+
+==========================================================================
+detailed place hold_violation_count
+--------------------------------------------------------------------------
+hold violation count 0
+
+==========================================================================
+detailed place critical path delay
+--------------------------------------------------------------------------
+-1
+
+==========================================================================
+detailed place critical path slack
+--------------------------------------------------------------------------
+0
+
+==========================================================================
+detailed place slack div critical path delay
+--------------------------------------------------------------------------
+0.000000
+
+==========================================================================
+detailed place report_power
+--------------------------------------------------------------------------
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Combinational          4.83e-15   1.93e-15   3.39e-10   3.39e-10 100.0%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  4.83e-15   1.93e-15   3.39e-10   3.39e-10 100.0%
+                           0.0%       0.0%     100.0%
+
+==========================================================================
+detailed place report_design_area
+--------------------------------------------------------------------------
+Design area 1258 u^2 16% utilization.
+
+Elapsed time: 0:01.38[h:]min:sec. CPU time: user 0.57 sys 0.06 (46%). Peak memory: 99912KB.
+cp /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//3_5_place_dp.odb /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//3_place.odb
+cp /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//2_floorplan.sdc /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//3_place.sdc
+cp /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//3_place.odb /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//4_1_cts.odb
+(/usr/bin/time -f 'Elapsed time: %E[h:]min:sec. CPU time: user %U sys %S (%P). Peak memory: %MKB.' /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad -exit -no_init  /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/scripts/fillcell.tcl -metrics /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc//4_2_cts_fillcell.json) 2>&1 | tee /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc//4_2_cts_fillcell.log
+OpenROAD v2.0-6895-g5c85b36f8 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO DPL-0001] Placed 752 filler instances.
+Elapsed time: 0:01.66[h:]min:sec. CPU time: user 0.69 sys 0.07 (46%). Peak memory: 99752KB.
+cp /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//4_2_cts_fillcell.odb /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//4_cts.odb
+cp /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//3_place.sdc /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//4_cts.sdc
+(/usr/bin/time -f 'Elapsed time: %E[h:]min:sec. CPU time: user %U sys %S (%P). Peak memory: %MKB.' /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad -exit -no_init  /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/scripts/global_route.tcl -metrics /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc//5_1_fastroute.json) 2>&1 | tee /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc//5_1_fastroute.log
+OpenROAD v2.0-6895-g5c85b36f8 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO GRT-0020] Min routing layer: met1
+[INFO GRT-0021] Max routing layer: met5
+[INFO GRT-0022] Global adjustment: 0%
+[INFO GRT-0023] Grid origin: (0, 0)
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0088] Layer li1     Track-Pitch = 0.4600  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met1    Track-Pitch = 0.3400  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met2    Track-Pitch = 0.4600  line-2-Via Pitch: 0.3500
+[INFO GRT-0088] Layer met3    Track-Pitch = 0.6800  line-2-Via Pitch: 0.6150
+[INFO GRT-0088] Layer met4    Track-Pitch = 0.9200  line-2-Via Pitch: 1.0400
+[INFO GRT-0088] Layer met5    Track-Pitch = 3.4000  line-2-Via Pitch: 3.1100
+[INFO GRT-0019] Found 0 clock nets.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 3
+[INFO GRT-0003] Macros: 1
+[INFO GRT-0004] Blockages: 30
+
+[INFO GRT-0053] Routing resources analysis:
+          Routing      Original      Derated      Resource
+Layer     Direction    Resources     Resources    Reduction (%)
+---------------------------------------------------------------
+li1        Vertical            0             0          0.00%
+met1       Horizontal       8820          5345          39.40%
+met2       Vertical         6615          4386          33.70%
+met3       Horizontal       4410          3050          30.84%
+met4       Vertical         2646          1392          47.39%
+met5       Horizontal        882           415          52.95%
+---------------------------------------------------------------
+
+[INFO GRT-0197] Via related to pin nodes: 45
+[INFO GRT-0198] Via related Steiner nodes: 1
+[INFO GRT-0199] Via filling finished.
+[INFO GRT-0111] Final number of vias: 68
+[INFO GRT-0112] Final usage 3D: 375
+
+[INFO GRT-0096] Final congestion report:
+Layer         Resource        Demand        Usage (%)    Max H / Max V / Total Overflow
+---------------------------------------------------------------------------------------
+li1                  0             0            0.00%             0 /  0 /  0
+met1              5345            85            1.59%             0 /  0 /  0
+met2              4386            86            1.96%             0 /  0 /  0
+met3              3050             0            0.00%             0 /  0 /  0
+met4              1392             0            0.00%             0 /  0 /  0
+met5               415             0            0.00%             0 /  0 /  0
+---------------------------------------------------------------------------------------
+Total            14588           171            1.17%             0 /  0 /  0
+
+[INFO GRT-0018] Total wirelength: 2684 um
+[INFO GRT-0014] Routed nets: 16
+[WARNING GRT-0026] Missing route to pin sramlogic/RBLprechargeEnable.
+
+==========================================================================
+global route report_tns
+--------------------------------------------------------------------------
+tns 0.00
+
+==========================================================================
+global route report_wns
+--------------------------------------------------------------------------
+wns 0.00
+
+==========================================================================
+global route report_worst_slack
+--------------------------------------------------------------------------
+worst slack INF
+
+==========================================================================
+global route report_clock_skew
+--------------------------------------------------------------------------
+
+==========================================================================
+global route report_checks -path_delay min
+--------------------------------------------------------------------------
+No paths found.
+
+==========================================================================
+global route report_checks -path_delay max
+--------------------------------------------------------------------------
+No paths found.
+
+==========================================================================
+global route report_checks -unconstrained
+--------------------------------------------------------------------------
+Startpoint: SEL (input port)
+Endpoint: out (output port)
+Path Group: (none)
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                          0.00    0.00 v input external delay
+                  0.00    0.00    0.00 v SEL (in)
+     1    0.02                           SEL (net)
+                  0.00    0.00    0.00 v _0_/S (sky130_fd_sc_hd__mux2_4)
+                  0.07    0.30    0.30 v _0_/X (sky130_fd_sc_hd__mux2_4)
+     1    0.01                           out (net)
+                  0.07    0.00    0.30 v out (out)
+                                  0.30   data arrival time
+-----------------------------------------------------------------------------
+(Path is unconstrained)
+
+
+
+==========================================================================
+global route report_check_types -max_slew -max_cap -max_fanout -violators
+--------------------------------------------------------------------------
+
+==========================================================================
+global route max_slew_check_slack
+--------------------------------------------------------------------------
+1.4415411949157715
+
+==========================================================================
+global route max_slew_check_limit
+--------------------------------------------------------------------------
+1.5070849657058716
+
+==========================================================================
+global route max_slew_check_slack_limit
+--------------------------------------------------------------------------
+0.9565
+
+==========================================================================
+global route max_fanout_check_slack
+--------------------------------------------------------------------------
+1.0000000150474662e+30
+
+==========================================================================
+global route max_fanout_check_limit
+--------------------------------------------------------------------------
+1.0000000150474662e+30
+
+==========================================================================
+global route max_capacitance_check_slack
+--------------------------------------------------------------------------
+0.5225639343261719
+
+==========================================================================
+global route max_capacitance_check_limit
+--------------------------------------------------------------------------
+0.5365089774131775
+
+==========================================================================
+global route max_capacitance_check_slack_limit
+--------------------------------------------------------------------------
+0.9740
+
+==========================================================================
+global route max_slew_violation_count
+--------------------------------------------------------------------------
+max slew violation count 0
+
+==========================================================================
+global route max_fanout_violation_count
+--------------------------------------------------------------------------
+max fanout violation count 0
+
+==========================================================================
+global route max_cap_violation_count
+--------------------------------------------------------------------------
+max cap violation count 0
+
+==========================================================================
+global route setup_violation_count
+--------------------------------------------------------------------------
+setup violation count 0
+
+==========================================================================
+global route hold_violation_count
+--------------------------------------------------------------------------
+hold violation count 0
+
+==========================================================================
+global route critical path delay
+--------------------------------------------------------------------------
+-1
+
+==========================================================================
+global route critical path slack
+--------------------------------------------------------------------------
+0
+
+==========================================================================
+global route slack div critical path delay
+--------------------------------------------------------------------------
+0.000000
+
+==========================================================================
+global route report_power
+--------------------------------------------------------------------------
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Combinational          4.95e-15   3.39e-15   3.39e-10   3.39e-10 100.0%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  4.95e-15   3.39e-15   3.39e-10   3.39e-10 100.0%
+                           0.0%       0.0%     100.0%
+
+==========================================================================
+global route report_design_area
+--------------------------------------------------------------------------
+Design area 1258 u^2 16% utilization.
+
+
+==========================================================================
+check_antennas
+--------------------------------------------------------------------------
+[WARNING ANT-0011] -report_violating_nets is deprecated.
+[INFO GRT-0043] No OR_DEFAULT vias defined.
+[INFO ANT-0002] Found 0 net violations.
+[INFO ANT-0001] Found 0 pin violations.
+[WARNING FLW-0006] No clocks found.
+[INFO FLW-0011] Path endpoint count 11
+Elapsed time: 0:01.92[h:]min:sec. CPU time: user 0.90 sys 0.18 (56%). Peak memory: 157460KB.
+(/usr/bin/time -f 'Elapsed time: %E[h:]min:sec. CPU time: user %U sys %S (%P). Peak memory: %MKB.' /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad -exit -no_init  /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/scripts/detail_route.tcl -metrics /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc//5_2_TritonRoute.json) 2>&1 | tee /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc//5_2_TritonRoute.log
+OpenROAD v2.0-6895-g5c85b36f8 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 4 thread(s).
+[INFO DRT-0149] Reading tech and libs.
+
+Units:                1000
+Number of layers:     13
+Number of macros:     442
+Number of vias:       25
+Number of viarulegen: 25
+
+[INFO DRT-0150] Reading design.
+
+Design:                   imc
+Die area:                 ( 0 0 ) ( 150000 150000 )
+Number of track patterns: 12
+Number of DEF vias:       10
+Number of components:     935
+Number of terminals:      18
+Number of snets:          2
+Number of nets:           16
+
+[INFO DRT-0167] List of default vias:
+  Layer mcon
+    default via: L1M1_PR
+  Layer via
+    default via: M1M2_PR
+  Layer via2
+    default via: M2M3_PR
+  Layer via3
+    default via: M3M4_PR
+  Layer via4
+    default via: M4M5_PR
+[INFO DRT-0162] Library cell analysis.
+[INFO DRT-0163] Instance analysis.
+[INFO DRT-0164] Number of unique instances = 16.
+[INFO DRT-0168] Init region query.
+[INFO DRT-0024]   Complete FR_MASTERSLICE.
+[INFO DRT-0024]   Complete Fr_VIA.
+[INFO DRT-0024]   Complete li1.
+[INFO DRT-0024]   Complete mcon.
+[INFO DRT-0024]   Complete met1.
+[INFO DRT-0024]   Complete via.
+[INFO DRT-0024]   Complete met2.
+[INFO DRT-0024]   Complete via2.
+[INFO DRT-0024]   Complete met3.
+[INFO DRT-0024]   Complete via3.
+[INFO DRT-0024]   Complete met4.
+[INFO DRT-0024]   Complete via4.
+[INFO DRT-0024]   Complete met5.
+[INFO DRT-0033] FR_MASTERSLICE shape region query size = 0.
+[INFO DRT-0033] FR_VIA shape region query size = 0.
+[INFO DRT-0033] li1 shape region query size = 2600.
+[INFO DRT-0033] mcon shape region query size = 11043.
+[INFO DRT-0033] met1 shape region query size = 2197.
+[INFO DRT-0033] via shape region query size = 1364.
+[INFO DRT-0033] met2 shape region query size = 434.
+[INFO DRT-0033] via2 shape region query size = 1089.
+[INFO DRT-0033] met3 shape region query size = 497.
+[INFO DRT-0033] via3 shape region query size = 1085.
+[INFO DRT-0033] met4 shape region query size = 231.
+[INFO DRT-0033] via4 shape region query size = 172.
+[INFO DRT-0033] met5 shape region query size = 96.
+[INFO DRT-0165] Start pin access.
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] Macro pin has more than 1 polygon
+[WARNING DRT-6000] message limit reached, this message will no longer print
+[INFO DRT-0078]   Complete 18 pins.
+[INFO DRT-0081]   Complete 5 unique inst patterns.
+[INFO DRT-0084]   Complete 1 groups.
+#scanned instances     = 935
+#unique  instances     = 16
+#stdCellGenAp          = 24
+#stdCellValidPlanarAp  = 0
+#stdCellValidViaAp     = 18
+#stdCellPinNoAp        = 0
+#stdCellPinCnt         = 4
+#instTermValidViaApCnt = 0
+#macroGenAp            = 1131
+#macroValidPlanarAp    = 997
+#macroValidViaAp       = 698
+#macroNoAp             = 0
+[INFO DRT-0166] Complete pin access.
+[INFO DRT-0267] cpu time = 00:00:03, elapsed time = 00:00:03, memory = 106.93 (MB), peak = 106.93 (MB)
+
+Number of guides:     162
+
+[INFO DRT-0169] Post process guides.
+[INFO DRT-0176] GCELLGRID X 0 DO 21 STEP 6900 ;
+[INFO DRT-0177] GCELLGRID Y 0 DO 21 STEP 6900 ;
+[INFO DRT-0028]   Complete FR_MASTERSLICE.
+[INFO DRT-0028]   Complete Fr_VIA.
+[INFO DRT-0028]   Complete li1.
+[INFO DRT-0028]   Complete mcon.
+[INFO DRT-0028]   Complete met1.
+[INFO DRT-0028]   Complete via.
+[INFO DRT-0028]   Complete met2.
+[INFO DRT-0028]   Complete via2.
+[INFO DRT-0028]   Complete met3.
+[INFO DRT-0028]   Complete via3.
+[INFO DRT-0028]   Complete met4.
+[INFO DRT-0028]   Complete via4.
+[INFO DRT-0028]   Complete met5.
+[INFO DRT-0178] Init guide query.
+[INFO DRT-0035]   Complete FR_MASTERSLICE (guide).
+[INFO DRT-0035]   Complete Fr_VIA (guide).
+[INFO DRT-0035]   Complete li1 (guide).
+[INFO DRT-0035]   Complete mcon (guide).
+[INFO DRT-0035]   Complete met1 (guide).
+[INFO DRT-0035]   Complete via (guide).
+[INFO DRT-0035]   Complete met2 (guide).
+[INFO DRT-0035]   Complete via2 (guide).
+[INFO DRT-0035]   Complete met3 (guide).
+[INFO DRT-0035]   Complete via3 (guide).
+[INFO DRT-0035]   Complete met4 (guide).
+[INFO DRT-0035]   Complete via4 (guide).
+[INFO DRT-0035]   Complete met5 (guide).
+[INFO DRT-0036] FR_MASTERSLICE guide region query size = 0.
+[INFO DRT-0036] FR_VIA guide region query size = 0.
+[INFO DRT-0036] li1 guide region query size = 5.
+[INFO DRT-0036] mcon guide region query size = 0.
+[INFO DRT-0036] met1 guide region query size = 25.
+[INFO DRT-0036] via guide region query size = 0.
+[INFO DRT-0036] met2 guide region query size = 29.
+[INFO DRT-0036] via2 guide region query size = 0.
+[INFO DRT-0036] met3 guide region query size = 10.
+[INFO DRT-0036] via3 guide region query size = 0.
+[INFO DRT-0036] met4 guide region query size = 4.
+[INFO DRT-0036] via4 guide region query size = 0.
+[INFO DRT-0036] met5 guide region query size = 4.
+[INFO DRT-0179] Init gr pin query.
+[INFO DRT-0185] Post process initialize RPin region query.
+[INFO DRT-0181] Start track assignment.
+[INFO DRT-0184] Done with 38 vertical wires in 1 frboxes and 39 horizontal wires in 1 frboxes.
+[INFO DRT-0186] Done with 4 vertical wires in 1 frboxes and 12 horizontal wires in 1 frboxes.
+[INFO DRT-0182] Complete track assignment.
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 108.25 (MB), peak = 109.70 (MB)
+[INFO DRT-0187] Start routing data preparation.
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 108.25 (MB), peak = 109.70 (MB)
+[INFO DRT-0194] Start detail routing.
+[INFO DRT-0195] Start 0th optimization iteration.
+    Completing 10% with 0 violations.
+    elapsed time = 00:00:00, memory = 129.81 (MB).
+    Completing 20% with 0 violations.
+    elapsed time = 00:00:00, memory = 128.50 (MB).
+    Completing 30% with 0 violations.
+    elapsed time = 00:00:00, memory = 126.85 (MB).
+    Completing 40% with 0 violations.
+    elapsed time = 00:00:00, memory = 124.64 (MB).
+    Completing 50% with 1 violations.
+    elapsed time = 00:00:00, memory = 140.65 (MB).
+    Completing 60% with 1 violations.
+    elapsed time = 00:00:00, memory = 138.09 (MB).
+    Completing 70% with 1 violations.
+    elapsed time = 00:00:00, memory = 138.45 (MB).
+    Completing 80% with 1 violations.
+    elapsed time = 00:00:01, memory = 138.45 (MB).
+    Completing 90% with 2 violations.
+    elapsed time = 00:00:01, memory = 143.24 (MB).
+    Completing 100% with 6 violations.
+    elapsed time = 00:00:01, memory = 143.24 (MB).
+[INFO DRT-0199]   Number of violations = 10.
+Viol/Layer         li1   mcon   met1   met5
+Metal Spacing        0      0      4      0
+Recheck              4      0      0      0
+Short                0      1      0      1
+[INFO DRT-0267] cpu time = 00:00:02, elapsed time = 00:00:02, memory = 483.22 (MB), peak = 495.21 (MB)
+Total wire length = 1455 um.
+Total wire length on LAYER li1 = 0 um.
+Total wire length on LAYER met1 = 633 um.
+Total wire length on LAYER met2 = 717 um.
+Total wire length on LAYER met3 = 88 um.
+Total wire length on LAYER met4 = 8 um.
+Total wire length on LAYER met5 = 6 um.
+Total number of vias = 63.
+Up-via summary (total 63):.
+
+---------------------
+ FR_MASTERSLICE     0
+            li1     6
+           met1    40
+           met2     9
+           met3     4
+           met4     4
+---------------------
+                   63
+
+
+[INFO DRT-0195] Start 1st optimization iteration.
+    Completing 10% with 10 violations.
+    elapsed time = 00:00:00, memory = 486.57 (MB).
+    Completing 20% with 10 violations.
+    elapsed time = 00:00:00, memory = 491.98 (MB).
+    Completing 30% with 10 violations.
+    elapsed time = 00:00:00, memory = 493.01 (MB).
+    Completing 40% with 10 violations.
+    elapsed time = 00:00:00, memory = 493.53 (MB).
+    Completing 50% with 10 violations.
+    elapsed time = 00:00:00, memory = 500.75 (MB).
+    Completing 60% with 10 violations.
+    elapsed time = 00:00:00, memory = 500.75 (MB).
+    Completing 70% with 10 violations.
+    elapsed time = 00:00:00, memory = 500.75 (MB).
+    Completing 80% with 11 violations.
+    elapsed time = 00:00:00, memory = 503.32 (MB).
+    Completing 90% with 11 violations.
+    elapsed time = 00:00:00, memory = 503.32 (MB).
+    Completing 100% with 2 violations.
+    elapsed time = 00:00:01, memory = 503.58 (MB).
+[INFO DRT-0199]   Number of violations = 2.
+Viol/Layer        met5
+Short                2
+[INFO DRT-0267] cpu time = 00:00:02, elapsed time = 00:00:01, memory = 503.70 (MB), peak = 515.69 (MB)
+Total wire length = 1413 um.
+Total wire length on LAYER li1 = 0 um.
+Total wire length on LAYER met1 = 592 um.
+Total wire length on LAYER met2 = 723 um.
+Total wire length on LAYER met3 = 91 um.
+Total wire length on LAYER met4 = 0 um.
+Total wire length on LAYER met5 = 6 um.
+Total number of vias = 61.
+Up-via summary (total 61):.
+
+---------------------
+ FR_MASTERSLICE     0
+            li1     6
+           met1    38
+           met2     9
+           met3     4
+           met4     4
+---------------------
+                   61
+
+
+[INFO DRT-0195] Start 2nd optimization iteration.
+    Completing 10% with 2 violations.
+    elapsed time = 00:00:00, memory = 503.70 (MB).
+    Completing 20% with 2 violations.
+    elapsed time = 00:00:00, memory = 503.70 (MB).
+    Completing 30% with 2 violations.
+    elapsed time = 00:00:00, memory = 503.70 (MB).
+    Completing 40% with 2 violations.
+    elapsed time = 00:00:00, memory = 503.70 (MB).
+    Completing 50% with 2 violations.
+    elapsed time = 00:00:00, memory = 503.70 (MB).
+    Completing 60% with 2 violations.
+    elapsed time = 00:00:00, memory = 503.70 (MB).
+    Completing 70% with 2 violations.
+    elapsed time = 00:00:00, memory = 503.70 (MB).
+    Completing 80% with 2 violations.
+    elapsed time = 00:00:00, memory = 503.70 (MB).
+    Completing 90% with 2 violations.
+    elapsed time = 00:00:00, memory = 503.70 (MB).
+    Completing 100% with 1 violations.
+    elapsed time = 00:00:00, memory = 503.70 (MB).
+[INFO DRT-0199]   Number of violations = 1.
+Viol/Layer        met5
+Short                1
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 506.59 (MB), peak = 518.39 (MB)
+Total wire length = 1357 um.
+Total wire length on LAYER li1 = 0 um.
+Total wire length on LAYER met1 = 574 um.
+Total wire length on LAYER met2 = 683 um.
+Total wire length on LAYER met3 = 96 um.
+Total wire length on LAYER met4 = 0 um.
+Total wire length on LAYER met5 = 3 um.
+Total number of vias = 54.
+Up-via summary (total 54):.
+
+---------------------
+ FR_MASTERSLICE     0
+            li1     6
+           met1    34
+           met2     8
+           met3     3
+           met4     3
+---------------------
+                   54
+
+
+[INFO DRT-0195] Start 3rd optimization iteration.
+    Completing 10% with 1 violations.
+    elapsed time = 00:00:00, memory = 506.59 (MB).
+    Completing 20% with 1 violations.
+    elapsed time = 00:00:00, memory = 506.59 (MB).
+    Completing 30% with 1 violations.
+    elapsed time = 00:00:00, memory = 506.59 (MB).
+    Completing 40% with 1 violations.
+    elapsed time = 00:00:00, memory = 506.59 (MB).
+    Completing 50% with 1 violations.
+    elapsed time = 00:00:00, memory = 506.59 (MB).
+    Completing 60% with 1 violations.
+    elapsed time = 00:00:00, memory = 506.59 (MB).
+    Completing 70% with 1 violations.
+    elapsed time = 00:00:00, memory = 506.59 (MB).
+    Completing 80% with 1 violations.
+    elapsed time = 00:00:00, memory = 506.59 (MB).
+    Completing 90% with 0 violations.
+    elapsed time = 00:00:00, memory = 506.59 (MB).
+    Completing 100% with 0 violations.
+    elapsed time = 00:00:00, memory = 506.59 (MB).
+[INFO DRT-0199]   Number of violations = 0.
+[INFO DRT-0267] cpu time = 00:00:00, elapsed time = 00:00:00, memory = 503.59 (MB), peak = 518.39 (MB)
+Total wire length = 1321 um.
+Total wire length on LAYER li1 = 0 um.
+Total wire length on LAYER met1 = 552 um.
+Total wire length on LAYER met2 = 659 um.
+Total wire length on LAYER met3 = 108 um.
+Total wire length on LAYER met4 = 1 um.
+Total wire length on LAYER met5 = 0 um.
+Total number of vias = 49.
+Up-via summary (total 49):.
+
+---------------------
+ FR_MASTERSLICE     0
+            li1     6
+           met1    32
+           met2     7
+           met3     2
+           met4     2
+---------------------
+                   49
+
+
+[INFO DRT-0198] Complete detail routing.
+Total wire length = 1321 um.
+Total wire length on LAYER li1 = 0 um.
+Total wire length on LAYER met1 = 552 um.
+Total wire length on LAYER met2 = 659 um.
+Total wire length on LAYER met3 = 108 um.
+Total wire length on LAYER met4 = 1 um.
+Total wire length on LAYER met5 = 0 um.
+Total number of vias = 49.
+Up-via summary (total 49):.
+
+---------------------
+ FR_MASTERSLICE     0
+            li1     6
+           met1    32
+           met2     7
+           met3     2
+           met4     2
+---------------------
+                   49
+
+
+[INFO DRT-0267] cpu time = 00:00:06, elapsed time = 00:00:04, memory = 503.59 (MB), peak = 518.39 (MB)
+
+[INFO DRT-0180] Post processing.
+Elapsed time: 0:09.04[h:]min:sec. CPU time: user 8.12 sys 1.74 (109%). Peak memory: 530836KB.
+cp /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//5_2_route.odb /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//5_route.odb
+cp /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//5_route.odb /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//6_1_fill.odb
+cp /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//4_cts.sdc /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//5_route.sdc
+cp /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//5_route.sdc /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//6_1_fill.sdc
+(/usr/bin/time -f 'Elapsed time: %E[h:]min:sec. CPU time: user %U sys %S (%P). Peak memory: %MKB.' /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad -exit -no_init  /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/scripts/final_report.tcl -metrics /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc//6_report.json) 2>&1 | tee /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc//6_report.log
+OpenROAD v2.0-6895-g5c85b36f8 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO] Deleted 0 routing obstructions
+[INFO RCX-0431] Defined process_corner X with ext_model_index 0
+[INFO RCX-0029] Defined extraction corner X
+[INFO RCX-0008] extracting parasitics of imc ...
+[INFO RCX-0435] Reading extraction model file /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/../../../common/platforms/sky130hd/rcx_patterns.rules ...
+[INFO RCX-0436] RC segment generation imc (max_merge_res 50.0) ...
+[WARNING RCX-0114] Net 18 r_VDD does not start from an iterm or a bterm.
+[INFO RCX-0040] Final 49 rc segments
+[INFO RCX-0439] Coupling Cap extraction imc ...
+[INFO RCX-0440] Coupling threshhold is 0.1000 fF, coupling capacitance less than 0.1000 fF will be grounded.
+[INFO RCX-0043] 372 wires to be extracted
+[INFO RCX-0442] 87% completion -- 324 wires have been extracted
+[INFO RCX-0442] 100% completion -- 372 wires have been extracted
+[INFO RCX-0045] Extract 16 nets, 65 rsegs, 65 caps, 17 ccs
+[INFO RCX-0015] Finished extracting imc.
+[INFO RCX-0016] Writing SPEF ...
+[INFO RCX-0443] 16 nets finished
+[INFO RCX-0017] Finished writing SPEF ...
+[WARNING PSM-0016] Voltage pad location (VSRC) file not specified, defaulting pad location to checkerboard pattern on core area.
+[WARNING PSM-0017] X direction bump pitch is not specified, defaulting to 140um.
+[WARNING PSM-0018] Y direction bump pitch is not specified, defaulting to 140um.
+[WARNING PSM-0063] Specified bump pitches of 140.000 and 140.000 are less than core width of 89.240 or core height of 87.040. Changing bump location to the center of the die at (74.980, 76.160).
+[WARNING PSM-0065] VSRC location not specified, using default checkerboard pattern with one VDD every size bumps in x-direction and one in two bumps in the y-direction
+[INFO PSM-0076] Setting metal node density to be standard cell height times 5.
+[WARNING PSM-0030] VSRC location at (74.980um, 76.160um) and size 10.000um, is not located on an existing power stripe node. Moving to closest node at (67.007um, 63.740um).
+[INFO PSM-0031] Number of PDN nodes on net VDD = 775.
+[INFO PSM-0064] Number of voltage sources = 1.
+[INFO PSM-0040] All PDN stripes on net VDD are connected.
+########## IR report #################
+Worstcase voltage: 1.80e+00 V
+Average IR drop  : 8.84e-11 V
+Worstcase IR drop: 1.59e-10 V
+######################################
+[WARNING PSM-0016] Voltage pad location (VSRC) file not specified, defaulting pad location to checkerboard pattern on core area.
+[WARNING PSM-0017] X direction bump pitch is not specified, defaulting to 140um.
+[WARNING PSM-0018] Y direction bump pitch is not specified, defaulting to 140um.
+[WARNING PSM-0063] Specified bump pitches of 140.000 and 140.000 are less than core width of 89.240 or core height of 87.040. Changing bump location to the center of the die at (74.980, 76.160).
+[WARNING PSM-0065] VSRC location not specified, using default checkerboard pattern with one VDD every size bumps in x-direction and one in two bumps in the y-direction
+[INFO PSM-0076] Setting metal node density to be standard cell height times 5.
+[INFO PSM-0031] Number of PDN nodes on net VSS = 707.
+[INFO PSM-0064] Number of voltage sources = 1.
+[INFO PSM-0040] All PDN stripes on net VSS are connected.
+########## IR report #################
+Worstcase voltage: 1.56e-10 V
+Average IR drop  : 7.62e-11 V
+Worstcase IR drop: 1.56e-10 V
+######################################
+
+==========================================================================
+finish report_tns
+--------------------------------------------------------------------------
+tns 0.00
+
+==========================================================================
+finish report_wns
+--------------------------------------------------------------------------
+wns 0.00
+
+==========================================================================
+finish report_worst_slack
+--------------------------------------------------------------------------
+worst slack INF
+
+==========================================================================
+finish report_clock_skew
+--------------------------------------------------------------------------
+
+==========================================================================
+finish report_checks -path_delay min
+--------------------------------------------------------------------------
+No paths found.
+
+==========================================================================
+finish report_checks -path_delay max
+--------------------------------------------------------------------------
+No paths found.
+
+==========================================================================
+finish report_checks -unconstrained
+--------------------------------------------------------------------------
+Startpoint: SEL (input port)
+Endpoint: out (output port)
+Path Group: (none)
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                          0.00    0.00 v input external delay
+                  0.00    0.00    0.00 v SEL (in)
+     1    0.01                           SEL (net)
+                  0.00    0.00    0.00 v _0_/S (sky130_fd_sc_hd__mux2_4)
+                  0.06    0.29    0.29 v _0_/X (sky130_fd_sc_hd__mux2_4)
+     1    0.01                           out (net)
+                  0.06    0.00    0.29 v out (out)
+                                  0.29   data arrival time
+-----------------------------------------------------------------------------
+(Path is unconstrained)
+
+
+
+==========================================================================
+finish report_check_types -max_slew -max_cap -max_fanout -violators
+--------------------------------------------------------------------------
+
+==========================================================================
+finish max_slew_check_slack
+--------------------------------------------------------------------------
+1.4498709440231323
+
+==========================================================================
+finish max_slew_check_limit
+--------------------------------------------------------------------------
+1.5070849657058716
+
+==========================================================================
+finish max_slew_check_slack_limit
+--------------------------------------------------------------------------
+0.9620
+
+==========================================================================
+finish max_fanout_check_slack
+--------------------------------------------------------------------------
+1.0000000150474662e+30
+
+==========================================================================
+finish max_fanout_check_limit
+--------------------------------------------------------------------------
+1.0000000150474662e+30
+
+==========================================================================
+finish max_capacitance_check_slack
+--------------------------------------------------------------------------
+0.5282430052757263
+
+==========================================================================
+finish max_capacitance_check_limit
+--------------------------------------------------------------------------
+0.5365089774131775
+
+==========================================================================
+finish max_capacitance_check_slack_limit
+--------------------------------------------------------------------------
+0.9846
+
+==========================================================================
+finish max_slew_violation_count
+--------------------------------------------------------------------------
+max slew violation count 0
+
+==========================================================================
+finish max_fanout_violation_count
+--------------------------------------------------------------------------
+max fanout violation count 0
+
+==========================================================================
+finish max_cap_violation_count
+--------------------------------------------------------------------------
+max cap violation count 0
+
+==========================================================================
+finish setup_violation_count
+--------------------------------------------------------------------------
+setup violation count 0
+
+==========================================================================
+finish hold_violation_count
+--------------------------------------------------------------------------
+hold violation count 0
+
+==========================================================================
+finish critical path delay
+--------------------------------------------------------------------------
+-1
+
+==========================================================================
+finish critical path slack
+--------------------------------------------------------------------------
+0
+
+==========================================================================
+finish slack div critical path delay
+--------------------------------------------------------------------------
+0.000000
+
+==========================================================================
+finish report_power
+--------------------------------------------------------------------------
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Combinational          4.84e-15   2.01e-15   3.39e-10   3.39e-10 100.0%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  4.84e-15   2.01e-15   3.39e-10   3.39e-10 100.0%
+                           0.0%       0.0%     100.0%
+
+==========================================================================
+finish report_design_area
+--------------------------------------------------------------------------
+Design area 1258 u^2 16% utilization.
+
+Elapsed time: 0:06.19[h:]min:sec. CPU time: user 1.78 sys 0.37 (34%). Peak memory: 227872KB.
+cp /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//5_route.sdc /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//6_final.sdc
+sed '/OR_DEFAULT/d' /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/../../../common/platforms/sky130hd/lef/sky130_fd_sc_hd.tlef > /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/objects/sky130hd/imc//klayout_tech.lef
+sed 's,<lef-files>.*</lef-files>,<lef-files>/home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/objects/sky130hd/imc/klayout_tech.lef</lef-files> <lef-files>/home/rahul/openfasoc/openfasoc/common/platforms/sky130hd/lef/sky130_fd_sc_hd_merged.lef</lef-files> <lef-files>/home/rahul/openfasoc/openfasoc/generators/IMC-gen/blocks/sky130hd/lef/SRAMLOGIC.lef</lef-files>,g' /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/../../../common/platforms/sky130hd/sky130hd.lyt > /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/objects/sky130hd/imc//klayout.lyt
+(/usr/bin/time -f 'Elapsed time: %E[h:]min:sec. CPU time: user %U sys %S (%P). Peak memory: %MKB.' stdbuf -o L /usr/bin/klayout -zz -rd design_name=imc \
+        -rd in_def=/home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//6_final.def \
+        -rd in_files="/home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/../../../common/platforms/sky130hd/gds/sky130_fd_sc_hd.gds ../blocks/sky130hd/gds/SRAMLOGIC.gds  " \
+        -rd config_file=/home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/../../../common/platforms/sky130hd/fill.json \
+        -rd seal_file="" \
+        -rd out_file=/home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//6_1_merged.gds \
+        -rd tech_file=/home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/objects/sky130hd/imc//klayout.lyt \
+        -rd layer_map= \
+        -r /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/util/def2stream.py) 2>&1 | tee /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc//6_1_merge.log
+[INFO] Reporting cells prior to loading DEF ...
+[INFO] Reading DEF ...
+[INFO] Clearing cells...
+[INFO] Merging GDS/OAS files...
+	/home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/../../../common/platforms/sky130hd/gds/sky130_fd_sc_hd.gds
+	../blocks/sky130hd/gds/SRAMLOGIC.gds
+[INFO] Copying toplevel cell 'imc'
+INFO: Reading config file: /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/../../../common/platforms/sky130hd/fill.json
+[INFO] Checking for missing cell from GDS/OAS...
+[INFO] All LEF cells have matching GDS/OAS cells
+[INFO] Checking for orphan cell in the final layout...
+[INFO] No orphan cells
+[INFO] Writing out GDS/OAS '/home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//6_1_merged.gds'
+Elapsed time: 0:19.04[h:]min:sec. CPU time: user 2.00 sys 0.50 (13%). Peak memory: 379892KB.
+cp /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//6_1_merged.gds /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/results/sky130hd/imc//6_final.gds
+make[1]: Leaving directory '/home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow'
+make[1]: Entering directory '/home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow'
+[INFO][FLOW] Using platform directory /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/../../../common/platforms/sky130hd
+/home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/../../../common/drc-lvs-check/run_drc.sh
+
+Magic 8.3 revision 367 - Compiled on Monday 20 February 2023 08:59:48 PM IST.
+Starting magic under Tcl interpreter
+Using the terminal as the console.
+Using NULL graphics device.
+Processing system .magicrc file
+Sourcing design .magicrc for technology sky130A ...
+2 Magic internal units = 1 Lambda
+Input style sky130(): scaleFactor=2, multiplier=2
+The following types are not handled by extraction and will be treated as non-electrical types:
+    ubm 
+Scaled tech values by 2 / 1 to match internal grid scaling
+Loading sky130A Device Generator Menu ...
+Loading "/home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/../../../common/drc-lvs-check/magic_commands.tcl" from command line.
+Warning: Calma reading is not undoable!  I hope that's OK.
+Library written using GDS-II Release 6.0
+Library name: LIB
+Reading "VIA_M4M5_PR".
+Saving contents of cell VIA_M4M5_PR
+Reading "VIA_M3M4_PR".
+Saving contents of cell VIA_M3M4_PR
+Reading "VIA_L1M1_PR_MR".
+Saving contents of cell VIA_L1M1_PR_MR
+Reading "VIA_M2M3_PR".
+Saving contents of cell VIA_M2M3_PR
+Reading "VIA_M1M2_PR".
+Saving contents of cell VIA_M1M2_PR
+Reading "VIA_via2_3_1200_490_1_3_320_320".
+Saving contents of cell VIA_via2_3_1200_490_1_3_320_320
+Reading "VIA_via3_4_1200_490_1_3_400_400".
+Saving contents of cell VIA_via3_4_1200_490_1_3_400_400
+Reading "VIA_via4_5_1200_490_1_3_400_400".
+Saving contents of cell VIA_via4_5_1200_490_1_3_400_400
+Reading "VIA_via2_3_5000_490_1_15_320_320".
+Saving contents of cell VIA_via2_3_5000_490_1_15_320_320
+Reading "VIA_via3_4_5000_490_1_12_400_400".
+Saving contents of cell VIA_via3_4_5000_490_1_12_400_400
+Reading "VIA_via4_5_5000_490_1_12_400_400".
+Saving contents of cell VIA_via4_5_5000_490_1_12_400_400
+Reading "VIA_via5_6_1200_1600_1_1_1600_1600".
+Saving contents of cell VIA_via5_6_1200_1600_1_1_1600_1600
+Reading "VIA_via5_6_1200_5000_3_1_1600_1600".
+Saving contents of cell VIA_via5_6_1200_5000_3_1_1600_1600
+Reading "VIA_via5_6_5000_1600_1_3_1600_1600".
+Saving contents of cell VIA_via5_6_5000_1600_1_3_1600_1600
+Reading "VIA_via5_6_5000_5000_3_3_1600_1600".
+Saving contents of cell VIA_via5_6_5000_5000_3_3_1600_1600
+Reading "SRAMLOGIC".
+Reading "sky130_fd_sc_hd__mux2_4".
+Reading "sky130_fd_sc_hd__tapvpwrvgnd_1".
+Reading "sky130_fd_sc_hd__decap_4".
+Reading "sky130_fd_sc_hd__fill_2".
+Reading "sky130_fd_sc_hd__fill_1".
+Reading "sky130_fd_sc_hd__fill_4".
+Reading "sky130_fd_sc_hd__fill_8".
+Reading "imc".
+[INFO]: Loading imc
+
+Loading DRC CIF style.
+No errors found.
+[INFO]: DONE with /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/reports/sky130hd/imc//6_final_drc.rpt
+
+Using technology "sky130A", version 1.0.391-1-g9d9c802
+# magic -rcfile /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/../../../common/drc-lvs-check/sky130A/sky130A.magicrc -noconsole -dnull /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/../../../common/drc-lvs-check/magic_commands.tcl < /dev/null
+make[1]: Leaving directory '/home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow'
+make[1]: Entering directory '/home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow'
+[INFO][FLOW] Using platform directory /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/../../../common/platforms/sky130hd
+(/usr/bin/time -f 'Elapsed time: %E[h:]min:sec. CPU time: user %U sys %S (%P). Peak memory: %MKB.' /home/rahul/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad -exit -no_init  /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/scripts/cdl.tcl) 2>&1 | tee /home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow/logs/sky130hd/imc//6_cdl.log
+OpenROAD v2.0-6895-g5c85b36f8 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[WARNING ODB-0284] Master HEADER not found.
+[WARNING ODB-0284] Master SLC not found.
+[ERROR ODB-0287] Master SRAMLOGIC was not in the masters CDL files.
+Error: cdl.tcl, 4 ODB-0287
+Command exited with non-zero status 1
+Elapsed time: 0:01.05[h:]min:sec. CPU time: user 0.65 sys 0.13 (75%). Peak memory: 101064KB.
+make[1]: Leaving directory '/home/rahul/openfasoc/openfasoc/generators/IMC-gen/flow'
+#----------------------------------------------------------------------
+# Parsing command line arguments...
+#----------------------------------------------------------------------
+['tools/IMC-gen.py', '--specfile', 'test.json', '--outputDir', './work', '--platform', 'sky130hd', '--mode', 'full']
+Loading specfile...
+search_param----
+---number of inverters---: 0    3
+Name: inv, dtype: int64
+Inv :  0    3
+Name: inv, dtype: int64
+#----------------------------------------------------------------------
+# Cleaning the workspace...
+#----------------------------------------------------------------------
+Loading platform_config file...
+
+PDK_ROOT value: /home/rahul/open_pdks/sky130/
+search_param----
+---number of inverters---: 0    3
+Name: inv, dtype: int64
+Inv :  0    3
+Name: inv, dtype: int64
+INV:0    3
+Name: inv, dtype: int64
+
+#----------------------------------------------------------------------
+# Verilog Generation
+#----------------------------------------------------------------------
+#----------------------------------------------------------------------
+# Verilog Generated
+#----------------------------------------------------------------------
+
+#----------------------------------------------------------------------
+# Run Synthesis and APR
+#----------------------------------------------------------------------
+#----------------------------------------------------------------------
+# Place and Route finished
+#----------------------------------------------------------------------
+#----------------------------------------------------------------------
+# DRC finished
+#----------------------------------------------------------------------
+[Error] LVS failed. Refer to the report
