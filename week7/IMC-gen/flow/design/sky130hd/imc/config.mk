@@ -8,7 +8,7 @@ export VERILOG_FILES 		= $(sort $(wildcard ./design/src/$(DESIGN_NICKNAME)/*.v))
 export SDC_FILE    		= ./design/$(PLATFORM)/$(DESIGN_NICKNAME)/constraint.sdc
 
 export DIE_AREA   	 	= 0 0 150 150
-export CORE_AREA   		= 20 20 130 130
+export CORE_AREA   		= 30 30 120 120
 
 # area of the smaller voltage domain
 #export VD1_AREA                 = 33.58 32.64 64.86 62.56
