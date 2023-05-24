@@ -486,4 +486,5 @@ Note the VDD and GND connections of macro's VDD and GND pins to VDD and GND powe
 You might face a signal11 error, which stops the automated RTL2GDS flow right before routing. To get rid of this error, I kept the core dimensions by less than 30 units from the die dimensions.
 
 After the flow completes you can read the GDS again and observe macro VDD and GND pins being connected to VDD and GND power straps in magic, The GDS is extracted and spice netlist is obtained.
+The GDS after extraction needs spice models of cells like tapcells, decaps, fill cells. 
 
