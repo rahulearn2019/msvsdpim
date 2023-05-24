@@ -376,6 +376,7 @@ Clearly post-layout results are similar to pre-layout
 Our mixed signal block comprises of an analog block which is the 8TSRAM cells and read circuitry that performs NOR and OR, and the digital block comprises of a 2*1 MUX which selects one of the two logics depending on a select line input. 
 Openfasoc treats the analog part of mixed signal block as a macro and places it on the core as per placement commands in manual_macro.tcl. For macros operating on differrent operating voltages different voltage domains can be created with commands in pdn.tcl. We need to provide GDS and LEF view of the macro to openfasoc. Macro is placed during the floorplanning stage of physical design flow
 Standard cells are used for the digital components and they are placed during placement stage in the openroad physical design flow.
+The mixed signal block's dummy verilog is written - a blackbox representation - verilog with pins for analog macros and corresponding synthesizable verilog for digital blocks.
 
 ### Verilog for MIXED SIGNAL BLOCK
 
@@ -390,33 +391,32 @@ Standard cells are used for the digital components and they are placed during pl
 ```verilog 
 ```
 
-The digital block 2_1 MUX will be placed as a standard cell in the design during the placement stage of the OpenFASOC flow, while the analog block will be treated as a macro and placed during the floorplan stage.
+In our design,  The digital block 2_1 MUX will be placed as a standard cell in the design during the placement stage of the OpenFASOC flow, while the analog block will be treated as a macro and placed during the floorplan stage.
 
-
-
-In the directory of the generator IMC-gen
+In the directory of the generator IMC-gen - to perform all the steps required for openfasoc flow - verilog generation, RTL2GDS, physical verification, the following make utility is placed and the make command is run
 ```export PDK_ROOT=/home/rahul/open_pdks/sky130/```
 ```make sky130hd_imc_full```
 
-
 ![Screenshot from 2023-04-18 00-39-19](https://user-images.githubusercontent.com/50217106/232712742-fd7a560a-27a1-43db-bf28-c1fda355a3aa.png)
 
-The final GDS has some drc errors 
+Open the The final GDS in magic - 
 
-magic view - ```magic -T sky130A.tech``` and then read GDS
+```magic -T sky130A.tech``` and then read GDS
 
 ![Screenshot from 2023-04-18 00-47-37](https://user-images.githubusercontent.com/50217106/232713040-181fe7d8-f0d9-4e75-ab1e-3ca651bc8f50.png)
 
-magic view - ```magic -D XR```  and then read GDS
+The GDS will have DRCs if 
+- The origin of GDS and LEF is not 0,0. Not having origin as 0,0 causes another problem where the pins of mixed signal block might be missing the macro ports
+- Position of macros are such that the placement and routing algorithms might nor find a solution that places macros, power straos and cells like decaps, tapcells etc. without DRCs
+- To get rid of DRCs, adjust the position of macro in the manual_macro.tcl file or bring the LEF,GDS to origin in magic tool
 
-![Screenshot from 2023-04-18 15-28-05](https://user-images.githubusercontent.com/50217106/232743708-5dc3af3d-f651-4a67-b415-8a827052ea4d.png)
+### magic view - ```magic -D XR```  and then read GDS
 
-klayout view
-
-![Screenshot from 2023-04-18 00-49-02](https://user-images.githubusercontent.com/50217106/232713189-90a2ec8d-923c-4b17-a174-585bad817283.png)
-
+### klayout view
 
 To route the VDD and GND power nets to the macro VDD and GND pins, pre-global-route.tcl file is edited, pdn.tcl is edited, and two files VSS_CONNECTION.txt and VDD_CONNECTION.txt are added, and their paths are added in config.mk
-On running the flow again, the following error occurs - signal11 recieved
 
-![Screenshot from 2023-04-24 00-50-57](https://user-images.githubusercontent.com/50217106/233862135-b4eb995f-a072-4d9b-89cb-f5cdaaf94b16.png)
+You might face a signal11 error, which stops the automated RTL2GDS flow right before routing. To get rid of this error, I kept the core dimensions by less than 30 units from the die dimensions.
+
+After the flow completes you can read the GDS again and observe macro VDD and GND pins being connected to VDD and GND power straps in magic, The GDS is extracted and spice netlist is obtained.
+
