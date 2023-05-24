@@ -448,6 +448,13 @@ In the directory of the generator IMC-gen - to perform all the steps required fo
 ```make sky130hd_imc_full```
 The FLow completes with 0 DRCs
 
+<details>
+<summary>OpenFASOC flow on IMC</summary>
+<br>
+This
+</details>
+
+
 
 
 The GDS will have DRCs if 
