@@ -474,12 +474,15 @@ The GDS will have DRCs if
 - Position of macros are such that the placement and routing algorithms might nor find a solution that places macros, power straos and cells like decaps, tapcells etc. without DRCs
 - To get rid of DRCs, adjust the position of macro in the manual_macro.tcl file or bring the LEF,GDS to origin in magic tool
 
-### magic view - ```magic -D XR```  and then read GDS
+### magic view - ```magic -D XR sky130A.tech```  and then read GDS
+![Screenshot from 2023-05-24 21-27-49](https://github.com/rahulearn2019/msvsdpim/assets/50217106/3fe93ddb-df2e-44f7-920b-a4734079c87d)
 
 ### klayout view
-
+![Screenshot from 2023-05-24 20-55-28](https://github.com/rahulearn2019/msvsdpim/assets/50217106/f5fc6522-e715-46f3-b9e7-a7c7ae6109a3)
 To route the VDD and GND power nets to the macro VDD and GND pins, pre-global-route.tcl file is edited, pdn.tcl is edited, and two files VSS_CONNECTION.txt and VDD_CONNECTION.txt are added, and their paths are added in config.mk
-
+Note the VDD and GND connections of macro's VDD and GND pins to VDD and GND power straps in magic
+![Screenshot from 2023-05-24 21-27-33](https://github.com/rahulearn2019/msvsdpim/assets/50217106/d71633ce-f81b-448e-a35a-4293eb0c708a)
+![Screenshot from 2023-05-24 21-22-40](https://github.com/rahulearn2019/msvsdpim/assets/50217106/e7a20073-7659-4123-b112-a0eb66fef8e5)
 You might face a signal11 error, which stops the automated RTL2GDS flow right before routing. To get rid of this error, I kept the core dimensions by less than 30 units from the die dimensions.
 
 After the flow completes you can read the GDS again and observe macro VDD and GND pins being connected to VDD and GND power straps in magic, The GDS is extracted and spice netlist is obtained.
