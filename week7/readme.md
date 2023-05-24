@@ -446,14 +446,9 @@ In our design,  The digital block 2_1 MUX will be placed as a standard cell in t
 In the directory of the generator IMC-gen - to perform all the steps required for openfasoc flow - verilog generation, RTL2GDS, physical verification, the following make utility is placed and the make command is run
 ```export PDK_ROOT=/home/rahul/open_pdks/sky130/```
 ```make sky130hd_imc_full```
+The FLow completes with 0 DRCs
 
-![Screenshot from 2023-04-18 00-39-19](https://user-images.githubusercontent.com/50217106/232712742-fd7a560a-27a1-43db-bf28-c1fda355a3aa.png)
 
-Open the The final GDS in magic - 
-
-```magic -T sky130A.tech``` and then read GDS
-
-![Screenshot from 2023-04-18 00-47-37](https://user-images.githubusercontent.com/50217106/232713040-181fe7d8-f0d9-4e75-ab1e-3ca651bc8f50.png)
 
 The GDS will have DRCs if 
 - The origin of GDS and LEF is not 0,0. Not having origin as 0,0 causes another problem where the pins of mixed signal block might be missing the macro ports
