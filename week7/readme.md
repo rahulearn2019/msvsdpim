@@ -32,6 +32,88 @@ OR and NOR operation with 1 written to both SRAM cells
 
 ![Screenshot from 2023-04-18 13-00-55](https://user-images.githubusercontent.com/50217106/232706288-3bb588fc-b196-42cc-b716-842e72b9a938.png)
 
+<details>
+<summary>see </summary>
+<br>
+
+```
+** sch_path: /home/rahul/Documents/sramlogic/sramcomp.sch
+.subckt sramcomp Q1 Q2 NOR OR WWL WBLB1 WBL2 WBL1 WBLB2 RWL RBLprechargeEnable RBLprecharge WWL WBL1
++ WBLB1 RWL RBLprechargeEnable RBLprecharge WBL2 WBLB2
+*.PININFO Q1:O Q2:O NOR:O OR:O WWL:I WBLB1:I WBL2:I WBL1:I WBLB2:I RWL:I RBLprechargeEnable:I
+*+ RBLprecharge:I WWL:I WBL1:I WBLB1:I RWL:I RBLprechargeEnable:I RBLprecharge:I WBL2:I WBLB2:I
+x1 WWL VDD WBLB1 WBL2 WBL1 WBLB2 GND Q1 Q2 RWL RBLprechargeEnable RBLprecharge NOR OR sramlogic
+V1 VDD GND 1.8
+.save i(v1)
+V2 WWL GND pulse(0 1.8 10n 5n 5n 10n 50n)
+.save i(v2)
+V3 WBL1 GND pulse(1.8 0 0 5n 5n 20n 50n)
+.save i(v3)
+V4 WBL2 GND pulse(1.8 0 0 5n 5n 20n 50n)
+.save i(v4)
+V5 RBLprecharge GND pulse(0 1.8 0 5n 5n 15n 50n)
+.save i(v5)
+V6 RWL GND pulse(0 1.8 30n 5n 5n 10n 50n)
+.save i(v6)
+V7 WBLB1 GND pulse(0 1.8 0 5n 5n 20n 50n)
+.save i(v7)
+V8 WBLB2 GND pulse(0 1.8 0 5n 5n 20n 50n)
+.save i(v8)
+V9 RBLprechargeEnable GND pulse(1.8 0 5n 5n 5n 5n 50n)
+.save i(v9)
+**** begin user architecture code
+
+.tran 0.01n 50n
+.save all
+
+
+.param mc_mm_switch=0
+.param mc_pr_switch=0
+.include /usr/local/share/pdk/sky130A/libs.tech/ngspice/corners/tt.spice
+.include /usr/local/share/pdk/sky130A/libs.tech/ngspice/r+c/res_typical__cap_typical.spice
+.include /usr/local/share/pdk/sky130A/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice
+.include /usr/local/share/pdk/sky130A/libs.tech/ngspice/corners/tt/specialized_cells.spice
+
+**** end user architecture code
+.ends
+
+* expanding   symbol:  /home/rahul/Documents/sramlogic/sramlogic.sym # of pins=14
+** sym_path: /home/rahul/Documents/sramlogic/sramlogic.sym
+** sch_path: /home/rahul/Documents/sramlogic/sramlogic.sch
+.subckt sramlogic WWL VDD WBLB1 WBL2 WBL1 WBLB2 GND Q1 Q2 RWL RBLprechargeEnable RBLprecharge NOR OR
+*.PININFO WWL:I VDD:B GND:B WBL1:I WBL2:I WBLB2:I WBLB1:I Q1:O Q2:O RWL:I RBLprecharge:I NOR:O
+*+ RBLprechargeEnable:I OR:O
+XM1 net1 Q1 GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=2 nf=1 m=1
+XM3 net1 Q1 VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 m=1
+XM2 Q1 net1 VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 m=1
+XM4 Q1 net1 GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=2 nf=1 m=1
+XM5 net2 Q2 GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=2 nf=1 m=1
+XM6 net2 Q2 VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 m=1
+XM7 Q2 net2 VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=1 nf=1 m=1
+XM8 Q2 net2 GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=2 nf=1 m=1
+XM9 WBL1 WWL Q1 GND sky130_fd_pr__nfet_01v8 L=0.15 W=2 nf=1 m=1
+XM10 net1 WWL WBLB1 GND sky130_fd_pr__nfet_01v8 L=0.15 W=2 nf=1 m=1
+XM11 WBL2 WWL Q2 GND sky130_fd_pr__nfet_01v8 L=0.15 W=2 nf=1 m=1
+XM12 net2 WWL WBLB2 GND sky130_fd_pr__nfet_01v8 L=0.15 W=2 nf=1 m=1
+XM13 net3 Q1 GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 m=1
+XM14 net4 Q2 GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 m=1
+XM15 net5 RWL net3 GND sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 m=1
+XM16 net5 RWL net4 GND sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 m=1
+XM18 net6 net5 VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=2 nf=1 m=1
+XM19 net6 net5 GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 m=1
+XM20 NOR net6 VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=2 nf=1 m=1
+XM21 NOR net6 GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 m=1
+XM17 net5 RBLprechargeEnable RBLprecharge VDD sky130_fd_pr__pfet_01v8 L=0.15 W=2 nf=1 m=1
+XM22 OR net5 VDD VDD sky130_fd_pr__pfet_01v8 L=0.15 W=2 nf=1 m=1
+XM23 OR net5 GND GND sky130_fd_pr__nfet_01v8 L=0.15 W=1 nf=1 m=1
+.ends
+
+.GLOBAL GND
+.GLOBAL VDD
+.end
+```
+</details>
+
 Pre-layout SPICE
 ```
 ** sch_path: /home/rahul/Documents/sramlogic/sramcomp.sch
