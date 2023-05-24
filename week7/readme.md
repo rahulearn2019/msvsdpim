@@ -451,11 +451,8 @@ The FLow completes with 0 DRCs
 <details>
 <summary>OpenFASOC flow on IMC</summary>
 <br>
-This
+Refer to the flow.txt file
 </details>
-
-
-
 
 The GDS will have DRCs if 
 - The origin of GDS and LEF is not 0,0. Not having origin as 0,0 causes another problem where the pins of mixed signal block might be missing the macro ports
