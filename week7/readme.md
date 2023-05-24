@@ -381,14 +381,64 @@ The mixed signal block's dummy verilog is written - a blackbox representation - 
 ### Verilog for MIXED SIGNAL BLOCK
 
 ```verilog
+module imc(  
+	input WBL1, 
+	input WBLB1, 
+	input WBL2, 
+	input WBLB2, 
+	input RWL, 
+	input WWL, 
+	input SEL, 
+	input RBLprecharge, 
+	input RBLprechargeEnable,
+	output out, Q1, Q2
+);
+wire inter1;
+wire inter2;
+
+SRAMLOGIC sramlogic(.WBL1(WBL1), .WBLB1(WBLB1), .WBL2(WBL2), .WBLB2(WBLB2), .OR(inter1), .NOR(inter2), .Q1(Q1), .Q2(Q2), 
+	.RBLprechargeEnable(RBLprechargeEnable), .RBLprecharge(RBLprecharge), .RWL(RWL), .WWL(WWL)
+);
+
+MUX2_1 mux(.in1(inter1), .in2(inter2), .out(out), .sel(SEL)
+);
+
+endmodule
 
 ```
 
 ```verilog
 
+module SRAMLOGIC(
+		input WWL,
+		input RWL,
+		input WBL1,
+		input WBLB1,
+		input WBL2,
+		input WBLB2,
+		input RBLprecharge,
+		input RBLprechargeEnable,
+		output Q1, 
+		output Q2,
+		output NOR,
+		output OR
+	);
+endmodule
+
 ```
 
 ```verilog 
+
+module MUX2_1(
+       	input in1, 
+	input in2, 
+	input sel,
+	output out
+);
+
+assign out = sel?in2:in1;
+
+endmodule
 ```
 
 In our design,  The digital block 2_1 MUX will be placed as a standard cell in the design during the placement stage of the OpenFASOC flow, while the analog block will be treated as a macro and placed during the floorplan stage.
