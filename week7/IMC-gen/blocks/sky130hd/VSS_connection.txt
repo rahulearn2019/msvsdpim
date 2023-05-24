@@ -1,2 +1,2 @@
-r_GND
+r_VSS
 sramlogic GND
