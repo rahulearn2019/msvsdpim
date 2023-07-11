@@ -3174,4 +3174,10 @@ The GDS after extraction needs spice models of cells like tapcells, decaps, fill
 
 ## References
 - https://openfasoc.readthedocs.io/en/latest/flow-tempsense.html
+- https://www.sciencedirect.com/science/article/abs/pii/S002627142100411X
+- https://openroad-flow-scripts.readthedocs.io/en/latest/
+- [1] Amogh Agrawal, Akhilesh Jaisawal, Chankyu Lee and Kaushik Roy, “X-SRAM: Enabling In-memory Boolean Computations in CMOS Static Random Access Memories”. Circuits and Systems I: Regular Papers, IEEE Transactions on PP(99), December 2017 [2] Sparsh Mittal, Gaurav Verma, Brajesh Kaushik, Farooq A. Khanday, “A Survey of SRAM-based Processing-in-Memory Techniques and Applications”. Journal of Systems Architecture, Volume 119, October 2021, 102276
 
+## Acknowledgements
+- Kunal Ghosh, Founder VLSI System Design, Mtech IIT Bombay - https://www.vlsisystemdesign.com/
+- Sumanto Kar, Research Associate, IIT Bombay
