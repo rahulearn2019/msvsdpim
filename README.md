@@ -3175,6 +3175,6 @@ The GDS after extraction needs spice models of cells like tapcells, decaps, fill
 
 ## Acknowledgements
 - Kunal Ghosh, Founder VLSI System Design, Mtech IIT Bombay - https://www.vlsisystemdesign.com/
-  I would like to thank Kunal Sir for providing me the opportunity to work on his concept - Physical Design of Mixed Signal SoC. It was a unique learning experience where me and my fellow interns brought an idea to reality.
+I would like to thank Kunal Sir for providing me the opportunity to work on his concept - Physical Design of Mixed Signal SoC. It was a unique learning experience where me and my fellow interns brought an idea to reality.
 - Sumanto Kar, Research Associate, IIT Bombay
-  I would like to thank Sumantro who worked tirelessly helping us get acquanited with open-source tools that were critical for the flow to work on OpenFASOC. 
+I would like to thank Sumantro who worked tirelessly helping us get acquanited with open-source tools that were critical for the flow to work on OpenFASOC. 
