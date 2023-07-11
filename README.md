@@ -1,10 +1,10 @@
 # VSD RESEARCH PROGRAMME - MIXED SIGNAL PHYSICAL DESIGN
-### Getting the tools
+## Getting the tools
 Note: open_pdk has to be installed last so it can correctly associate the xschem and magic directories. Note: if the configure step fails during any process, its most likely due to missing additional packages, and they need to be installed (preferably from source) to complete the installation
 ![image](https://user-images.githubusercontent.com/50217106/218158061-a319ea61-f115-48f8-8694-172a138004ba.png)
 
 
-### Magic 
+## Magic 
 - Install steps
 ```
 $  git clone git://opencircuitdesign.com/magic
@@ -14,7 +14,7 @@ $  make
 $  sudo make install
 ```
 More info can be found at http://opencircuitdesign.com/magic/index.html
-### Ngspice 
+## Ngspice 
 ngspice is the open-source spice simulator for electric and electronic circuits.
 - Install steps
 After downloading the tarball from https://sourceforge.net/projects/ngspice/files/ to a local directory, unpack it using:
@@ -27,7 +27,7 @@ After downloading the tarball from https://sourceforge.net/projects/ngspice/file
  $ make
  $ sudo make install
  ```
-### xschem
+## xschem
 Xschem is a schematic capture program
 - Install steps
 ```
@@ -48,10 +48,9 @@ $	./configure --enable-sky130-pdk
 $  make
 $  sudo make install
 ```
-### Align - 
+## Align - 
 #### Analog Layout Intelligently generated from netlists
-About :
-#### ALIGN is an open source automatic layout generator for analog circuits jointly developed under the DARPA IDEA program by the University of Minnesota, Texas A&M University, and Intel Corporation.
+About : ALIGN is an open source automatic layout generator for analog circuits jointly developed under the DARPA IDEA program by the University of Minnesota, Texas A&M University, and Intel Corporation.
 
 ![image](https://user-images.githubusercontent.com/50217106/218092464-0208dbd9-ac05-4b9a-9f00-ee752b3f90d3.png)
 
@@ -63,7 +62,7 @@ The ALIGN flow includes the following steps:
 Circuit annotation creates a multilevel hierarchical representation of the input netlist. This representation is used to implement the circuit layout in using a hierarchical manner. Design rule abstraction creates a compact JSON-format represetation of the design rules in a PDK. This repository provides a mock PDK based on a FinFET technology (where the parameters are based on published data). These design rules are used to guide the layout and ensure DRC-correctness. Primitive cell generation works with primitives, i.e., blocks at the lowest level of design hierarchy, and generates their layouts. Primitives typically contain a small number of transistor structures (each of which may be implemented using multiple fins and/or fingers). A parameterized instance of a primitive is automatically translated to a GDSII layout in this step. Placement and routing performs block assembly of the hierarchical blocks in the netlist and routes connections between these blocks, while obeying a set of analog layout constraints. At the end of this step, the translation of the input SPICE netlist to a GDSII layout is complete.
 
 ### Installing Align:
-### 
+---------------------------------------------------------------
 ### Prerequisites:
 - gcc >= 6.1.0( for C++14 support) 
 - Python >= 3.7 
